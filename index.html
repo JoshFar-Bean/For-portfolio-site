@@ -187,6 +187,13 @@
             background-color: var(--color-paper-light);
             overflow: hidden;
         }
+
+        /* Picture specific constraints */
+        .cluster-item picture {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
         
         .cluster-item img {
             width: 100%;
@@ -202,8 +209,13 @@
             width: 100%;
             height: 100%;
         }
-        .split-frame img {
+        .split-frame picture {
             width: calc(50% - 0.25rem);
+            height: 100%;
+            display: flex;
+        }
+        .split-frame img {
+            width: 100%;
             height: 100%;
             object-fit: contain;
         }
@@ -460,10 +472,16 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Qualitative research and card sorting of all points into 8 developmental categories via Miro.">
-                                <img src="portfolio-images/cs1-images/1.1.png" loading="lazy" alt="Qualitative research and card sorting">
+                                <picture>
+                                    <source srcset="portfolio-images/cs1-images/1.1.webp" type="image/webp">
+                                    <img src="portfolio-images/cs1-images/1.1.png" loading="lazy" alt="Qualitative research and card sorting">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Translating 8 categories of qualitative developmental research into long-term organisational strategy.">
-                                <img src="portfolio-images/cs1-images/1.2.png" loading="lazy" alt="Translating 8 categories">
+                                <picture>
+                                    <source srcset="portfolio-images/cs1-images/1.2.webp" type="image/webp">
+                                    <img src="portfolio-images/cs1-images/1.2.png" loading="lazy" alt="Translating 8 categories">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Qualitative research and card sorting of all points into 8 developmental categories via Miro.</div>
@@ -483,10 +501,16 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.">
-                                <img src="portfolio-images/cs1-images/1.3.png" loading="lazy" alt="Identifying handoff vulnerabilities">
+                                <picture>
+                                    <source srcset="portfolio-images/cs1-images/1.3.webp" type="image/webp">
+                                    <img src="portfolio-images/cs1-images/1.3.png" loading="lazy" alt="Identifying handoff vulnerabilities">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Translating 8 developmental categories into a compliant backstage transition eliminated drop-off friction across 8 consecutive years.">
-                                <img src="portfolio-images/cs1-images/1.4.png" loading="lazy" alt="Translating categories into transition">
+                                <picture>
+                                    <source srcset="portfolio-images/cs1-images/1.4.webp" type="image/webp">
+                                    <img src="portfolio-images/cs1-images/1.4.png" loading="lazy" alt="Translating categories into transition">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
@@ -515,12 +539,21 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.">
-                                <img src="portfolio-images/cs2-images/2.1.jpg" loading="lazy" alt="Fragmented flight case">
+                                <picture>
+                                    <source srcset="portfolio-images/cs2-images/2.1.webp" type="image/webp">
+                                    <img src="portfolio-images/cs2-images/2.1.png" loading="lazy" alt="Fragmented flight case">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Low-fidelity mockups created to test layout alternatives before moving to final fabrication.">
                                 <div class="split-frame">
-                                    <img src="portfolio-images/cs2-images/2.2.1.png" loading="lazy" alt="Mockup 1">
-                                    <img src="portfolio-images/cs2-images/2.2.2.jpeg" loading="lazy" alt="Mockup 2">
+                                    <picture>
+                                        <source srcset="portfolio-images/cs2-images/2.2.1.webp" type="image/webp">
+                                        <img src="portfolio-images/cs2-images/2.2.1.png" loading="lazy" alt="Mockup 1">
+                                    </picture>
+                                    <picture>
+                                        <source srcset="portfolio-images/cs2-images/2.2.2.webp" type="image/webp">
+                                        <img src="portfolio-images/cs2-images/2.2.2.png" loading="lazy" alt="Mockup 2">
+                                    </picture>
                                 </div>
                             </div>
                         </div>
@@ -541,10 +574,16 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.">
-                                <img src="portfolio-images/cs2-images/2.3.jpeg" loading="lazy" alt="Finalised 5S modular storage">
+                                <picture>
+                                    <source srcset="portfolio-images/cs2-images/2.3.webp" type="image/webp">
+                                    <img src="portfolio-images/cs2-images/2.3.png" loading="lazy" alt="Finalised 5S modular storage">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Transitioning from a high-friction logistical loop to a standardised, 5S-driven operational workflow.">
-                                <img src="portfolio-images/cs2-images/2.4.jpeg" loading="lazy" alt="Streamlined loop">
+                                <picture>
+                                    <source srcset="portfolio-images/cs2-images/2.4.webp" type="image/webp">
+                                    <img src="portfolio-images/cs2-images/2.4.png" loading="lazy" alt="Streamlined loop">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
@@ -573,7 +612,10 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.">
-                                <img src="portfolio-images/cs3-images/3.1.jpg" loading="lazy" alt="Root Cause Audit">
+                                <picture>
+                                    <source srcset="portfolio-images/cs3-images/3.1.webp" type="image/webp">
+                                    <img src="portfolio-images/cs3-images/3.1.png" loading="lazy" alt="Root Cause Audit">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.</div>
@@ -593,12 +635,21 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Strict time-bound guardrails provide operational accountability and continuous service assurance.">
-                                <img src="portfolio-images/cs3-images/3.4.jpeg" loading="lazy" alt="Recovery SLA">
+                                <picture>
+                                    <source srcset="portfolio-images/cs3-images/3.4.webp" type="image/webp">
+                                    <img src="portfolio-images/cs3-images/3.4.png" loading="lazy" alt="Recovery SLA">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Translating dense policy documentation into easy-to-understand visual playbook">
                                 <div class="split-frame">
-                                    <img src="portfolio-images/cs3-images/3.2.png" loading="lazy" alt="Playbook Part 1">
-                                    <img src="portfolio-images/cs3-images/3.3.jpeg" loading="lazy" alt="Playbook Part 2">
+                                    <picture>
+                                        <source srcset="portfolio-images/cs3-images/3.2.webp" type="image/webp">
+                                        <img src="portfolio-images/cs3-images/3.2.png" loading="lazy" alt="Playbook Part 1">
+                                    </picture>
+                                    <picture>
+                                        <source srcset="portfolio-images/cs3-images/3.3.webp" type="image/webp">
+                                        <img src="portfolio-images/cs3-images/3.3.png" loading="lazy" alt="Playbook Part 2">
+                                    </picture>
                                 </div>
                             </div>
                         </div>
@@ -635,16 +686,28 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
-                                <img src="portfolio-images/cs4-images/4.1.jpg" loading="lazy" alt="Research finding 1">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.1.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.1.png" loading="lazy" alt="Research finding 1">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Research findings">
-                                <img src="portfolio-images/cs4-images/4.2.jpg" loading="lazy" alt="Research finding 2">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.2.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.2.png" loading="lazy" alt="Research finding 2">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Research findings">
-                                <img src="portfolio-images/cs4-images/4.3.jpg" loading="lazy" alt="Research finding 3">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.3.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.3.png" loading="lazy" alt="Research finding 3">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
-                                <img src="portfolio-images/cs4-images/4.4.jpg" loading="lazy" alt="Research finding 4">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.4.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.4.png" loading="lazy" alt="Research finding 4">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Research findings</div>
@@ -664,13 +727,22 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Insights synthesised">
-                                <img src="portfolio-images/cs4-images/4.5.jpg" loading="lazy" alt="Insight 1">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.5.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.5.png" loading="lazy" alt="Insight 1">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Insights synthesised">
-                                <img src="portfolio-images/cs4-images/4.6.jpg" loading="lazy" alt="Insight 2">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.6.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.6.png" loading="lazy" alt="Insight 2">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Insights synthesised">
-                                <img src="portfolio-images/cs4-images/4.7.jpg" loading="lazy" alt="Insight 3">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.7.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.7.png" loading="lazy" alt="Insight 3">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Insights synthesised</div>
@@ -678,10 +750,16 @@
                         <!-- Third Carousel -->
                         <div class="image-cluster" style="margin-top: 3rem;">
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Feature preferences & Problem Statement">
-                                <img src="portfolio-images/cs4-images/4.8.png" loading="lazy" alt="Feature Preferences">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.8.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.8.png" loading="lazy" alt="Feature Preferences">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Feature preferences & Problem Statement">
-                                <img src="portfolio-images/cs4-images/4.9.png" loading="lazy" alt="Problem Statement">
+                                <picture>
+                                    <source srcset="portfolio-images/cs4-images/4.9.webp" type="image/webp">
+                                    <img src="portfolio-images/cs4-images/4.9.png" loading="lazy" alt="Problem Statement">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Feature preferences & Problem Statement</div>
@@ -713,13 +791,22 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.">
-                                <img src="portfolio-images/cs5-images/5.1.png" loading="lazy" alt="Phase 1">
+                                <picture>
+                                    <source srcset="portfolio-images/cs5-images/5.1.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.1.png" loading="lazy" alt="Phase 1">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Phase 2: Monolithic Custom Gem — Consolidating rules into one guide reduced setup time, but instruction bloat diluted output precision.">
-                                <img src="portfolio-images/cs5-images/5.2.png" loading="lazy" alt="Phase 2">
+                                <picture>
+                                    <source srcset="portfolio-images/cs5-images/5.2.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.2.png" loading="lazy" alt="Phase 2">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Phase 3: Specialised Agent Fleet — Decoupled into 5 discrete role-based Gems (Script, Visuals, Metadata, Community, Publishing) to enforce strict prompt boundaries.">
-                                <img src="portfolio-images/cs5-images/5.3.png" loading="lazy" alt="Phase 3">
+                                <picture>
+                                    <source srcset="portfolio-images/cs5-images/5.3.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.3.png" loading="lazy" alt="Phase 3">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.</div>
@@ -739,10 +826,16 @@
                     <div class="cs-visual">
                         <div class="image-cluster">
                             <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.">
-                                <img src="portfolio-images/cs5-images/5.4.png" loading="lazy" alt="Webhook routing">
+                                <picture>
+                                    <source srcset="portfolio-images/cs5-images/5.4.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.4.png" loading="lazy" alt="Webhook routing">
+                                </picture>
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Centralised multi-chat orchestration into a single Airtable workspace with embedded human review gates.">
-                                <img src="portfolio-images/cs5-images/5.5.png" loading="lazy" alt="Multi-chat orchestration">
+                                <picture>
+                                    <source srcset="portfolio-images/cs5-images/5.5.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.5.png" loading="lazy" alt="Multi-chat orchestration">
+                                </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container" contenteditable="true">Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.</div>
