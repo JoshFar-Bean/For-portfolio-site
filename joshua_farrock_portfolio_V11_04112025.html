@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Farrock | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           CSS Reset & Base Styles
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Studio Ghibli Watercolor Palette - Solid Colors */
+            --color-paper: #f4f1ea;
+            --color-paper-light: #fffdf9;
+            --color-text: #333333;
+            
+            --color-blue: #5b7b8a;
+            --color-blue-slate: #5C7285; /* Specific color for intro/icons */
+            --color-blue-wash: #e3ebef; /* Solid pastel */
+            
+            --color-orange: #d97757; /* Specific orange for hover */
+            --color-orange-light: #e8ab98;
+            --color-orange-wash: #f7e6df; /* Solid pastel */
+            
+            --color-green: #7b8e73;
+            --color-green-light: #b8c5b3;
+            --color-green-wash: #e9efe7; /* Solid pastel */
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--color-paper);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Paper Texture Overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        [contenteditable="true"] {
+            outline: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        [contenteditable="true"]:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+            cursor: text;
+        }
+        [contenteditable="true"]:focus {
+            background-color: var(--color-blue-wash);
+            box-shadow: 0 2px 0 var(--color-blue-slate);
+        }
+
+        /* Typography */
+        h1 { font-size: 3.5rem; font-weight: 800; color: var(--color-blue); margin-bottom: 0.5rem; line-height: 1.2; }
+        h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-blue); }
+        h5 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-text); margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
+        p { font-size: 1.05rem; margin-bottom: 1rem; }
+
+        /* Typography Fixes */
+        .intro-special {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--color-blue-slate);
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+        .section-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 3rem;
+            width: 100%;
+            display: block;
+        }
+
+        /* =========================================
+           Organic Shapes & Sections
+           ========================================= */
+        .section-margin { margin-bottom: 6rem; scroll-margin-top: 4rem; }
+        #about { margin-bottom: 12rem; }
+        
+        .organic-card {
+            background-color: var(--color-paper-light);
+            border: 2px solid;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .border-blue { border-color: var(--color-blue); border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; box-shadow: 4px 6px 15px rgba(91, 123, 138, 0.15); }
+        .border-orange { border-color: var(--color-orange); border-radius: 15px 255px 15px 225px/225px 15px 255px 15px; box-shadow: 4px 6px 15px rgba(210, 121, 92, 0.15); }
+        .border-green { border-color: var(--color-green); border-radius: 225px 15px 255px 15px/15px 225px 15px 255px; box-shadow: 4px 6px 15px rgba(123, 142, 115, 0.15); }
+
+        /* Pillars Grid */
+        .pillars-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+        .pillar-card { flex: 0 1 calc(50% - 1rem); min-width: 320px; max-width: 480px; padding: 2rem; text-align: center; cursor: pointer; text-decoration: none; color: inherit; }
+        .pillar-card:hover { transform: translateY(-5px); box-shadow: 6px 10px 20px rgba(0,0,0,0.08); }
+
+        /* =========================================
+           Case Study: 50/50 Zigzag Layout
+           ========================================= */
+        .cs-wrapper { margin-bottom: 6rem; border-bottom: 2px dashed var(--color-blue-wash); padding-bottom: 4rem; }
+        .cs-wrapper:last-child { border-bottom: none; }
+        .cs-title { font-size: 2.25rem; font-weight: 800; color: #333; margin-bottom: 0.5rem; }
+        
+        .cs-row { display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; margin-bottom: 4rem; }
+        .cs-row.reverse { flex-direction: row-reverse; }
+        .cs-text { flex: 1 1 45%; min-width: 320px; }
+        .cs-visual { flex: 1 1 45%; min-width: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+
+        /* =========================================
+           Scrapbook Image Clusters (Solid, 1/3 Peek)
+           ========================================= */
+        .image-cluster {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cluster-item {
+            position: absolute;
+            width: 70%;
+            height: 280px;
+            padding: 0.75rem 0.75rem 3.5rem 0.75rem; /* Polaroid feel */
+            border: 2px solid;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; font-weight: 700; color: #333; font-size: 0.9rem;
+            border-radius: 4px; cursor: pointer;
+            opacity: 1 !important; /* Force solid */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: var(--color-paper-light); /* Prevent transparency */
+            overflow: hidden; /* Constrain images */
+        }
+        
+        /* IMAGE RULES to prevent magnification */
+        .cluster-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Prevents stretching and cropping */
+            pointer-events: none; /* Let clicks pass to the cluster item */
+        }
+        
+        /* Split Frame for Side-by-Side */
+        .split-frame {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            width: 100%;
+            height: 100%;
+        }
+        .split-frame img {
+            width: calc(50% - 0.25rem);
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Positions */
+        .pos-front {
+            transform: translate(0, 0) scale(1);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .pos-back-right {
+            transform: translate(35%, 15%) rotate(8deg) scale(0.9);
+            z-index: 2;
+            box-shadow: 4px 8px 15px rgba(0,0,0,0.1);
+        }
+        .pos-back-left {
+            transform: translate(-35%, -15%) rotate(-8deg) scale(0.9);
+            z-index: 1;
+            box-shadow: 4px 8px 15px rgba(0,0,0,0.1);
+        }
+        .pos-hidden {
+            transform: translate(0, 0) scale(0.8);
+            z-index: 0;
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
+        /* Washi Tape */
+        .cluster-item::before {
+            content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(2deg);
+            width: 70px; height: 24px; background-color: var(--color-paper);
+            border: 1px solid rgba(0,0,0,0.05); box-shadow: 1px 2px 3px rgba(0,0,0,0.05); z-index: 2;
+        }
+
+        /* Arrows */
+        .nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 44px; height: 44px; background: var(--color-paper-light);
+            border: 2px solid var(--color-orange); color: var(--color-orange);
+            border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 20;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0.6; transition: all 0.3s ease; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+        }
+        .nav-btn:hover { background: var(--color-orange); color: var(--color-paper-light); opacity: 1; transform: translateY(-50%) scale(1.1); }
+        .nav-btn.prev { left: 0; }
+        .nav-btn.next { right: 0; }
+
+        /* Dynamic Caption Box */
+        .dynamic-caption-container {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: var(--color-paper-light);
+            border-left: 4px solid var(--color-orange);
+            font-size: 0.95rem; font-style: italic; color: var(--color-text);
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+            min-height: 4rem; display: flex; align-items: center;
+        }
+
+        /* =========================================
+           Insights & Blockquotes
+           ========================================= */
+        .meta-tag {
+            display: inline-block; background: var(--color-green-wash); color: var(--color-green);
+            padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; border: 1px solid var(--color-green-light);
+        }
+
+        .insight-quote-left, .insight-quote-right {
+            background-color: var(--color-orange-wash); color: var(--color-text);
+            font-style: italic; font-weight: 700; font-size: 1.1rem; margin: 2rem 0;
+        }
+        .insight-quote-left {
+            border-left: 6px solid var(--color-orange); padding: 1.5rem 2rem; border-radius: 0 30px 30px 0;
+        }
+        .insight-quote-right {
+            border-right: 8px solid var(--color-orange); padding: 1.5rem 2rem 1.5rem 3rem; border-radius: 60px 0 0 60px;
+        }
+
+        .improve-section {
+            background-color: var(--color-blue-wash);
+            border: 2px solid var(--color-blue-slate);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .improve-section h5 {
+            color: var(--color-blue);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+        .improve-section p {
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 800px;
+        }
+
+        /* =========================================
+           Navigation 1: Fixed Hamburger & Sidebar
+           ========================================= */
+        #openNav {
+            position: fixed; top: 20px; left: 20px; z-index: 1000;
+            background: transparent; border: none; box-shadow: none; padding: 0; cursor: pointer;
+        }
+        #openNav svg { width: 36px; height: 36px; fill: var(--color-blue-slate); transition: fill 0.3s ease; }
+        #openNav:hover svg { fill: var(--color-orange); }
+
+        .side-nav-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(44, 53, 49, 0.4); z-index: 998;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .side-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .side-nav {
+            position: fixed; top: 0; left: -320px; width: 320px; height: 100vh;
+            background: var(--color-paper); z-index: 999;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.1); transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            padding: 6rem 2rem 2rem 2rem; border-right: 2px solid var(--color-blue-slate);
+            overflow-y: auto;
+        }
+        .side-nav.active { transform: translateX(320px); }
+
+        .close-nav-btn { position: absolute; top: 20px; right: 20px; background: none; border: none; cursor: pointer; padding: 0; }
+        .close-nav-btn svg { width: 30px; height: 30px; fill: var(--color-blue-slate); transition: fill 0.3s ease; }
+        .close-nav-btn:hover svg { fill: var(--color-orange); }
+
+        .side-nav ul { list-style: none; padding: 0; }
+        .side-nav li a {
+            display: block; font-family: 'Montserrat', sans-serif; color: #333; font-weight: 600;
+            white-space: normal; line-height: 1.3; text-decoration: none; transition: color 0.3s;
+            margin-bottom: 1.25rem;
+        }
+        .side-nav li a:hover { color: var(--color-orange); }
+        .nav-top-level { text-transform: uppercase; margin-top: 1.5rem; }
+        .nav-subset { margin-left: 32px; font-size: 0.95em; }
+
+        /* =========================================
+           Navigation 2: Right Floating Mini Nav
+           ========================================= */
+        .mini-nav {
+            position: fixed; top: 50%; right: 1.5rem; transform: translateY(-50%); z-index: 900;
+            background: var(--color-paper-light); border: 2px solid var(--color-blue-slate);
+            border-radius: 50px; padding: 0.75rem 0.5rem; display: flex; flex-direction: column; align-items: center;
+            box-shadow: 4px 6px 15px rgba(92, 114, 133, 0.2);
+            transition: all 0.5s ease; gap: 0.75rem;
+        }
+
+        .mini-nav.idle { padding: 0.5rem; gap: 0; border-color: transparent; background: transparent; box-shadow: none; }
+        .mini-nav:hover { opacity: 1 !important; border-color: var(--color-blue-slate); background: var(--color-paper-light); box-shadow: 4px 6px 15px rgba(92, 114, 133, 0.2); }
+
+        .mini-nav-item {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer; text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; opacity: 1; transform: scale(1);
+        }
+        .mini-nav-item:hover, .mini-nav-item.active { background: var(--color-orange-wash); }
+        .mini-nav-item svg { width: 20px; height: 20px; fill: var(--color-blue-slate); transition: fill 0.3s; }
+        .mini-nav-item:hover svg, .mini-nav-item.active svg { fill: var(--color-orange); }
+
+        /* Hide inactive when idle */
+        .mini-nav.idle .mini-nav-item:not(.active) { height: 0; opacity: 0; transform: scale(0); pointer-events: none; margin: 0; padding: 0; }
+
+        .tooltip {
+            position: absolute; right: 130%; top: 50%; transform: translateY(-50%) translateX(10px);
+            background: var(--color-paper-light); border: 1px solid var(--color-blue-slate); color: var(--color-blue-slate);
+            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 800; font-family: 'Montserrat', sans-serif;
+            white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.2s ease;
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.1); pointer-events: none;
+        }
+        .mini-nav-item:hover .tooltip { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Hamburger Icon -->
+    <button id="openNav" aria-label="Open Navigation">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path></svg>
+    </button>
+    
+    <!-- Left Sidebar Nav -->
+    <div class="side-nav-overlay" id="navOverlay"></div>
+    <nav class="side-nav" id="sideNav">
+        <button class="close-nav-btn" id="closeNav" aria-label="Close Navigation">
+            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+        </button>
+        <ul>
+            <li><a href="#about" class="nav-top-level">ABOUT ME</a></li>
+            <li><a href="#services" class="nav-top-level">MY SERVICES</a></li>
+            
+            <li><a href="#pro-projects" class="nav-top-level">PROFESSIONAL PROJECTS</a></li>
+            <li><a href="#cs1" class="nav-subset">CS1: 12-Year Development Roadmap</a></li>
+            <li><a href="#cs3" class="nav-subset">CS2: Physical Storage Configuration Revamp</a></li>
+            <li><a href="#cs4" class="nav-subset">CS3: Frontline Service Recovery Framework</a></li>
+            
+            <li><a href="#personal-projects" class="nav-top-level">PERSONAL PROJECTS</a></li>
+            <li><a href="#cs2" class="nav-subset">CS4: Turning Saved Places Into a Trip</a></li>
+            <li><a href="#cs5" class="nav-subset">CS5: The Thinking Belle</a></li>
+            
+            <li><a href="#connect" class="nav-top-level">LET'S CONNECT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Right Floating Mini Nav -->
+    <nav class="mini-nav idle" id="rightNav">
+        <!-- Home (About) -->
+        <a href="#about" class="mini-nav-item nav-tracker" data-target="about">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg><span class="tooltip">About Me</span>
+        </a>
+        <!-- Verified Badge (Services) -->
+        <a href="#services" class="mini-nav-item nav-tracker" data-target="services">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg><span class="tooltip">My Services</span>
+        </a>
+        <!-- Briefcase (Pro Projects) -->
+        <a href="#pro-projects" class="mini-nav-item nav-tracker active" data-target="pro-projects">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg><span class="tooltip">Professional Projects</span>
+        </a>
+        <!-- Open Book (Personal Projects) -->
+        <a href="#personal-projects" class="mini-nav-item nav-tracker" data-target="personal-projects">
+            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zM11 18.49c-1.5-.7-3.4-1-5-1-1.2 0-2.4.2-3.5.6v-11c1-.4 2.2-.6 3.5-.6 1.6 0 3.5.3 5 1v11zm10 .5c-1.1-.4-2.3-.6-3.5-.6-1.6 0-3.5.3-5 1v-11c1.5-.7 3.4-1 5-1 1.2 0 2.4.2 3.5.6v11z"></path></svg><span class="tooltip">Personal Projects</span>
+        </a>
+        <!-- Mail (Connect) -->
+        <a href="#connect" class="mini-nav-item nav-tracker" data-target="connect">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg><span class="tooltip">Let's Connect</span>
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- 1. ABOUT ME -->
+        <section id="about" class="section-margin scroll-section">
+            <h2 class="section-title" contenteditable="true">ABOUT ME</h2>
+            <h1 contenteditable="true">Joshua Farrock</h1>
+            <h2 contenteditable="true" style="font-size: 1.5rem; color: var(--color-orange); font-style: italic; text-transform: none; margin-bottom: 1.5rem;">Customer Experience &amp; Service Transformation Professional</h2>
+            <p contenteditable="true" style="font-weight: 700; color: var(--color-blue); margin-bottom: 1.5rem;">joshuafarrock@gmail.com | +65 9651 3048 | linkedin.com/in/joshua-farrock</p>
+            <div class="organic-card border-blue" style="max-width: 850px;">
+                <p class="intro-special" contenteditable="true">Bridging human-centred research, behavioural psychology, and rigorous physical operations to architect scalable, omni-channel service ecosystems and streamline complex spatial workflows.</p>
+            </div>
+        </section>
+
+        <!-- 2. MY SERVICES -->
+        <section id="services" class="section-margin scroll-section">
+            <h2 class="section-title" contenteditable="true">MY SERVICES</h2>
+            <p class="intro-special" contenteditable="true">Bridging Generative Research, Physical Operations, and Service Architecture</p>
+            <p contenteditable="true">With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence—now augmented by my active NTU PACE AI-UX and IxDF Senior Service Designer program. Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through my existing capabilities.</p>
+
+            <div class="pillars-grid">
+                <a href="#cs2" class="organic-card pillar-card border-green">
+                    <h4 contenteditable="true" style="color: var(--color-green);">EVIDENCE-BASED UX RESEARCH</h4>
+                    <span class="meta-tag" contenteditable="true">Generative Methodologies</span>
+                    <p contenteditable="true">Grounding strategic designs in mixed-methods user research and behavioural psychology to bridge the gap between digital discovery and real-world human friction.</p>
+                </a>
+                <a href="#cs3" class="organic-card pillar-card border-orange">
+                    <h4 contenteditable="true" style="color: var(--color-orange);">SERVICE ERGONOMICS &amp; 5S</h4>
+                    <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">Ethnographic &amp; Workflow Audits</span>
+                    <p contenteditable="true">Applying 5S Lean methodologies and ethnographic research to eliminate cognitive load, prototype physical solutions, and streamline complex logistical workflows.</p>
+                </a>
+                <a href="#cs1" class="organic-card pillar-card border-blue">
+                    <h4 contenteditable="true">STRATEGIC ARCHITECTURE</h4>
+                    <span class="meta-tag" contenteditable="true" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel Execution</span>
+                    <p contenteditable="true">Translating conceptual experiences into backstage playbooks and strict compliance protocols, achieving high user retention and frontline incident eradication.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- =========================================
+             PROFESSIONAL PROJECTS 
+             ========================================= -->
+        <section id="pro-projects" class="scroll-section">
+            <h2 class="section-title" contenteditable="true">PROFESSIONAL PROJECTS</h2>
+
+            <!-- CS1: 12-Year Roadmap -->
+            <div id="cs1" class="cs-wrapper">
+                <span class="meta-tag" contenteditable="true">CASE STUDY 01</span>
+                <h3 class="cs-title" contenteditable="true">12-Year Development Roadmap</h3>
+                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Lead Service Designer</p>
+                
+                <div class="cs-row">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-left" contenteditable="true">
+                            "Parent anxiety peaked not just during academic exams, but much earlier before exams and during school transitions—revealing touchpoints gaps and opportunities."
+                        </blockquote>
+                        <h5 contenteditable="true">CHALLENGE</h5>
+                        <p contenteditable="true"><strong>Fragmented Handoff Gaps:</strong> Isolated programmatic events across a 12-year span caused severe engagement drop-offs. Siloed departmental handoffs risked further drop-offs and critical PDPA privacy breaches.</p>
+                        <h5 contenteditable="true">METHODOLOGY</h5>
+                        <p contenteditable="true"><strong>Generative Journey Mapping:</strong> Conducted interviews and surveys to synthesise needs across 8 developmental categories. Mapped multi-platform transition paths anchored to academic and age-specific milestones.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Qualitative research and card sorting of all points into 8 developmental categories via Miro.">
+                                <img src="1.1.png" alt="Qualitative research and card sorting">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Translating 8 categories of qualitative developmental research into long-term organisational strategy.">
+                                <img src="1.2.png" alt="Translating 8 categories">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Qualitative research and card sorting of all points into 8 developmental categories via Miro.</div>
+                    </div>
+                </div>
+
+                <div class="cs-row reverse">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-right" contenteditable="true">
+                            "Sustainable long-term retention requires bridging front-stage experiences with backstage rigor."
+                        </blockquote>
+                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
+                        <p contenteditable="true"><strong>Targeted Channels &amp; Protocols:</strong> Reorganised fragmented events and introduced a dual-track ecosystem. Built a paced omnichannel calendar with strict IT database transfer protocols.</p>
+                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
+                        <p contenteditable="true"><strong>100% Adoption | 70%+ Retention | 0 Data Breaches</strong><br>Adopted as the foundational strategy governing long-term experience design across 4,000+ members.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.">
+                                <img src="1.3.png" alt="Identifying handoff vulnerabilities">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Translating 8 developmental categories into a compliant backstage transition eliminated drop-off friction across 8 consecutive years.">
+                                <img src="1.4.png" alt="Translating categories into transition">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
+                    </div>
+                </div>
+                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p style="margin-bottom: 0;" contenteditable="true"><b>Dynamic &amp; Strategic real-time calibration</b><strong><br></strong>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
+                </div>
+            </div>
+
+            <!-- CS3: Storage Revamp (Originally CS2) -->
+            <div id="cs3" class="cs-wrapper">
+                <span class="meta-tag" contenteditable="true">CASE STUDY 02</span>
+                <h3 class="cs-title" contenteditable="true">Physical Storage Configuration Revamp</h3>
+                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
+                
+                <div class="cs-row reverse">
+                    <div class="cs-text">
+                        <h5 contenteditable="true">CHALLENGE</h5>
+                        <p contenteditable="true"><strong>High Cognitive Load &amp; Failure Risks:</strong> Fragmented weekly supply logistics created immense cognitive load for volunteer seniors. This chaotic loop introduced significant failure risks and friction during high-volume service delivery.</p>
+                        <h5 contenteditable="true">METHODOLOGY</h5>
+                        <p contenteditable="true"><strong>5S Lean &amp; Ethnographic Prototyping:</strong> Applied 5S Lean methodology and conducted ethnographic research to analyse live workflows. Created low-fidelity mockups to test layout alternatives before final fabrication.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.">
+                                <img src="2.1.jpg" alt="Fragmented flight case">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Low-fidelity mockups created to test layout alternatives before moving to final fabrication.">
+                                <div class="split-frame">
+                                    <img src="2.2.1.png" alt="Mockup 1">
+                                    <img src="2.2.2.jpeg" alt="Mockup 2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.</div>
+                    </div>
+                </div>
+
+                <div class="cs-row">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-right" contenteditable="true">
+                            "The operational bottleneck was not a lack of manpower, but a chaotic physical layout that overwhelmed volunteers with high cognitive load."
+                        </blockquote>
+                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
+                        <p contenteditable="true"><strong>Custom 5S Modular Storage Setups:</strong> Transitioned from cardboard prototypes to finalized 5S modular storage setups, utilising custom-sized carton configurations for optimized space utilisation.</p>
+                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
+                        <p contenteditable="true"><strong>100% Adoption &amp; Zero Downtime.</strong> Completely eliminated weekly supply logistical friction. Successfully shifted the operation from a chaotic packing loop into a streamlined, guided workflow.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.">
+                                <img src="2.3.jpeg" alt="Finalised 5S modular storage">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Transitioning from a high-friction logistical loop to a standardised, 5S-driven operational workflow.">
+                                <img src="2.4.jpeg" alt="Streamlined loop">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
+                    </div>
+                </div>
+                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
+                </div>
+            </div>
+
+            <!-- CS4: Service Recovery (Originally CS3) -->
+            <div id="cs4" class="cs-wrapper" style="border: none;">
+                <span class="meta-tag" contenteditable="true">CASE STUDY 03</span>
+                <h3 class="cs-title" contenteditable="true">Frontline Service Recovery Framework</h3>
+                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
+                
+                <div class="cs-row">
+                    <div class="cs-text">
+                        <h5 contenteditable="true">CHALLENGE</h5>
+                        <p contenteditable="true"><strong>Frontline Failure Risks:</strong> Uncommunicated backstage policies led to recurring weekly service failures—culminating in asset custody mismatches, lost items, and mounting parent complaints.</p>
+                        <h5 contenteditable="true">METHODOLOGY</h5>
+                        <p contenteditable="true"><strong>Systemic Root-Cause Audit:</strong> Partnered with on-ground leads to shadow live operations and trace breakdowns between compliance guidelines and ground-level volunteers.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <!-- Only 1 image here based on instructions -->
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.">
+                                <img src="3.1.jpg" alt="Root Cause Audit">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.</div>
+                    </div>
+                </div>
+
+                <div class="cs-row reverse">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-right" contenteditable="true">
+                            "Operational Disconnect: Long-form compliance manuals fail in high-speed, live operational environments."
+                        </blockquote>
+                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
+                        <p contenteditable="true"><strong>Visual Reference &amp; SLA:</strong> Redesigned dense rules into an actionable Visual Reference Blueprint. Enforced a time-bound SLA: 1-Day Triage, 2-Day Recovery Plan, Target Weekend Resolution.</p>
+                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
+                        <p contenteditable="true"><strong>100% Incident Eradication in 30 Days.</strong> Empowered frontline teams with active operational guardrails to resolve complaints autonomously with continuous service assurance.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Strict time-bound guardrails provide operational accountability and continuous service assurance.">
+                                <img src="3.4.jpeg" alt="Recovery SLA">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Translating dense policy documentation into easy-to-understand visual playbook">
+                                <div class="split-frame">
+                                    <img src="3.2.png" alt="Playbook Part 1">
+                                    <img src="3.3.jpeg" alt="Playbook Part 2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Strict time-bound guardrails provide operational accountability and continuous service assurance.</div>
+                    </div>
+                </div>
+                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             PERSONAL PROJECTS
+             ========================================= -->
+        <section id="personal-projects" class="scroll-section">
+            <h2 class="section-title" contenteditable="true">PERSONAL PROJECTS</h2>
+
+            <!-- CS2: Saved Places (Originally CS4) -->
+            <div id="cs2" class="cs-wrapper">
+                <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 04</span>
+                <h3 class="cs-title" contenteditable="true">Turning Saved Places Into a Trip</h3>
+                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: UX Researcher (Course Project)</p>
+                
+                <div class="cs-row reverse">
+                    <div class="cs-text">
+                        <h5 contenteditable="true">CHALLENGE</h5>
+                        <p contenteditable="true"><strong>Saved Pins Are Not a Plan:</strong> Singaporeans who plan their own trips struggle to translate all their saved pins in Google Maps into a usable daily schedule for their trips.</p>
+                        <h5 contenteditable="true">METHODOLOGY</h5>
+                        <p contenteditable="true"><strong>Journey &amp; Competitor Audits:</strong> Paired competitor audits (Google Maps, Wanderlog, TripIt) with mixed-methods research to uncover two systemic pain points: The "Relay Race" (81% juggle 2+ tools) and the "AI Trust Gap".</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
+                                <img src="4.1.jpg" alt="Research finding 1">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Research findings">
+                                <img src="4.2.jpg" alt="Research finding 2">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Research findings">
+                                <img src="4.3.jpg" alt="Research finding 3">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
+                                <img src="4.4.jpg" alt="Research finding 4">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Research findings</div>
+                    </div>
+                </div>
+
+                <div class="cs-row">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-right" contenteditable="true">
+                            "81% of travellers didn't want another discovery engine—they were drowning in scattered pins and needed a sequencing bridge."
+                        </blockquote>
+                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
+                        <p contenteditable="true"><strong>Organisation Over Discovery:</strong> Synthesised data into a HMW statement revolving around organisation. Validated top preferences: Pin Organiser (84%), Day-by-Day Scheduler (82%), Route Optimiser (80%).</p>
+                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
+                        <p contenteditable="true">The research pointed to a clear requirement: a native, one-stop feature within Google Maps that bridges discovery and execution by enabling users to seamlessly organize pins into itineraries.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Insights synthesised">
+                                <img src="4.5.jpg" alt="Insight 1">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Insights synthesised">
+                                <img src="4.6.jpg" alt="Insight 2">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Insights synthesised">
+                                <img src="4.7.jpg" alt="Insight 3">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Insights synthesised</div>
+                        
+                        <!-- Third Carousel -->
+                        <div class="image-cluster" style="margin-top: 3rem;">
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Feature preferences & Problem Statement">
+                                <img src="4.8.png" alt="Feature Preferences">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Feature preferences & Problem Statement">
+                                <img src="4.9.png" alt="Problem Statement">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Feature preferences & Problem Statement</div>
+                    </div>
+                </div>
+                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
+                </div>
+            </div>
+
+            <!-- CS5: The Thinking Belle -->
+            <div id="cs5" class="cs-wrapper" style="border: none;">
+                <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 05</span>
+                <h3 class="cs-title" contenteditable="true">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
+                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Workflow Architect (Personal Project)</p>
+                
+                <div class="cs-row">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-left" contenteditable="true">
+                            "The Bottleneck - Single-prompt AI generation caused severe instruction bloat, requiring a decoupled multi-agent architecture."
+                        </blockquote>
+                        <h5 contenteditable="true">CHALLENGE</h5>
+                        <p contenteditable="true"><strong>The Manual Monolith:</strong> Scaling an educational CX video series failed under manual prompting. Single-chat generation caused severe context window pollution, tone drift, and hallucination loops.</p>
+                        <h5 contenteditable="true">METHODOLOGY</h5>
+                        <p contenteditable="true"><strong>Multi-Agent Specialisation:</strong> Transitioned from bloated single-prompting to an all-in-one agent. Ultimately, modularising the pipeline into 5 specialized AI agents (Concept, Script, Visual, Audio, Metadata).</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.">
+                                <img src="5.1.png" alt="Phase 1">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Phase 2: Monolithic Custom Gem — Consolidating rules into one guide reduced setup time, but instruction bloat diluted output precision.">
+                                <img src="5.2.png" alt="Phase 2">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Phase 3: Specialised Agent Fleet — Decoupled into 5 discrete role-based Gems (Script, Visuals, Metadata, Community, Publishing) to enforce strict prompt boundaries.">
+                                <img src="5.3.png" alt="Phase 3">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.</div>
+                    </div>
+                </div>
+
+                <div class="cs-row reverse">
+                    <div class="cs-text">
+                        <blockquote class="insight-quote-right" contenteditable="true">
+                            "Applying backstage service blueprinting to AI operations eliminated the human-friction bottleneck of manual text transfer."
+                        </blockquote>
+                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
+                        <p contenteditable="true"><strong>Automated Command Center:</strong> Unified multi-chat workflows into an Airtable command center via Make.com webhooks, embedding structured human-in-the-loop review gates before triggering downstream Gemini agents.</p>
+                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
+                        <p contenteditable="true"><strong>5 Agents LLM Pipeline | 100% Format Lock</strong><br>Full-stack webhook routing. Centralised multi-chat orchestration into a single workspace, embedding human review gates to enforce tone, creative direction, and output quality.</p>
+                    </div>
+                    <div class="cs-visual">
+                        <div class="image-cluster">
+                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.">
+                                <img src="5.4.png" alt="Webhook routing">
+                            </div>
+                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Centralised multi-chat orchestration into a single Airtable workspace with embedded human review gates.">
+                                <img src="5.5.png" alt="Multi-chat orchestration">
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container" contenteditable="true">Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.</div>
+                    </div>
+                </div>
+                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p style="margin-bottom: 0;" contenteditable="true">
+                        <b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>
+                        Advance the architecture by automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>
+                        Refine Make.com revision logic so human review notes update targeted script lines without hallucinating and deploy blank-field input guardrails.<br>
+                        Explore Google Workspace Studio to setup this workflow.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             8. LET'S CONNECT
+             ========================================= -->
+        <section id="connect" class="section-margin scroll-section">
+            <h2 class="section-title" contenteditable="true">LET'S CONNECT</h2>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 contenteditable="true" style="font-size: 2.25rem; color: var(--color-blue); margin-bottom: 0.5rem; font-style: normal; font-weight: 800;">Joshua Farrock</h2>
+                <p contenteditable="true" style="font-weight: 700; color: var(--color-orange); font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem;">Ready to Bridge Human Behaviour, Delightful Experiences &amp; Service Execution</p>
+                <p contenteditable="true" style="max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for reviewing my portfolio.<br>I am eager to discuss how my background in service transformation can support your organisation.</p>
+            </div>
+            
+            <div class="cs-row" style="align-items: stretch;">
+                <div class="organic-card border-blue" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
+                    <h4 contenteditable="true">DIRECT CONTACT</h4>
+                    <p contenteditable="true" style="font-weight: 800; color: var(--color-text); margin-bottom: 1rem; font-size: 1.15rem;">Joshua Farrock</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li contenteditable="true" style="margin-bottom: 0.75rem;"><strong>Email:</strong> joshuafarrock@gmail.com</li>
+                        <li contenteditable="true" style="margin-bottom: 0.75rem;"><strong>Phone:</strong> +65 9651 3048</li>
+                        <li contenteditable="true" style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> linkedin.com/in/joshua-farrock</li>
+                    </ul>
+                </div>
+                <div class="organic-card border-green" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
+                    <h4 contenteditable="true">ACTIVE UPSKILLING &amp; EDUCATION</h4>
+                    <p contenteditable="true" style="font-weight: 800; color: var(--color-green); margin-bottom: 1.5rem; font-style: italic;">Continuous Growth</p>
+                    <ul style="list-style: none;">
+                        <li contenteditable="true" style="margin-bottom: 1.25rem; line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Bachelor of Science in Psychology (Part-Time)</strong><br>
+                            SUSS (Commencing Jan 2027)
+                        </li>
+                        <li contenteditable="true" style="margin-bottom: 1.25rem; line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Advanced Professional Certification in AI-Powered UX Design &amp; Digital Product Strategy</strong><br>
+                            NTU PACE (Aug - Dec 2026)
+                        </li>
+                        <li contenteditable="true" style="line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Career Program Certification in Senior Service Designer + AI</strong><br>
+                            IxDF (Oct - Dec 2026)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // ----------------------------------------------------
+        // Navigation Interactivity (Left Hamburger Nav)
+        // ----------------------------------------------------
+        const hamburgerBtn = document.getElementById('openNav');
+        const closeNavBtn = document.getElementById('closeNav');
+        const sideNav = document.getElementById('sideNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            sideNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleNav);
+        closeNavBtn.addEventListener('click', toggleNav);
+        navOverlay.addEventListener('click', toggleNav);
+
+        const navLinks = sideNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sideNav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        });
+
+        // ----------------------------------------------------
+        // Intersection Observer (Highlight Right Mini Nav)
+        // ----------------------------------------------------
+        const sections = document.querySelectorAll('.scroll-section');
+        const miniNavItems = document.querySelectorAll('.nav-tracker');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    miniNavItems.forEach(item => item.classList.remove('active'));
+                    
+                    const activeItem = document.querySelector(`.nav-tracker[data-target="${id}"]`);
+                    if (activeItem) {
+                        activeItem.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // ----------------------------------------------------
+        // Right Nav Idle Shrink/Fade Logic
+        // ----------------------------------------------------
+        const rightNav = document.getElementById('rightNav');
+        let scrollTimeout;
+
+        rightNav.classList.remove('idle');
+        resetScrollTimeout();
+
+        function resetScrollTimeout() {
+            clearTimeout(scrollTimeout);
+            rightNav.classList.remove('idle');
+            
+            scrollTimeout = setTimeout(() => {
+                rightNav.classList.add('idle');
+            }, 1500); // 1.5s idle time
+        }
+
+        window.addEventListener('scroll', resetScrollTimeout);
+        
+        rightNav.addEventListener('mouseenter', () => {
+            clearTimeout(scrollTimeout);
+            rightNav.classList.remove('idle');
+        });
+        rightNav.addEventListener('mouseleave', () => {
+            resetScrollTimeout();
+        });
+
+        // ----------------------------------------------------
+        // Carousel Navigation for Image Clusters
+        // ----------------------------------------------------
+        document.querySelectorAll('.image-cluster').forEach(cluster => {
+            const items = Array.from(cluster.querySelectorAll('.cluster-item'));
+            const captionBox = cluster.parentElement.querySelector('.dynamic-caption-container');
+            if (items.length === 0) return;
+            
+            let activeIdx = 0;
+            
+            // Only add buttons if there is more than 1 image to cycle
+            if (items.length > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'nav-btn prev';
+                prevBtn.innerHTML = '❮';
+                
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'nav-btn next';
+                nextBtn.innerHTML = '❯';
+                
+                cluster.appendChild(prevBtn);
+                cluster.appendChild(nextBtn);
+
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    activeIdx = (activeIdx - 1 + items.length) % items.length;
+                    updateImages();
+                });
+                
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    activeIdx = (activeIdx + 1) % items.length;
+                    updateImages();
+                });
+            }
+            
+            const updateImages = () => {
+                items.forEach((item, idx) => {
+                    item.className = 'cluster-item'; // reset classes
+                    
+                    if (idx === activeIdx) {
+                        item.classList.add('pos-front');
+                        if (captionBox) {
+                            captionBox.innerText = item.getAttribute('data-caption') || '';
+                        }
+                    } else if (idx === (activeIdx + 1) % items.length) {
+                        item.classList.add('pos-back-right');
+                    } else if (items.length > 2 && idx === (activeIdx - 1 + items.length) % items.length) {
+                        item.classList.add('pos-back-left');
+                    } else {
+                        item.classList.add('pos-hidden'); // hide 4th/5th items so they don't break layout
+                    }
+                });
+            };
+            
+            updateImages();
+            
+            // Allow clicking to bring to front
+            items.forEach((item, idx) => {
+                item.addEventListener('click', (e) => {
+                    if (items.length > 1) {
+                        e.stopPropagation();
+                        activeIdx = idx;
+                        updateImages();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
