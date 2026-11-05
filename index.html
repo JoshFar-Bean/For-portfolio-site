@@ -64,20 +64,6 @@
             z-index: 1;
         }
 
-        [contenteditable="true"] {
-            outline: none;
-            border-radius: 4px;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        [contenteditable="true"]:hover {
-            background-color: rgba(0, 0, 0, 0.03);
-            cursor: text;
-        }
-        [contenteditable="true"]:focus {
-            background-color: var(--color-blue-wash);
-            box-shadow: 0 2px 0 var(--color-blue-slate);
-        }
-
         /* Typography */
         h1 { font-size: 3.5rem; font-weight: 800; color: var(--color-blue); margin-bottom: 0.5rem; line-height: 1.2; }
         h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-blue); }
@@ -102,6 +88,19 @@
             margin-bottom: 3rem;
             width: 100%;
             display: block;
+        }
+
+        /* Links */
+        .contact-link {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: rgba(91, 123, 138, 0.4);
+            text-underline-offset: 3px;
+            transition: all 0.3s ease;
+        }
+        .contact-link:hover {
+            color: var(--color-orange);
+            text-decoration-color: var(--color-orange);
         }
 
         /* =========================================
@@ -417,42 +416,45 @@
         
         <!-- 1. ABOUT ME -->
         <section id="about" class="section-margin scroll-section" style="text-align: center;">
-            <h2 class="section-title" contenteditable="true">ABOUT ME</h2>
-            <h1 contenteditable="true">Joshua Farrock</h1>
-            <h2 contenteditable="true" style="font-size: 1.5rem; color: var(--color-orange); font-style: italic; text-transform: none; margin-bottom: 1.5rem;">Customer Experience &amp; Service Transformation Professional</h2>
-            <p contenteditable="true" style="font-weight: 700; color: var(--color-blue); margin-bottom: 1.5rem;">joshuafarrock@gmail.com | +65 9651 3048 | linkedin.com/in/joshua-farrock</p>
+            <h2 class="section-title">ABOUT ME</h2>
+            <h1>Joshua Farrock</h1>
+            <h2 style="font-size: 1.5rem; color: var(--color-orange); font-style: italic; text-transform: none; margin-bottom: 1.5rem;">Customer Experience &amp; Service Transformation Professional</h2>
+            <p style="font-weight: 700; color: var(--color-blue); margin-bottom: 1.5rem;">
+                <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a> | +65 9651 3048 | 
+                <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/joshua-farrock</a>
+            </p>
             <div class="organic-card border-blue" style="max-width: 850px; margin: 0 auto;">
-                <p class="intro-special" contenteditable="true" style="margin-bottom: 0;">Bridging human-centred research, behavioural psychology, and rigorous physical operations to architect scalable, omni-channel service ecosystems and streamline complex spatial workflows.</p>
+                <p class="intro-special" style="margin-bottom: 0;">Bridging human-centred research, behavioural psychology, and rigorous physical operations to architect scalable, omni-channel service ecosystems and streamline complex spatial workflows.</p>
             </div>
         </section>
 
         <!-- 2. MY SERVICES -->
         <section id="services" class="section-margin scroll-section">
-            <h2 class="section-title" contenteditable="true">MY SERVICES</h2>
-            <p class="intro-special" contenteditable="true">Bridging Generative Research, Physical Operations, and Service Architecture</p>
-            <p contenteditable="true">With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
-            <p contenteditable="true">Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through proven methodologies and innovative tools—translating academic insights into practical value for your organisation.</p>
+            <h2 class="section-title">MY SERVICES</h2>
+            <p class="intro-special">Bridging Generative Research, Physical Operations, and Service Architecture</p>
+            <p>With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
+            <p>Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through proven methodologies and innovative tools—translating academic insights into practical value for your organisation.</p>
 
             <div class="pillars-grid">
                 <a href="#cs2" class="organic-card pillar-card border-green">
-                    <h4 contenteditable="true" style="color: var(--color-green);">EVIDENCE-BASED UX RESEARCH</h4>
-                    <span class="meta-tag" contenteditable="true">Generative Methodologies</span>
-                    <p contenteditable="true">Grounding strategic designs in mixed-methods user research and behavioural psychology to bridge the gap between digital discovery and real-world human friction.</p>
+                    <h4 style="color: var(--color-green);">EVIDENCE-BASED UX RESEARCH</h4>
+                    <span class="meta-tag">Generative Methodologies</span>
+                    <p>Grounding strategic designs in mixed-methods user research and behavioural psychology to bridge the gap between digital discovery and real-world human friction.</p>
                 </a>
                 <a href="#cs3" class="organic-card pillar-card border-orange">
-                    <h4 contenteditable="true" style="color: var(--color-orange);">SERVICE ERGONOMICS &amp; 5S</h4>
-                    <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">Ethnographic &amp; Workflow Audits</span>
-                    <p contenteditable="true">Applying 5S Lean methodologies and ethnographic research to eliminate cognitive load, prototype physical solutions, and streamline complex logistical workflows.</p>
+                    <h4 style="color: var(--color-orange);">SERVICE ERGONOMICS &amp; 5S</h4>
+                    <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">Ethnographic &amp; Workflow Audits</span>
+                    <p>Applying 5S Lean methodologies and ethnographic research to eliminate cognitive load, prototype physical solutions, and streamline complex logistical workflows.</p>
                 </a>
                 <a href="#cs1" class="organic-card pillar-card border-blue">
-                    <h4 contenteditable="true">STRATEGIC ARCHITECTURE</h4>
-                    <span class="meta-tag" contenteditable="true" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel Execution</span>
-                    <p contenteditable="true">Translating conceptual experiences into backstage playbooks and strict compliance protocols, achieving high user retention and frontline incident eradication.</p>
+                    <h4>STRATEGIC ARCHITECTURE</h4>
+                    <span class="meta-tag" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel Execution</span>
+                    <p>Translating conceptual experiences into backstage playbooks and strict compliance protocols, achieving high user retention and frontline incident eradication.</p>
                 </a>
                 <a href="#cs5" class="organic-card pillar-card border-green">
-                    <h4 contenteditable="true" style="color: var(--color-green);">EMERGING TECH EXPLORATION</h4>
-                    <span class="meta-tag" contenteditable="true">RAPID PROTOTYPING &amp; AUTOMATION</span>
-                    <p contenteditable="true">Embracing emerging technologies to solve complex operational bottlenecks, demonstrating a readiness to learn and prototype unconventional solutions—like automated multi-agent ecosystems—to eliminate manual friction.</p>
+                    <h4 style="color: var(--color-green);">EMERGING TECH EXPLORATION</h4>
+                    <span class="meta-tag">RAPID PROTOTYPING &amp; AUTOMATION</span>
+                    <p>Embracing emerging technologies to solve complex operational bottlenecks, demonstrating a readiness to learn and prototype unconventional solutions—like automated multi-agent ecosystems—to eliminate manual friction.</p>
                 </a>
             </div>
         </section>
@@ -461,23 +463,23 @@
              PROFESSIONAL PROJECTS 
              ========================================= -->
         <section id="pro-projects" class="scroll-section">
-            <h2 class="section-title" contenteditable="true">PROFESSIONAL PROJECTS</h2>
+            <h2 class="section-title">PROFESSIONAL PROJECTS</h2>
 
             <!-- CS1: 12-Year Roadmap -->
             <div id="cs1" class="cs-wrapper">
-                <span class="meta-tag" contenteditable="true">CASE STUDY 01</span>
-                <h3 class="cs-title" contenteditable="true">12-Year Development Roadmap</h3>
-                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Lead Service Designer</p>
+                <span class="meta-tag">CASE STUDY 01</span>
+                <h3 class="cs-title">12-Year Development Roadmap</h3>
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Lead Service Designer</p>
                 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-left" contenteditable="true">
+                        <blockquote class="insight-quote-left">
                             "Parent anxiety peaked not just during academic exams, but much earlier before exams and during school transitions—revealing touchpoints gaps and opportunities."
                         </blockquote>
-                        <h5 contenteditable="true">CHALLENGE</h5>
-                        <p contenteditable="true"><strong>Fragmented Handoff Gaps:</strong> Isolated programmatic events across a 12-year span caused severe engagement drop-offs. Siloed departmental handoffs risked further drop-offs and critical PDPA privacy breaches.</p>
-                        <h5 contenteditable="true">METHODOLOGY</h5>
-                        <p contenteditable="true"><strong>Generative Journey Mapping:</strong> Conducted interviews and surveys to synthesise needs across 8 developmental categories. Mapped multi-platform transition paths anchored to academic and age-specific milestones.</p>
+                        <h5>CHALLENGE</h5>
+                        <p><strong>Fragmented Handoff Gaps:</strong> Isolated programmatic events across a 12-year span caused severe engagement drop-offs. Siloed departmental handoffs risked further drop-offs and critical PDPA privacy breaches.</p>
+                        <h5>METHODOLOGY</h5>
+                        <p><strong>Generative Journey Mapping:</strong> Conducted interviews and surveys to synthesise needs across 8 developmental categories. Mapped multi-platform transition paths anchored to academic and age-specific milestones.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -494,19 +496,19 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Qualitative research and card sorting of all points into 8 developmental categories via Miro.</div>
+                        <div class="dynamic-caption-container">Qualitative research and card sorting of all points into 8 developmental categories via Miro.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-right" contenteditable="true">
+                        <blockquote class="insight-quote-right">
                             "Sustainable long-term retention requires bridging front-stage experiences with backstage rigor."
                         </blockquote>
-                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
-                        <p contenteditable="true"><strong>Targeted Channels &amp; Protocols:</strong> Reorganised fragmented events and introduced a dual-track ecosystem. Built a paced omnichannel calendar with strict IT database transfer protocols.</p>
-                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
-                        <p contenteditable="true"><strong>100% Adoption | 70%+ Retention | 0 Data Breaches</strong><br>Adopted as the foundational strategy governing long-term experience design across 4,000+ members.</p>
+                        <h5>ECOSYSTEM SOLUTION</h5>
+                        <p><strong>Targeted Channels &amp; Protocols:</strong> Reorganised fragmented events and introduced a dual-track ecosystem. Built a paced omnichannel calendar with strict IT database transfer protocols.</p>
+                        <h5>STRATEGIC OUTCOME</h5>
+                        <p><strong>100% Adoption | 70%+ Retention | 0 Data Breaches</strong><br>Adopted as the foundational strategy governing long-term experience design across 4,000+ members.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -523,28 +525,28 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
+                        <div class="dynamic-caption-container">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
                     </div>
                 </div>
                 
                 <div class="improve-section">
-                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p contenteditable="true"><b>Dynamic &amp; Strategic real-time calibration</b><br>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
+                    <h5>WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p><b>Dynamic &amp; Strategic real-time calibration</b><br>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
                 </div>
             </div>
 
             <!-- CS3: Storage Revamp (Originally CS2) - ZIGZAG SWAPPED -->
             <div id="cs3" class="cs-wrapper">
-                <span class="meta-tag" contenteditable="true">CASE STUDY 02</span>
-                <h3 class="cs-title" contenteditable="true">Physical Storage Configuration Revamp</h3>
-                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
+                <span class="meta-tag">CASE STUDY 02</span>
+                <h3 class="cs-title">Physical Storage Configuration Revamp</h3>
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
                 
                 <div class="cs-row reverse">
                     <div class="cs-text">
-                        <h5 contenteditable="true">CHALLENGE</h5>
-                        <p contenteditable="true"><strong>High Cognitive Load &amp; Failure Risks:</strong> Fragmented weekly supply logistics created immense cognitive load for volunteer seniors. This chaotic loop introduced significant failure risks and friction during high-volume service delivery.</p>
-                        <h5 contenteditable="true">METHODOLOGY</h5>
-                        <p contenteditable="true"><strong>5S Lean &amp; Ethnographic Prototyping:</strong> Applied 5S Lean methodology and conducted ethnographic research to analyse live workflows. Created low-fidelity mockups to test layout alternatives before final fabrication.</p>
+                        <h5>CHALLENGE</h5>
+                        <p><strong>High Cognitive Load &amp; Failure Risks:</strong> Fragmented weekly supply logistics created immense cognitive load for volunteer seniors. This chaotic loop introduced significant failure risks and friction during high-volume service delivery.</p>
+                        <h5>METHODOLOGY</h5>
+                        <p><strong>5S Lean &amp; Ethnographic Prototyping:</strong> Applied 5S Lean methodology and conducted ethnographic research to analyse live workflows. Created low-fidelity mockups to test layout alternatives before final fabrication.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -567,19 +569,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.</div>
+                        <div class="dynamic-caption-container">Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.</div>
                     </div>
                 </div>
 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-left" contenteditable="true">
+                        <blockquote class="insight-quote-left">
                             "The operational bottleneck was not a lack of manpower, but a chaotic physical layout that overwhelmed volunteers with high cognitive load."
                         </blockquote>
-                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
-                        <p contenteditable="true"><strong>Custom 5S Modular Storage Setups:</strong> Transitioned from cardboard prototypes to finalized 5S modular storage setups, utilising custom-sized carton configurations for optimized space utilisation.</p>
-                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
-                        <p contenteditable="true"><strong>100% Adoption &amp; Zero Downtime.</strong> Completely eliminated weekly supply logistical friction. Successfully shifted the operation from a chaotic packing loop into a streamlined, guided workflow.</p>
+                        <h5>ECOSYSTEM SOLUTION</h5>
+                        <p><strong>Custom 5S Modular Storage Setups:</strong> Transitioned from cardboard prototypes to finalized 5S modular storage setups, utilising custom-sized carton configurations for optimized space utilisation.</p>
+                        <h5>STRATEGIC OUTCOME</h5>
+                        <p><strong>100% Adoption &amp; Zero Downtime.</strong> Completely eliminated weekly supply logistical friction. Successfully shifted the operation from a chaotic packing loop into a streamlined, guided workflow.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -596,28 +598,28 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
+                        <div class="dynamic-caption-container">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
                     </div>
                 </div>
 
                 <div class="improve-section">
-                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p contenteditable="true"><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
+                    <h5>WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
                 </div>
             </div>
 
             <!-- CS4: Service Recovery (Originally CS3) -->
             <div id="cs4" class="cs-wrapper" style="border: none;">
-                <span class="meta-tag" contenteditable="true">CASE STUDY 03</span>
-                <h3 class="cs-title" contenteditable="true">Frontline Service Recovery Framework</h3>
-                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
+                <span class="meta-tag">CASE STUDY 03</span>
+                <h3 class="cs-title">Frontline Service Recovery Framework</h3>
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
                 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <h5 contenteditable="true">CHALLENGE</h5>
-                        <p contenteditable="true"><strong>Frontline Failure Risks:</strong> Uncommunicated backstage policies led to recurring weekly service failures—culminating in asset custody mismatches, lost items, and mounting parent complaints.</p>
-                        <h5 contenteditable="true">METHODOLOGY</h5>
-                        <p contenteditable="true"><strong>Systemic Root-Cause Audit:</strong> Partnered with on-ground leads to shadow live operations and trace breakdowns between compliance guidelines and ground-level volunteers.</p>
+                        <h5>CHALLENGE</h5>
+                        <p><strong>Frontline Failure Risks:</strong> Uncommunicated backstage policies led to recurring weekly service failures—culminating in asset custody mismatches, lost items, and mounting parent complaints.</p>
+                        <h5>METHODOLOGY</h5>
+                        <p><strong>Systemic Root-Cause Audit:</strong> Partnered with on-ground leads to shadow live operations and trace breakdowns between compliance guidelines and ground-level volunteers.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -628,19 +630,19 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.</div>
+                        <div class="dynamic-caption-container">Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-right" contenteditable="true">
+                        <blockquote class="insight-quote-right">
                             "Operational Disconnect: Long-form compliance manuals fail in high-speed, live operational environments."
                         </blockquote>
-                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
-                        <p contenteditable="true"><strong>Visual Reference &amp; SLA:</strong> Redesigned dense rules into an actionable Visual Reference Blueprint. Enforced a time-bound SLA: 1-Day Triage, 2-Day Recovery Plan, Target Weekend Resolution.</p>
-                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
-                        <p contenteditable="true"><strong>100% Incident Eradication in 30 Days.</strong> Empowered frontline teams with active operational guardrails to resolve complaints autonomously with continuous service assurance.</p>
+                        <h5>ECOSYSTEM SOLUTION</h5>
+                        <p><strong>Visual Reference &amp; SLA:</strong> Redesigned dense rules into an actionable Visual Reference Blueprint. Enforced a time-bound SLA: 1-Day Triage, 2-Day Recovery Plan, Target Weekend Resolution.</p>
+                        <h5>STRATEGIC OUTCOME</h5>
+                        <p><strong>100% Incident Eradication in 30 Days.</strong> Empowered frontline teams with active operational guardrails to resolve complaints autonomously with continuous service assurance.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -663,13 +665,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Strict time-bound guardrails provide operational accountability and continuous service assurance.</div>
+                        <div class="dynamic-caption-container">Strict time-bound guardrails provide operational accountability and continuous service assurance.</div>
                     </div>
                 </div>
                 
                 <div class="improve-section">
-                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p contenteditable="true"><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
+                    <h5>WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
                 </div>
             </div>
         </section>
@@ -678,20 +680,20 @@
              PERSONAL PROJECTS
              ========================================= -->
         <section id="personal-projects" class="scroll-section">
-            <h2 class="section-title" contenteditable="true">PERSONAL PROJECTS</h2>
+            <h2 class="section-title">PERSONAL PROJECTS</h2>
 
             <!-- CS2: Saved Places (Originally CS4) - ZIGZAG SWAPPED -->
             <div id="cs2" class="cs-wrapper">
-                <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 04</span>
-                <h3 class="cs-title" contenteditable="true">Turning Saved Places Into a Trip</h3>
-                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: UX Researcher (Course Project)</p>
+                <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 04</span>
+                <h3 class="cs-title">Turning Saved Places Into a Trip</h3>
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: UX Researcher (Course Project)</p>
                 
                 <div class="cs-row reverse">
                     <div class="cs-text">
-                        <h5 contenteditable="true">CHALLENGE</h5>
-                        <p contenteditable="true"><strong>Saved Pins Are Not a Plan:</strong> Singaporeans who plan their own trips struggle to translate all their saved pins in Google Maps into a usable daily schedule for their trips.</p>
-                        <h5 contenteditable="true">METHODOLOGY</h5>
-                        <p contenteditable="true"><strong>Journey &amp; Competitor Audits:</strong> Paired competitor audits (Google Maps, Wanderlog, TripIt) with mixed-methods research to uncover two systemic pain points: The "Relay Race" (81% juggle 2+ tools) and the "AI Trust Gap".</p>
+                        <h5>CHALLENGE</h5>
+                        <p><strong>Saved Pins Are Not a Plan:</strong> Singaporeans who plan their own trips struggle to translate all their saved pins in Google Maps into a usable daily schedule for their trips.</p>
+                        <h5>METHODOLOGY</h5>
+                        <p><strong>Journey &amp; Competitor Audits:</strong> Paired competitor audits (Google Maps, Wanderlog, TripIt) with mixed-methods research to uncover two systemic pain points: The "Relay Race" (81% juggle 2+ tools) and the "AI Trust Gap".</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -720,19 +722,19 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Research findings</div>
+                        <div class="dynamic-caption-container">Research findings</div>
                     </div>
                 </div>
 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-left" contenteditable="true">
+                        <blockquote class="insight-quote-left">
                             "81% of travellers didn't want another discovery engine—they were drowning in scattered pins and needed a sequencing bridge."
                         </blockquote>
-                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
-                        <p contenteditable="true"><strong>Organisation Over Discovery:</strong> Synthesised data into a HMW statement revolving around organisation. Validated top preferences: Pin Organiser (84%), Day-by-Day Scheduler (82%), Route Optimiser (80%).</p>
-                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
-                        <p contenteditable="true">The research pointed to a clear requirement: a native, one-stop feature within Google Maps that bridges discovery and execution by enabling users to seamlessly organize pins into itineraries.</p>
+                        <h5>ECOSYSTEM SOLUTION</h5>
+                        <p><strong>Organisation Over Discovery:</strong> Synthesised data into a HMW statement revolving around organisation. Validated top preferences: Pin Organiser (84%), Day-by-Day Scheduler (82%), Route Optimiser (80%).</p>
+                        <h5>STRATEGIC OUTCOME</h5>
+                        <p>The research pointed to a clear requirement: a native, one-stop feature within Google Maps that bridges discovery and execution by enabling users to seamlessly organize pins into itineraries.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -755,7 +757,7 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Insights synthesised</div>
+                        <div class="dynamic-caption-container">Insights synthesised</div>
                         
                         <!-- Third Carousel -->
                         <div class="image-cluster" style="margin-top: 3rem;">
@@ -772,31 +774,31 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Feature preferences & Problem Statement</div>
+                        <div class="dynamic-caption-container">Feature preferences & Problem Statement</div>
                     </div>
                 </div>
                 
                 <div class="improve-section">
-                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p contenteditable="true"><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
+                    <h5>WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
                 </div>
             </div>
 
             <!-- CS5: The Thinking Belle -->
             <div id="cs5" class="cs-wrapper" style="border: none;">
-                <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 05</span>
-                <h3 class="cs-title" contenteditable="true">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
-                <p contenteditable="true" style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Workflow Architect (Personal Project)</p>
+                <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 05</span>
+                <h3 class="cs-title">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Workflow Architect (Personal Project)</p>
                 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-left" contenteditable="true">
+                        <blockquote class="insight-quote-left">
                             "The Bottleneck - Single-prompt AI generation caused severe instruction bloat, requiring a decoupled multi-agent architecture."
                         </blockquote>
-                        <h5 contenteditable="true">CHALLENGE</h5>
-                        <p contenteditable="true"><strong>The Manual Monolith:</strong> Scaling an educational CX video series failed under manual prompting. Single-chat generation caused severe context window pollution, tone drift, and hallucination loops.</p>
-                        <h5 contenteditable="true">METHODOLOGY</h5>
-                        <p contenteditable="true"><strong>Multi-Agent Specialisation:</strong> Transitioned from bloated single-prompting to an all-in-one agent. Ultimately, modularising the pipeline into 5 specialized AI agents (Concept, Script, Visual, Audio, Metadata).</p>
+                        <h5>CHALLENGE</h5>
+                        <p><strong>The Manual Monolith:</strong> Scaling an educational CX video series failed under manual prompting. Single-chat generation caused severe context window pollution, tone drift, and hallucination loops.</p>
+                        <h5>METHODOLOGY</h5>
+                        <p><strong>Multi-Agent Specialisation:</strong> Transitioned from bloated single-prompting to an all-in-one agent. Ultimately, modularising the pipeline into 5 specialized AI agents (Concept, Script, Visual, Audio, Metadata).</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -819,19 +821,19 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container" contenteditable="true">Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.</div>
+                        <div class="dynamic-caption-container">Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-right" contenteditable="true">
+                        <blockquote class="insight-quote-right">
                             "Applying backstage service blueprinting to AI operations eliminated the human-friction bottleneck of manual text transfer."
                         </blockquote>
-                        <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
-                        <p contenteditable="true"><strong>Automated Command Center:</strong> Unified multi-chat workflows into an Airtable command center via Make.com webhooks, embedding structured human-in-the-loop review gates before triggering downstream Gemini agents.</p>
-                        <h5 contenteditable="true">STRATEGIC OUTCOME</h5>
-                        <p contenteditable="true"><strong>5 Agents LLM Pipeline | 100% Format Lock</strong><br>Full-stack webhook routing. Centralised multi-chat orchestration into a single workspace, embedding human review gates to enforce tone, creative direction, and output quality.</p>
+                        <h5>ECOSYSTEM SOLUTION</h5>
+                        <p><strong>Automated Command Center:</strong> Unified multi-chat workflows into an Airtable command center via Make.com webhooks, embedding structured human-in-the-loop review gates before triggering downstream Gemini agents.</p>
+                        <h5>STRATEGIC OUTCOME</h5>
+                        <p><strong>5 Agents LLM Pipeline | 100% Format Lock</strong><br>Full-stack webhook routing. Centralised multi-chat orchestration into a single workspace, embedding human review gates to enforce tone, creative direction, and output quality.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
@@ -843,4 +845,215 @@
                             </div>
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Centralised multi-chat orchestration into a single Airtable workspace with embedded human review gates.">
                                 <picture>
-                                    <source srcset="portfolio-images/cs5
+                                    <source srcset="portfolio-images/cs5-images/5.5.webp" type="image/webp">
+                                    <img src="portfolio-images/cs5-images/5.5.png" loading="lazy" alt="Multi-chat orchestration">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="dynamic-caption-container">Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.</div>
+                    </div>
+                </div>
+                
+                <div class="improve-section">
+                    <h5>WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p><b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>Advance the architecture by automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>Refine Make.com revision logic so human review notes update targeted script lines without hallucinating and deploy blank-field input guardrails.<br>Explore Google Workspace Studio to setup this workflow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             8. LET'S CONNECT
+             ========================================= -->
+        <section id="connect" class="section-margin scroll-section">
+            <h2 class="section-title">LET'S CONNECT</h2>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.25rem; color: var(--color-blue); margin-bottom: 0.5rem; font-style: normal; font-weight: 800;">Joshua Farrock</h2>
+                <p style="font-weight: 700; color: var(--color-orange); font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem;">Ready to Bridge Human Behaviour, Delightful Experiences &amp; Service Execution</p>
+                <p style="max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for reviewing my portfolio.<br>I am eager to discuss how my background in service transformation can support your organisation.</p>
+            </div>
+            
+            <div class="cs-row" style="align-items: stretch;">
+                <div class="organic-card border-blue" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
+                    <h4>DIRECT CONTACT</h4>
+                    <p style="font-weight: 800; color: var(--color-text); margin-bottom: 1rem; font-size: 1.15rem;">Joshua Farrock</p>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.75rem;"><strong>Email:</strong> <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a></li>
+                        <li style="margin-bottom: 0.75rem;"><strong>Phone:</strong> +65 9651 3048</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/joshua-farrock</a></li>
+                    </ul>
+                </div>
+                <div class="organic-card border-green" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
+                    <h4>ACTIVE UPSKILLING &amp; EDUCATION</h4>
+                    <p style="font-weight: 800; color: var(--color-green); margin-bottom: 1.5rem; font-style: italic;">Continuous Growth</p>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 1.25rem; line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Bachelor of Science in Psychology (Part-Time)</strong><br>
+                            SUSS (Commencing Jan 2027)
+                        </li>
+                        <li style="margin-bottom: 1.25rem; line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Advanced Professional Certification in AI-Powered UX Design &amp; Digital Product Strategy</strong><br>
+                            NTU PACE (Aug - Dec 2026)
+                        </li>
+                        <li style="line-height: 1.4;">
+                            <strong style="color: var(--color-text);">Career Program Certification in Senior Service Designer + AI</strong><br>
+                            IxDF (Oct - Dec 2026)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // ----------------------------------------------------
+        // Navigation Interactivity (Left Hamburger Nav)
+        // ----------------------------------------------------
+        const hamburgerBtn = document.getElementById('openNav');
+        const closeNavBtn = document.getElementById('closeNav');
+        const sideNav = document.getElementById('sideNav');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function toggleNav() {
+            sideNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleNav);
+        closeNavBtn.addEventListener('click', toggleNav);
+        navOverlay.addEventListener('click', toggleNav);
+
+        const navLinks = sideNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sideNav.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        });
+
+        // ----------------------------------------------------
+        // Intersection Observer (Highlight Right Mini Nav)
+        // ----------------------------------------------------
+        const sections = document.querySelectorAll('.scroll-section');
+        const miniNavItems = document.querySelectorAll('.nav-tracker');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    miniNavItems.forEach(item => item.classList.remove('active'));
+                    
+                    const activeItem = document.querySelector(`.nav-tracker[data-target="${id}"]`);
+                    if (activeItem) {
+                        activeItem.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // ----------------------------------------------------
+        // Right Nav Idle Shrink/Fade Logic
+        // ----------------------------------------------------
+        const rightNav = document.getElementById('rightNav');
+        let scrollTimeout;
+
+        rightNav.classList.remove('idle');
+        resetScrollTimeout();
+
+        function resetScrollTimeout() {
+            clearTimeout(scrollTimeout);
+            rightNav.classList.remove('idle');
+            
+            scrollTimeout = setTimeout(() => {
+                rightNav.classList.add('idle');
+            }, 1500); // 1.5s idle time
+        }
+
+        window.addEventListener('scroll', resetScrollTimeout);
+        
+        rightNav.addEventListener('mouseenter', () => {
+            clearTimeout(scrollTimeout);
+            rightNav.classList.remove('idle');
+        });
+        rightNav.addEventListener('mouseleave', () => {
+            resetScrollTimeout();
+        });
+
+        // ----------------------------------------------------
+        // Carousel Navigation for Image Clusters
+        // ----------------------------------------------------
+        document.querySelectorAll('.image-cluster').forEach(cluster => {
+            const items = Array.from(cluster.querySelectorAll('.cluster-item'));
+            const captionBox = cluster.parentElement.querySelector('.dynamic-caption-container');
+            if (items.length === 0) return;
+            
+            let activeIdx = 0;
+            
+            if (items.length > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'nav-btn prev';
+                prevBtn.innerHTML = '❮';
+                
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'nav-btn next';
+                nextBtn.innerHTML = '❯';
+                
+                cluster.appendChild(prevBtn);
+                cluster.appendChild(nextBtn);
+
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    activeIdx = (activeIdx - 1 + items.length) % items.length;
+                    updateImages();
+                });
+                
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    activeIdx = (activeIdx + 1) % items.length;
+                    updateImages();
+                });
+            }
+            
+            const updateImages = () => {
+                items.forEach((item, idx) => {
+                    item.className = 'cluster-item'; 
+                    
+                    if (idx === activeIdx) {
+                        item.classList.add('pos-front');
+                        if (captionBox) {
+                            captionBox.innerText = item.getAttribute('data-caption') || '';
+                        }
+                    } else if (idx === (activeIdx + 1) % items.length) {
+                        item.classList.add('pos-back-right');
+                    } else if (items.length > 2 && idx === (activeIdx - 1 + items.length) % items.length) {
+                        item.classList.add('pos-back-left');
+                    } else {
+                        item.classList.add('pos-hidden'); 
+                    }
+                });
+            };
+            
+            updateImages();
+            
+            items.forEach((item, idx) => {
+                item.addEventListener('click', (e) => {
+                    if (items.length > 1) {
+                        e.stopPropagation();
+                        activeIdx = idx;
+                        updateImages();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
