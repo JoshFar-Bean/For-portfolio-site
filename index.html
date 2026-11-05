@@ -26,16 +26,16 @@
             --color-text: #333333;
             
             --color-blue: #5b7b8a;
-            --color-blue-slate: #5C7285; /* Specific color for intro/icons */
-            --color-blue-wash: #e3ebef; /* Solid pastel */
+            --color-blue-slate: #5C7285;
+            --color-blue-wash: #e3ebef;
             
-            --color-orange: #d97757; /* Specific orange for hover */
+            --color-orange: #d97757;
             --color-orange-light: #e8ab98;
-            --color-orange-wash: #f7e6df; /* Solid pastel */
+            --color-orange-wash: #f7e6df;
             
             --color-green: #7b8e73;
             --color-green-light: #b8c5b3;
-            --color-green-wash: #e9efe7; /* Solid pastel */
+            --color-green-wash: #e9efe7;
         }
 
         body {
@@ -84,7 +84,6 @@
         h5 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-text); margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
         p { font-size: 1.05rem; margin-bottom: 1rem; }
 
-        /* Typography Fixes */
         .intro-special {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -97,6 +96,8 @@
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
+            font-size: 3.5rem; /* Scaled to match h1 */
+            line-height: 1.2;
             color: #333;
             margin-bottom: 3rem;
             width: 100%;
@@ -107,7 +108,8 @@
            Organic Shapes & Sections
            ========================================= */
         .section-margin { margin-bottom: 6rem; scroll-margin-top: 4rem; }
-        #about { margin-bottom: 12rem; }
+        
+        #about { margin-bottom: 12rem; } /* Pushes 'My Services' down to prevent observer overlap */
         
         .organic-card {
             background-color: var(--color-paper-light);
@@ -124,11 +126,11 @@
 
         /* Pillars Grid */
         .pillars-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
-        .pillar-card { flex: 0 1 calc(50% - 1rem); min-width: 320px; max-width: 480px; padding: 2rem; text-align: center; cursor: pointer; text-decoration: none; color: inherit; }
+        .pillar-card { flex: 1 1 calc(50% - 1rem); min-width: 320px; max-width: 480px; padding: 2rem; text-align: center; cursor: pointer; text-decoration: none; color: inherit; }
         .pillar-card:hover { transform: translateY(-5px); box-shadow: 6px 10px 20px rgba(0,0,0,0.08); }
 
         /* =========================================
-           Case Study: 50/50 Zigzag Layout
+           Case Study Layouts
            ========================================= */
         .cs-wrapper { margin-bottom: 6rem; border-bottom: 2px dashed var(--color-blue-wash); padding-bottom: 4rem; }
         .cs-wrapper:last-child { border-bottom: none; }
@@ -139,8 +141,27 @@
         .cs-text { flex: 1 1 45%; min-width: 320px; }
         .cs-visual { flex: 1 1 45%; min-width: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
 
+        /* Improvement Section block */
+        .improve-section {
+            background: var(--color-blue-wash);
+            border: 1px solid var(--color-blue-slate);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 1rem;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.05);
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .improve-section h5 {
+            color: var(--color-blue);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
         /* =========================================
-           Scrapbook Image Clusters (Solid, 1/3 Peek)
+           Scrapbook Image Clusters
            ========================================= */
         .image-cluster {
             position: relative;
@@ -156,26 +177,24 @@
             position: absolute;
             width: 70%;
             height: 280px;
-            padding: 0.75rem 0.75rem 3.5rem 0.75rem; /* Polaroid feel */
+            padding: 0.75rem 0.75rem 3.5rem 0.75rem; 
             border: 2px solid;
             display: flex; align-items: center; justify-content: center;
             text-align: center; font-weight: 700; color: #333; font-size: 0.9rem;
             border-radius: 4px; cursor: pointer;
-            opacity: 1 !important; /* Force solid */
+            opacity: 1 !important;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            background-color: var(--color-paper-light); /* Prevent transparency */
-            overflow: hidden; /* Constrain images */
+            background-color: var(--color-paper-light);
+            overflow: hidden;
         }
         
-        /* IMAGE RULES to prevent magnification */
         .cluster-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents stretching and cropping */
-            pointer-events: none; /* Let clicks pass to the cluster item */
+            object-fit: contain; 
+            pointer-events: none; 
         }
         
-        /* Split Frame for Side-by-Side */
         .split-frame {
             display: flex;
             flex-direction: row;
@@ -189,37 +208,17 @@
             object-fit: contain;
         }
 
-        /* Positions */
-        .pos-front {
-            transform: translate(0, 0) scale(1);
-            z-index: 10;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        .pos-back-right {
-            transform: translate(35%, 15%) rotate(8deg) scale(0.9);
-            z-index: 2;
-            box-shadow: 4px 8px 15px rgba(0,0,0,0.1);
-        }
-        .pos-back-left {
-            transform: translate(-35%, -15%) rotate(-8deg) scale(0.9);
-            z-index: 1;
-            box-shadow: 4px 8px 15px rgba(0,0,0,0.1);
-        }
-        .pos-hidden {
-            transform: translate(0, 0) scale(0.8);
-            z-index: 0;
-            opacity: 0 !important;
-            pointer-events: none;
-        }
+        .pos-front { transform: translate(0, 0) scale(1); z-index: 10; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
+        .pos-back-right { transform: translate(35%, 15%) rotate(8deg) scale(0.9); z-index: 2; box-shadow: 4px 8px 15px rgba(0,0,0,0.1); }
+        .pos-back-left { transform: translate(-35%, -15%) rotate(-8deg) scale(0.9); z-index: 1; box-shadow: 4px 8px 15px rgba(0,0,0,0.1); }
+        .pos-hidden { transform: translate(0, 0) scale(0.8); z-index: 0; opacity: 0 !important; pointer-events: none; }
 
-        /* Washi Tape */
         .cluster-item::before {
             content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(2deg);
             width: 70px; height: 24px; background-color: var(--color-paper);
             border: 1px solid rgba(0,0,0,0.05); box-shadow: 1px 2px 3px rgba(0,0,0,0.05); z-index: 2;
         }
 
-        /* Arrows */
         .nav-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
             width: 44px; height: 44px; background: var(--color-paper-light);
@@ -232,7 +231,6 @@
         .nav-btn.prev { left: 0; }
         .nav-btn.next { right: 0; }
 
-        /* Dynamic Caption Box */
         .dynamic-caption-container {
             width: 100%;
             padding: 1rem 1.5rem;
@@ -261,27 +259,6 @@
         }
         .insight-quote-right {
             border-right: 8px solid var(--color-orange); padding: 1.5rem 2rem 1.5rem 3rem; border-radius: 60px 0 0 60px;
-        }
-
-        .improve-section {
-            background-color: var(--color-blue-wash);
-            border: 2px solid var(--color-blue-slate);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-        .improve-section h5 {
-            color: var(--color-blue);
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1.15rem;
-        }
-        .improve-section p {
-            margin-bottom: 0;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 800px;
         }
 
         /* =========================================
@@ -347,7 +324,6 @@
         .mini-nav-item svg { width: 20px; height: 20px; fill: var(--color-blue-slate); transition: fill 0.3s; }
         .mini-nav-item:hover svg, .mini-nav-item.active svg { fill: var(--color-orange); }
 
-        /* Hide inactive when idle */
         .mini-nav.idle .mini-nav-item:not(.active) { height: 0; opacity: 0; transform: scale(0); pointer-events: none; margin: 0; padding: 0; }
 
         .tooltip {
@@ -418,13 +394,13 @@
     <main class="container">
         
         <!-- 1. ABOUT ME -->
-        <section id="about" class="section-margin scroll-section">
+        <section id="about" class="section-margin scroll-section" style="text-align: center;">
             <h2 class="section-title" contenteditable="true">ABOUT ME</h2>
             <h1 contenteditable="true">Joshua Farrock</h1>
             <h2 contenteditable="true" style="font-size: 1.5rem; color: var(--color-orange); font-style: italic; text-transform: none; margin-bottom: 1.5rem;">Customer Experience &amp; Service Transformation Professional</h2>
             <p contenteditable="true" style="font-weight: 700; color: var(--color-blue); margin-bottom: 1.5rem;">joshuafarrock@gmail.com | +65 9651 3048 | linkedin.com/in/joshua-farrock</p>
-            <div class="organic-card border-blue" style="max-width: 850px;">
-                <p class="intro-special" contenteditable="true">Bridging human-centred research, behavioural psychology, and rigorous physical operations to architect scalable, omni-channel service ecosystems and streamline complex spatial workflows.</p>
+            <div class="organic-card border-blue" style="max-width: 850px; margin: 0 auto;">
+                <p class="intro-special" contenteditable="true" style="margin-bottom: 0;">Bridging human-centred research, behavioural psychology, and rigorous physical operations to architect scalable, omni-channel service ecosystems and streamline complex spatial workflows.</p>
             </div>
         </section>
 
@@ -432,7 +408,8 @@
         <section id="services" class="section-margin scroll-section">
             <h2 class="section-title" contenteditable="true">MY SERVICES</h2>
             <p class="intro-special" contenteditable="true">Bridging Generative Research, Physical Operations, and Service Architecture</p>
-            <p contenteditable="true">With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence—now augmented by my active NTU PACE AI-UX and IxDF Senior Service Designer program. Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through my existing capabilities.</p>
+            <p contenteditable="true">With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
+            <p contenteditable="true">Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through proven methodologies and innovative tools—translating academic insights into practical value for your organisation.</p>
 
             <div class="pillars-grid">
                 <a href="#cs2" class="organic-card pillar-card border-green">
@@ -449,6 +426,11 @@
                     <h4 contenteditable="true">STRATEGIC ARCHITECTURE</h4>
                     <span class="meta-tag" contenteditable="true" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel Execution</span>
                     <p contenteditable="true">Translating conceptual experiences into backstage playbooks and strict compliance protocols, achieving high user retention and frontline incident eradication.</p>
+                </a>
+                <a href="#cs5" class="organic-card pillar-card border-green">
+                    <h4 contenteditable="true" style="color: var(--color-green);">EMERGING TECH EXPLORATION</h4>
+                    <span class="meta-tag" contenteditable="true">RAPID PROTOTYPING &amp; AUTOMATION</span>
+                    <p contenteditable="true">Embracing emerging technologies to solve complex operational bottlenecks, demonstrating a readiness to learn and prototype unconventional solutions—like automated multi-agent ecosystems—to eliminate manual friction.</p>
                 </a>
             </div>
         </section>
@@ -510,13 +492,14 @@
                         <div class="dynamic-caption-container" contenteditable="true">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
                     </div>
                 </div>
-                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p style="margin-bottom: 0;" contenteditable="true"><b>Dynamic &amp; Strategic real-time calibration</b><strong><br></strong>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
+                
+                <div class="improve-section">
+                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p contenteditable="true"><b>Dynamic &amp; Strategic real-time calibration</b><br>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
                 </div>
             </div>
 
-            <!-- CS3: Storage Revamp (Originally CS2) -->
+            <!-- CS3: Storage Revamp (Originally CS2) - ZIGZAG SWAPPED -->
             <div id="cs3" class="cs-wrapper">
                 <span class="meta-tag" contenteditable="true">CASE STUDY 02</span>
                 <h3 class="cs-title" contenteditable="true">Physical Storage Configuration Revamp</h3>
@@ -547,7 +530,7 @@
 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-right" contenteditable="true">
+                        <blockquote class="insight-quote-left" contenteditable="true">
                             "The operational bottleneck was not a lack of manpower, but a chaotic physical layout that overwhelmed volunteers with high cognitive load."
                         </blockquote>
                         <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
@@ -567,9 +550,10 @@
                         <div class="dynamic-caption-container" contenteditable="true">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
                     </div>
                 </div>
-                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
+
+                <div class="improve-section">
+                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p contenteditable="true"><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
                 </div>
             </div>
 
@@ -588,7 +572,6 @@
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <!-- Only 1 image here based on instructions -->
                             <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.">
                                 <img src="3.1.jpg" alt="Root Cause Audit">
                             </div>
@@ -622,9 +605,10 @@
                         <div class="dynamic-caption-container" contenteditable="true">Strict time-bound guardrails provide operational accountability and continuous service assurance.</div>
                     </div>
                 </div>
-                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
+                
+                <div class="improve-section">
+                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p contenteditable="true"><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
                 </div>
             </div>
         </section>
@@ -635,7 +619,7 @@
         <section id="personal-projects" class="scroll-section">
             <h2 class="section-title" contenteditable="true">PERSONAL PROJECTS</h2>
 
-            <!-- CS2: Saved Places (Originally CS4) -->
+            <!-- CS2: Saved Places (Originally CS4) - ZIGZAG SWAPPED -->
             <div id="cs2" class="cs-wrapper">
                 <span class="meta-tag" contenteditable="true" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 04</span>
                 <h3 class="cs-title" contenteditable="true">Turning Saved Places Into a Trip</h3>
@@ -669,7 +653,7 @@
 
                 <div class="cs-row">
                     <div class="cs-text">
-                        <blockquote class="insight-quote-right" contenteditable="true">
+                        <blockquote class="insight-quote-left" contenteditable="true">
                             "81% of travellers didn't want another discovery engine—they were drowning in scattered pins and needed a sequencing bridge."
                         </blockquote>
                         <h5 contenteditable="true">ECOSYSTEM SOLUTION</h5>
@@ -703,9 +687,10 @@
                         <div class="dynamic-caption-container" contenteditable="true">Feature preferences & Problem Statement</div>
                     </div>
                 </div>
-                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p style="margin-bottom: 0;" contenteditable="true"><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
+                
+                <div class="improve-section">
+                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p contenteditable="true"><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
                 </div>
             </div>
 
@@ -763,14 +748,10 @@
                         <div class="dynamic-caption-container" contenteditable="true">Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.</div>
                     </div>
                 </div>
-                <div class="improve-section" style="background-color: var(--color-blue-wash); padding: 2.5rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <h5 style="color: var(--color-blue); margin-top: 0;" contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p style="margin-bottom: 0;" contenteditable="true">
-                        <b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>
-                        Advance the architecture by automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>
-                        Refine Make.com revision logic so human review notes update targeted script lines without hallucinating and deploy blank-field input guardrails.<br>
-                        Explore Google Workspace Studio to setup this workflow.
-                    </p>
+                
+                <div class="improve-section">
+                    <h5 contenteditable="true">WHAT I WOULD IMPROVE FURTHER</h5>
+                    <p contenteditable="true"><b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>Advance the architecture by automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>Refine Make.com revision logic so human review notes update targeted script lines without hallucinating and deploy blank-field input guardrails.<br>Explore Google Workspace Studio to setup this workflow.</p>
                 </div>
             </div>
         </section>
@@ -912,7 +893,6 @@
             
             let activeIdx = 0;
             
-            // Only add buttons if there is more than 1 image to cycle
             if (items.length > 1) {
                 const prevBtn = document.createElement('button');
                 prevBtn.className = 'nav-btn prev';
@@ -940,7 +920,7 @@
             
             const updateImages = () => {
                 items.forEach((item, idx) => {
-                    item.className = 'cluster-item'; // reset classes
+                    item.className = 'cluster-item'; 
                     
                     if (idx === activeIdx) {
                         item.classList.add('pos-front');
@@ -952,14 +932,13 @@
                     } else if (items.length > 2 && idx === (activeIdx - 1 + items.length) % items.length) {
                         item.classList.add('pos-back-left');
                     } else {
-                        item.classList.add('pos-hidden'); // hide 4th/5th items so they don't break layout
+                        item.classList.add('pos-hidden'); 
                     }
                 });
             };
             
             updateImages();
             
-            // Allow clicking to bring to front
             items.forEach((item, idx) => {
                 item.addEventListener('click', (e) => {
                     if (items.length > 1) {
