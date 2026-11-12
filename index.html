@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Nunito:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* =========================================
            CSS Reset & Base Styles
@@ -19,20 +22,24 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             /* Studio Ghibli Watercolor Palette - Solid Colors */
             --color-paper: #f4f1ea;
             --color-paper-light: #fffdf9;
             --color-text: #333333;
-            
+
             --color-blue: #5b7b8a;
             --color-blue-slate: #5C7285;
             --color-blue-wash: #e3ebef;
-            
+
             --color-orange: #d97757;
             --color-orange-light: #e8ab98;
             --color-orange-wash: #f7e6df;
-            
+
             --color-green: #7b8e73;
             --color-green-light: #b8c5b3;
             --color-green-wash: #e9efe7;
@@ -50,7 +57,10 @@
         body::after {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 9999;
@@ -65,10 +75,35 @@
         }
 
         /* Typography */
-        h1 { font-size: 3.5rem; font-weight: 800; color: var(--color-blue); margin-bottom: 0.5rem; line-height: 1.2; }
-        h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--color-blue); }
-        h5 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-text); margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;}
-        p { font-size: 1.05rem; margin-bottom: 1rem; }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--color-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--color-blue);
+        }
+
+        h5 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
 
         .intro-special {
             font-family: 'Montserrat', sans-serif;
@@ -77,12 +112,13 @@
             font-size: 1.25rem;
             line-height: 1.6;
         }
+
         .section-title {
             text-align: center;
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 3.5rem; 
+            font-size: 3.5rem;
             line-height: 1.2;
             color: #333;
             margin-bottom: 3rem;
@@ -98,6 +134,7 @@
             text-underline-offset: 3px;
             transition: all 0.3s ease;
         }
+
         .contact-link:hover {
             color: var(--color-orange);
             text-decoration-color: var(--color-orange);
@@ -106,10 +143,195 @@
         /* =========================================
            Organic Shapes & Sections
            ========================================= */
-        .section-margin { margin-bottom: 6rem; scroll-margin-top: 4rem; }
-        
-        #about { margin-bottom: 8rem; }
-        
+        .section-margin {
+            margin-bottom: 6rem;
+            scroll-margin-top: 4rem;
+        }
+
+        #about {
+            margin-bottom: 8rem;
+        }
+
+        /* =========================================
+           Top Hero Statement Section (Ghibli Style)
+           ========================================= */
+        .hero-statement-section {
+            position: relative;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 2rem 5rem;
+            overflow: hidden;
+            background-color: var(--color-paper);
+            scroll-margin-top: 0;
+        }
+
+        .hero-bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-bg-img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: saturate(1.08) contrast(1.02);
+            /* Feathers out the center so artwork surrounds the text, keeping text on pure standard paper background */
+            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 48%, transparent 32%, rgba(0, 0, 0, 0.3) 55%, black 85%);
+            mask-image: radial-gradient(ellipse 70% 50% at 50% 48%, transparent 32%, rgba(0, 0, 0, 0.3) 55%, black 85%);
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .hero-bg-wash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                    rgba(244, 241, 234, 0.35) 0%,
+                    transparent 15%,
+                    transparent 80%,
+                    var(--color-paper) 100%);
+        }
+
+        .hero-statement-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1080px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.75rem;
+            padding: 2.5rem 1.5rem;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .hero-statement-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.4rem, 4.6vw, 4.25rem);
+            line-height: 1.25;
+            letter-spacing: -0.025em;
+            color: var(--color-text);
+            margin: 0;
+            text-wrap: balance;
+        }
+
+        /* Highlighting with the site's authentic palette */
+        .hl-architect {
+            color: var(--color-blue);
+            background: linear-gradient(120deg, var(--color-blue-wash) 0%, var(--color-blue-wash) 100%) no-repeat;
+            background-size: 100% 38%;
+            background-position: 0 88%;
+            padding: 0 0.14em;
+            border-radius: 4px;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .hl-experience {
+            color: var(--color-orange);
+            background: linear-gradient(120deg, var(--color-orange-wash) 0%, var(--color-orange-wash) 100%) no-repeat;
+            background-size: 100% 38%;
+            background-position: 0 88%;
+            padding: 0 0.14em;
+            border-radius: 4px;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .hero-scroll-trigger {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-backstory-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--color-blue);
+            background: none;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            letter-spacing: -0.01em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-scroll-trigger:hover .hero-backstory-text {
+            color: var(--color-orange);
+            transform: translateY(-1px);
+        }
+
+        .hero-scroll-cue {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+            color: var(--color-blue-slate);
+            animation: heroScrollBounce 2s infinite ease-in-out;
+            transition: color 0.3s ease;
+        }
+
+        .hero-scroll-trigger:hover .hero-scroll-cue {
+            color: var(--color-orange);
+        }
+
+        .scroll-cue-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .scroll-cue-arrow {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            opacity: 0.85;
+        }
+
+        @keyframes heroScrollBounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(6px);
+            }
+
+            60% {
+                transform: translateY(3px);
+            }
+        }
+
         /* =========================================
            Hero & About Me Sections (Japandi Aesthetic)
            ========================================= */
@@ -125,11 +347,13 @@
             padding: 3rem;
             box-shadow: 4px 6px 18px rgba(91, 123, 138, 0.12);
         }
+
         .hero-photo-wrap {
             flex: 0 0 220px;
             display: flex;
             justify-content: center;
         }
+
         .hero-photo-frame {
             width: 200px;
             height: 200px;
@@ -143,11 +367,13 @@
             justify-content: center;
             position: relative;
         }
+
         .hero-photo-frame picture {
             width: 100%;
             height: 100%;
             display: block;
         }
+
         .hero-photo {
             width: 100%;
             height: 100%;
@@ -156,6 +382,7 @@
             border-radius: 50%;
             transform: scale(1.02);
         }
+
         .hero-avatar-fallback {
             width: 100%;
             height: 100%;
@@ -170,6 +397,7 @@
             font-size: 2.75rem;
             letter-spacing: 2px;
         }
+
         .hero-avatar-fallback span.fallback-sub {
             font-size: 0.75rem;
             font-weight: 700;
@@ -178,21 +406,25 @@
             color: var(--color-blue-slate);
             text-transform: uppercase;
         }
+
         .hero-content {
             flex: 1 1 auto;
         }
+
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             color: var(--color-blue);
             line-height: 1.15;
         }
+
         .hero-content .hero-body {
             font-size: 1.12rem;
             line-height: 1.7;
             color: var(--color-text);
             margin-bottom: 1.5rem;
         }
+
         .hero-contact {
             font-weight: 700;
             color: var(--color-blue);
@@ -207,11 +439,13 @@
             margin-top: 5rem;
             position: relative;
         }
+
         .leveling-header {
             text-align: center;
             margin-bottom: 3.5rem;
             max-width: 100%;
         }
+
         .leveling-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.25rem;
@@ -219,6 +453,7 @@
             color: #333;
             margin-bottom: 0.5rem;
         }
+
         .leveling-subtitle {
             color: var(--color-blue-slate);
             font-weight: 700;
@@ -231,10 +466,12 @@
             display: block;
             padding: 0 1rem;
         }
+
         .timeline-container {
             position: relative;
             padding: 1.5rem 0 1rem 0;
         }
+
         /* Treasure Map SVG Track - undulating curve, fades in left, fades out right */
         .timeline-track-svg {
             position: absolute;
@@ -245,9 +482,10 @@
             pointer-events: none;
             z-index: 1;
             overflow: visible;
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
         }
+
         .treasure-map-path {
             stroke: var(--color-blue-slate);
             stroke-width: 2.5px;
@@ -257,6 +495,7 @@
             opacity: 0.85;
             transition: d 0.15s ease;
         }
+
         .timeline-milestones {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -264,6 +503,7 @@
             position: relative;
             z-index: 2;
         }
+
         .timeline-milestone {
             display: flex;
             flex-direction: column;
@@ -273,6 +513,7 @@
             background: transparent;
             padding: 0;
         }
+
         .milestone-node-wrap {
             display: flex;
             flex-direction: column;
@@ -282,6 +523,7 @@
             margin-bottom: 1.75rem;
             position: relative;
         }
+
         .milestone-badge {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
@@ -294,25 +536,30 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
+
         .milestone-badge:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
         }
+
         .badge-blue {
             background: var(--color-blue);
             color: #ffffff;
         }
+
         .badge-orange {
             background: var(--color-orange);
             color: #ffffff;
         }
+
         .badge-green {
             background: var(--color-green);
             color: #ffffff;
         }
+
         .milestone-dot {
             width: 22px;
             height: 22px;
@@ -325,16 +572,27 @@
             z-index: 3;
             transition: transform 0.25s ease;
         }
+
         .timeline-milestone:hover .milestone-dot {
             transform: scale(1.3);
         }
-        .dot-blue { border-color: var(--color-blue); }
-        .dot-orange { border-color: var(--color-orange); }
-        .dot-green { border-color: var(--color-green); }
+
+        .dot-blue {
+            border-color: var(--color-blue);
+        }
+
+        .dot-orange {
+            border-color: var(--color-orange);
+        }
+
+        .dot-green {
+            border-color: var(--color-green);
+        }
 
         .milestone-content {
             width: 100%;
         }
+
         .milestone-subheading {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
@@ -342,6 +600,7 @@
             margin-bottom: 0.75rem;
             line-height: 1.3;
         }
+
         .milestone-body {
             font-size: 1.02rem;
             line-height: 1.65;
@@ -356,10 +615,12 @@
             margin-top: 5.5rem;
             text-align: left;
         }
+
         .beyond-header {
             text-align: center;
             margin-bottom: 3rem;
         }
+
         .beyond-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.25rem;
@@ -367,17 +628,20 @@
             color: #333;
             margin-bottom: 0.5rem;
         }
+
         .beyond-subtitle {
             color: var(--color-blue-slate);
             font-weight: 700;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .beyond-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2.25rem;
         }
+
         .hobby-card {
             display: flex;
             flex-direction: column;
@@ -385,6 +649,7 @@
             border: none;
             text-align: left;
         }
+
         .hobby-photo-wrap {
             aspect-ratio: 4 / 5;
             width: 100%;
@@ -393,13 +658,15 @@
             background: var(--color-paper-light);
             border: 2px solid;
             position: relative;
-            box-shadow: 2px 6px 18px rgba(0,0,0,0.06);
+            box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .hobby-card:hover .hobby-photo-wrap {
             transform: translateY(-4px);
-            box-shadow: 4px 10px 24px rgba(0,0,0,0.1);
+            box-shadow: 4px 10px 24px rgba(0, 0, 0, 0.1);
         }
+
         .hobby-img {
             width: 100%;
             height: 100%;
@@ -407,6 +674,7 @@
             object-position: center;
             display: block;
         }
+
         .hobby-subheading {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
@@ -415,6 +683,7 @@
             margin-bottom: 0.6rem;
             line-height: 1.3;
         }
+
         .hobby-body {
             font-size: 1.02rem;
             line-height: 1.65;
@@ -428,6 +697,7 @@
             margin-top: 6rem;
             margin-bottom: 6rem;
         }
+
         .resume-card {
             background-color: var(--color-paper-light);
             border: 2px solid var(--color-blue);
@@ -438,6 +708,7 @@
             box-shadow: 4px 8px 24px rgba(91, 123, 138, 0.15);
             text-align: center;
         }
+
         .resume-btn {
             display: inline-flex;
             align-items: center;
@@ -455,13 +726,14 @@
             transition: all 0.3s ease;
             margin-top: 1rem;
         }
+
         .resume-btn:hover {
             background-color: #c26547;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(217, 119, 87, 0.45);
             color: #ffffff;
         }
-        
+
         .organic-card {
             background-color: var(--color-paper-light);
             border: 2px solid;
@@ -470,27 +742,96 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
-        
-        .border-blue { border-color: var(--color-blue); border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; box-shadow: 4px 6px 15px rgba(91, 123, 138, 0.15); }
-        .border-orange { border-color: var(--color-orange); border-radius: 15px 255px 15px 225px/225px 15px 255px 15px; box-shadow: 4px 6px 15px rgba(210, 121, 92, 0.15); }
-        .border-green { border-color: var(--color-green); border-radius: 225px 15px 255px 15px/15px 225px 15px 255px; box-shadow: 4px 6px 15px rgba(123, 142, 115, 0.15); }
+
+        .border-blue {
+            border-color: var(--color-blue);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 4px 6px 15px rgba(91, 123, 138, 0.15);
+        }
+
+        .border-orange {
+            border-color: var(--color-orange);
+            border-radius: 15px 255px 15px 225px/225px 15px 255px 15px;
+            box-shadow: 4px 6px 15px rgba(210, 121, 92, 0.15);
+        }
+
+        .border-green {
+            border-color: var(--color-green);
+            border-radius: 225px 15px 255px 15px/15px 225px 15px 255px;
+            box-shadow: 4px 6px 15px rgba(123, 142, 115, 0.15);
+        }
 
         /* Pillars Grid */
-        .pillars-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
-        .pillar-card { flex: 1 1 calc(50% - 1rem); min-width: 320px; max-width: 480px; padding: 2rem; text-align: center; cursor: pointer; text-decoration: none; color: inherit; }
-        .pillar-card:hover { transform: translateY(-5px); box-shadow: 6px 10px 20px rgba(0,0,0,0.08); }
+        .pillars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pillar-card {
+            flex: 1 1 calc(50% - 1rem);
+            min-width: 320px;
+            max-width: 480px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.08);
+        }
 
         /* =========================================
            Case Study Layouts
            ========================================= */
-        .cs-wrapper { margin-bottom: 6rem; border-bottom: 2px dashed var(--color-blue-wash); padding-bottom: 4rem; }
-        .cs-wrapper:last-child { border-bottom: none; }
-        .cs-title { font-size: 2.25rem; font-weight: 800; color: #333; margin-bottom: 0.5rem; }
-        
-        .cs-row { display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; margin-bottom: 4rem; }
-        .cs-row.reverse { flex-direction: row-reverse; }
-        .cs-text { flex: 1 1 45%; min-width: 320px; }
-        .cs-visual { flex: 1 1 45%; min-width: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+        .cs-wrapper {
+            margin-bottom: 6rem;
+            border-bottom: 2px dashed var(--color-blue-wash);
+            padding-bottom: 4rem;
+        }
+
+        .cs-wrapper:last-child {
+            border-bottom: none;
+        }
+
+        .cs-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .cs-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .cs-text {
+            flex: 1 1 45%;
+            min-width: 320px;
+        }
+
+        .cs-visual {
+            flex: 1 1 45%;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
         /* Improvement Section block */
         .improve-section {
@@ -500,11 +841,12 @@
             padding: 2.5rem;
             text-align: center;
             margin-top: 1rem;
-            box-shadow: 2px 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
             max-width: 850px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .improve-section h5 {
             color: var(--color-blue);
             margin-top: 0;
@@ -528,11 +870,17 @@
             position: absolute;
             width: 70%;
             height: 280px;
-            padding: 0.75rem 0.75rem 3.5rem 0.75rem; 
+            padding: 0.75rem 0.75rem 3.5rem 0.75rem;
             border: 2px solid;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; font-weight: 700; color: #333; font-size: 0.9rem;
-            border-radius: 4px; cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            color: #333;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
             opacity: 1 !important;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             background-color: var(--color-paper-light);
@@ -545,14 +893,14 @@
             height: 100%;
             display: flex;
         }
-        
+
         .cluster-item img {
             width: 100%;
             height: 100%;
-            object-fit: contain; 
-            pointer-events: none; 
+            object-fit: contain;
+            pointer-events: none;
         }
-        
+
         .split-frame {
             display: flex;
             flex-direction: row;
@@ -560,166 +908,444 @@
             width: 100%;
             height: 100%;
         }
+
         .split-frame picture {
             width: calc(50% - 0.25rem);
             height: 100%;
             display: flex;
         }
+
         .split-frame img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
 
-        .pos-front { transform: translate(0, 0) scale(1); z-index: 10; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
-        .pos-back-right { transform: translate(35%, 15%) rotate(8deg) scale(0.9); z-index: 2; box-shadow: 4px 8px 15px rgba(0,0,0,0.1); }
-        .pos-back-left { transform: translate(-35%, -15%) rotate(-8deg) scale(0.9); z-index: 1; box-shadow: 4px 8px 15px rgba(0,0,0,0.1); }
-        .pos-hidden { transform: translate(0, 0) scale(0.8); z-index: 0; opacity: 0 !important; pointer-events: none; }
+        .pos-front {
+            transform: translate(0, 0) scale(1);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .pos-back-right {
+            transform: translate(35%, 15%) rotate(8deg) scale(0.9);
+            z-index: 2;
+            box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pos-back-left {
+            transform: translate(-35%, -15%) rotate(-8deg) scale(0.9);
+            z-index: 1;
+            box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pos-hidden {
+            transform: translate(0, 0) scale(0.8);
+            z-index: 0;
+            opacity: 0 !important;
+            pointer-events: none;
+        }
 
         .cluster-item::before {
-            content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(2deg);
-            width: 70px; height: 24px; background-color: var(--color-paper);
-            border: 1px solid rgba(0,0,0,0.05); box-shadow: 1px 2px 3px rgba(0,0,0,0.05); z-index: 2;
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(2deg);
+            width: 70px;
+            height: 24px;
+            background-color: var(--color-paper);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.05);
+            z-index: 2;
         }
 
         .nav-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 44px; height: 44px; background: var(--color-paper-light);
-            border: 2px solid var(--color-orange); color: var(--color-orange);
-            border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 20;
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0.6; transition: all 0.3s ease; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: var(--color-paper-light);
+            border: 2px solid var(--color-orange);
+            color: var(--color-orange);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .nav-btn:hover { background: var(--color-orange); color: var(--color-paper-light); opacity: 1; transform: translateY(-50%) scale(1.1); }
-        .nav-btn.prev { left: 0; }
-        .nav-btn.next { right: 0; }
+
+        .nav-btn:hover {
+            background: var(--color-orange);
+            color: var(--color-paper-light);
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-btn.prev {
+            left: 0;
+        }
+
+        .nav-btn.next {
+            right: 0;
+        }
 
         .dynamic-caption-container {
             width: 100%;
             padding: 1rem 1.5rem;
             background: var(--color-paper-light);
             border-left: 4px solid var(--color-orange);
-            font-size: 0.95rem; font-style: italic; color: var(--color-text);
-            box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
-            min-height: 4rem; display: flex; align-items: center;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--color-text);
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
         }
 
         /* =========================================
            Insights & Blockquotes
            ========================================= */
         .meta-tag {
-            display: inline-block; background: var(--color-green-wash); color: var(--color-green);
-            padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 800;
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; border: 1px solid var(--color-green-light);
+            display: inline-block;
+            background: var(--color-green-wash);
+            color: var(--color-green);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-green-light);
         }
 
-        .insight-quote-left, .insight-quote-right {
-            background-color: var(--color-orange-wash); color: var(--color-text);
-            font-style: italic; font-weight: 700; font-size: 1.1rem; margin: 2rem 0;
-        }
-        .insight-quote-left {
-            border-left: 6px solid var(--color-orange); padding: 1.5rem 2rem; border-radius: 0 30px 30px 0;
-        }
+        .insight-quote-left,
         .insight-quote-right {
-            border-right: 8px solid var(--color-orange); padding: 1.5rem 2rem 1.5rem 3rem; border-radius: 60px 0 0 60px;
+            background-color: var(--color-orange-wash);
+            color: var(--color-text);
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+        }
+
+        .insight-quote-left {
+            border-left: 6px solid var(--color-orange);
+            padding: 1.5rem 2rem;
+            border-radius: 0 30px 30px 0;
+        }
+
+        .insight-quote-right {
+            border-right: 8px solid var(--color-orange);
+            padding: 1.5rem 2rem 1.5rem 3rem;
+            border-radius: 60px 0 0 60px;
         }
 
         /* =========================================
            Navigation 1: Fixed Hamburger & Sidebar
            ========================================= */
         #openNav {
-            position: fixed; top: 20px; left: 20px; z-index: 1000;
-            background: transparent; border: none; box-shadow: none; padding: 0; cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            cursor: pointer;
         }
-        #openNav svg { width: 36px; height: 36px; fill: var(--color-blue-slate); transition: fill 0.3s ease; }
-        #openNav:hover svg { fill: var(--color-orange); }
+
+        #openNav svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--color-blue-slate);
+            transition: fill 0.3s ease;
+        }
+
+        #openNav:hover svg {
+            fill: var(--color-orange);
+        }
 
         .side-nav-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(44, 53, 49, 0.4); z-index: 998;
-            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(44, 53, 49, 0.4);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
-        .side-nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .side-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
         .side-nav {
-            position: fixed; top: 0; left: -320px; width: 320px; height: 100vh;
-            background: var(--color-paper); z-index: 999;
-            box-shadow: 10px 0 30px rgba(0,0,0,0.1); transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            padding: 6rem 2rem 2rem 2rem; border-right: 2px solid var(--color-blue-slate);
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: var(--color-paper);
+            z-index: 999;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            padding: 6rem 2rem 2rem 2rem;
+            border-right: 2px solid var(--color-blue-slate);
             overflow-y: auto;
         }
-        .side-nav.active { transform: translateX(320px); }
 
-        .close-nav-btn { position: absolute; top: 20px; right: 20px; background: none; border: none; cursor: pointer; padding: 0; }
-        .close-nav-btn svg { width: 30px; height: 30px; fill: var(--color-blue-slate); transition: fill 0.3s ease; }
-        .close-nav-btn:hover svg { fill: var(--color-orange); }
+        .side-nav.active {
+            transform: translateX(320px);
+        }
 
-        .side-nav ul { list-style: none; padding: 0; }
+        .close-nav-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .close-nav-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--color-blue-slate);
+            transition: fill 0.3s ease;
+        }
+
+        .close-nav-btn:hover svg {
+            fill: var(--color-orange);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
         .side-nav li a {
-            display: block; font-family: 'Montserrat', sans-serif; color: #333; font-weight: 600;
-            white-space: normal; line-height: 1.3; text-decoration: none; transition: color 0.3s;
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            font-weight: 600;
+            white-space: normal;
+            line-height: 1.3;
+            text-decoration: none;
+            transition: color 0.3s;
             margin-bottom: 1.25rem;
         }
-        .side-nav li a:hover { color: var(--color-orange); }
-        .nav-top-level { text-transform: uppercase; margin-top: 1.5rem; }
-        .nav-subset { margin-left: 32px; font-size: 0.95em; }
+
+        .side-nav li a:hover {
+            color: var(--color-orange);
+        }
+
+        .nav-top-level {
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+        }
+
+        .nav-subset {
+            margin-left: 32px;
+            font-size: 0.95em;
+        }
 
         /* =========================================
            Navigation 2: Right Floating Mini Nav
            ========================================= */
         .mini-nav {
-            position: fixed; top: 50%; right: 1.5rem; transform: translateY(-50%); z-index: 900;
-            background: var(--color-paper-light); border: 2px solid var(--color-blue-slate);
-            border-radius: 50px; padding: 0.75rem 0.5rem; display: flex; flex-direction: column; align-items: center;
+            position: fixed;
+            top: 50%;
+            right: 1.5rem;
+            transform: translateY(-50%);
+            z-index: 900;
+            background: var(--color-paper-light);
+            border: 2px solid var(--color-blue-slate);
+            border-radius: 50px;
+            padding: 0.75rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             box-shadow: 4px 6px 15px rgba(92, 114, 133, 0.2);
-            transition: all 0.5s ease; gap: 0.75rem;
+            transition: all 0.5s ease;
+            gap: 0.75rem;
         }
 
-        .mini-nav.idle { padding: 0.5rem; gap: 0; border-color: transparent; background: transparent; box-shadow: none; }
-        .mini-nav:hover { opacity: 1 !important; border-color: var(--color-blue-slate); background: var(--color-paper-light); box-shadow: 4px 6px 15px rgba(92, 114, 133, 0.2); }
+        .mini-nav.idle {
+            padding: 0.5rem;
+            gap: 0;
+            border-color: transparent;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .mini-nav:hover {
+            opacity: 1 !important;
+            border-color: var(--color-blue-slate);
+            background: var(--color-paper-light);
+            box-shadow: 4px 6px 15px rgba(92, 114, 133, 0.2);
+        }
 
         .mini-nav-item {
-            position: relative; display: flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; border-radius: 50%; cursor: pointer; text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); overflow: hidden; opacity: 1; transform: scale(1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            opacity: 1;
+            transform: scale(1);
         }
-        .mini-nav-item:hover, .mini-nav-item.active { background: var(--color-orange-wash); }
-        .mini-nav-item svg { width: 20px; height: 20px; fill: var(--color-blue-slate); transition: fill 0.3s; }
-        .mini-nav-item:hover svg, .mini-nav-item.active svg { fill: var(--color-orange); }
 
-        .mini-nav.idle .mini-nav-item:not(.active) { height: 0; opacity: 0; transform: scale(0); pointer-events: none; margin: 0; padding: 0; }
+        .mini-nav-item:hover,
+        .mini-nav-item.active {
+            background: var(--color-orange-wash);
+        }
+
+        .mini-nav-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-blue-slate);
+            transition: fill 0.3s;
+        }
+
+        .mini-nav-item:hover svg,
+        .mini-nav-item.active svg {
+            fill: var(--color-orange);
+        }
+
+        .mini-nav.idle .mini-nav-item:not(.active) {
+            height: 0;
+            opacity: 0;
+            transform: scale(0);
+            pointer-events: none;
+            margin: 0;
+            padding: 0;
+        }
 
         .tooltip {
-            position: absolute; right: 130%; top: 50%; transform: translateY(-50%) translateX(10px);
-            background: var(--color-paper-light); border: 1px solid var(--color-blue-slate); color: var(--color-blue-slate);
-            padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 800; font-family: 'Montserrat', sans-serif;
-            white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.2s ease;
-            box-shadow: 2px 4px 8px rgba(0,0,0,0.1); pointer-events: none;
+            position: absolute;
+            right: 130%;
+            top: 50%;
+            transform: translateY(-50%) translateX(10px);
+            background: var(--color-paper-light);
+            border: 1px solid var(--color-blue-slate);
+            color: var(--color-blue-slate);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
         }
-        .mini-nav-item:hover .tooltip { opacity: 1; visibility: visible; transform: translateY(-50%) translateX(0); }
+
+        .mini-nav-item:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) translateX(0);
+        }
 
         /* =========================================
            Mobile Responsiveness
            ========================================= */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .section-title { font-size: 2.25rem; }
-            .cs-title { font-size: 1.75rem; }
-            .improve-section { padding: 1.5rem; }
-            .hero-row { flex-direction: column; text-align: center; gap: 2rem; padding: 2rem 1.5rem; border-radius: 24px; }
-            .hero-photo-wrap { margin: 0 auto; flex: 0 0 auto; }
-            .hero-photo-frame { width: 170px; height: 170px; }
-            
+
+            /* Top Hero Statement Mobile */
+            .hero-statement-section {
+                min-height: 75vh;
+                padding: 6.5rem 1.25rem 3.5rem;
+            }
+
+            .hero-bg-img {
+                -webkit-mask-image: radial-gradient(ellipse 90% 64% at 50% 46%, transparent 38%, rgba(0, 0, 0, 0.3) 60%, black 88%);
+                mask-image: radial-gradient(ellipse 90% 64% at 50% 46%, transparent 38%, rgba(0, 0, 0, 0.3) 60%, black 88%);
+            }
+
+            .hero-statement-inner {
+                padding: 1.5rem 0.5rem;
+                gap: 1.75rem;
+            }
+
+            .hero-statement-title {
+                font-size: clamp(2rem, 7.5vw, 2.75rem);
+                line-height: 1.28;
+            }
+
+            .hero-backstory-text {
+                font-size: 1.05rem;
+            }
+
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .cs-title {
+                font-size: 1.75rem;
+            }
+
+            .improve-section {
+                padding: 1.5rem;
+            }
+
+            .hero-row {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+
+            .hero-photo-wrap {
+                margin: 0 auto;
+                flex: 0 0 auto;
+            }
+
+            .hero-photo-frame {
+                width: 170px;
+                height: 170px;
+            }
+
             /* Levelling Up Mobile Timeline */
             .timeline-milestones {
                 grid-template-columns: 1fr;
                 gap: 2.75rem;
                 padding-left: 2.5rem;
             }
+
             .timeline-track-svg {
-                -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 92%, rgba(0,0,0,0) 100%);
-                mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 92%, rgba(0,0,0,0) 100%);
+                -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 92%, rgba(0, 0, 0, 0) 100%);
+                mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 92%, rgba(0, 0, 0, 0) 100%);
             }
+
             .milestone-node-wrap {
                 margin-left: -2.5rem;
                 flex-direction: row;
@@ -727,10 +1353,12 @@
                 gap: 1rem;
                 margin-bottom: 0.75rem;
             }
+
             .milestone-dot {
                 margin-left: 8px;
                 order: -1;
             }
+
             .milestone-badge {
                 margin-bottom: 0;
             }
@@ -740,44 +1368,57 @@
                 grid-template-columns: 1fr;
                 gap: 2.75rem;
             }
+
             .hobby-photo-wrap {
                 max-width: 340px;
                 margin: 0 auto;
             }
+
             .hobby-card {
                 text-align: center;
             }
 
-            .resume-card { padding: 2.5rem 1.5rem; border-radius: 24px; }
+            .resume-card {
+                padding: 2.5rem 1.5rem;
+                border-radius: 24px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Fixed Hamburger Icon -->
     <button id="openNav" aria-label="Open Navigation">
-        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path></svg>
+        <svg viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path>
+        </svg>
     </button>
-    
+
     <!-- Left Sidebar Nav -->
     <div class="side-nav-overlay" id="navOverlay"></div>
     <nav class="side-nav" id="sideNav">
         <button class="close-nav-btn" id="closeNav" aria-label="Close Navigation">
-            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z">
+                </path>
+            </svg>
         </button>
         <ul>
+            <li><a href="#hero" class="nav-top-level">HOME</a></li>
             <li><a href="#about" class="nav-top-level">ABOUT ME</a></li>
             <li><a href="#services" class="nav-top-level">MY SERVICES</a></li>
-            
+
             <li><a href="#pro-projects" class="nav-top-level">PROFESSIONAL PROJECTS</a></li>
             <li><a href="#cs1" class="nav-subset">CS1: 12-Year Development Roadmap</a></li>
             <li><a href="#cs3" class="nav-subset">CS2: Physical Storage Configuration Revamp</a></li>
             <li><a href="#cs4" class="nav-subset">CS3: Frontline Service Recovery Framework</a></li>
-            
+
             <li><a href="#personal-projects" class="nav-top-level">PERSONAL PROJECTS</a></li>
             <li><a href="#cs2" class="nav-subset">CS4: Turning Saved Places Into a Trip</a></li>
             <li><a href="#cs5" class="nav-subset">CS5: The Thinking Belle</a></li>
-            
+
             <li><a href="#connect" class="nav-top-level">LET'S CONNECT</a></li>
             <li><a href="#resume" class="nav-top-level">RESUME</a></li>
         </ul>
@@ -785,35 +1426,88 @@
 
     <!-- Right Floating Mini Nav -->
     <nav class="mini-nav idle" id="rightNav">
-        <!-- Home (About) -->
+        <!-- Home (Hero) -->
+        <a href="#hero" class="mini-nav-item nav-tracker active" data-target="hero">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+            </svg><span class="tooltip">Home</span>
+        </a>
+        <!-- About Me -->
         <a href="#about" class="mini-nav-item nav-tracker" data-target="about">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg><span class="tooltip">About Me</span>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                </path>
+            </svg><span class="tooltip">About Me</span>
         </a>
         <!-- Verified Badge (Services) -->
         <a href="#services" class="mini-nav-item nav-tracker" data-target="services">
-            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg><span class="tooltip">My Services</span>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z">
+                </path>
+            </svg><span class="tooltip">My Services</span>
         </a>
         <!-- Briefcase (Pro Projects) -->
-        <a href="#pro-projects" class="mini-nav-item nav-tracker active" data-target="pro-projects">
-            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg><span class="tooltip">Professional Projects</span>
+        <a href="#pro-projects" class="mini-nav-item nav-tracker" data-target="pro-projects">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z">
+                </path>
+            </svg><span class="tooltip">Professional Projects</span>
         </a>
         <!-- Open Book (Personal Projects) -->
         <a href="#personal-projects" class="mini-nav-item nav-tracker" data-target="personal-projects">
-            <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zM11 18.49c-1.5-.7-3.4-1-5-1-1.2 0-2.4.2-3.5.6v-11c1-.4 2.2-.6 3.5-.6 1.6 0 3.5.3 5 1v11zm10 .5c-1.1-.4-2.3-.6-3.5-.6-1.6 0-3.5.3-5 1v-11c1.5-.7 3.4-1 5-1 1.2 0 2.4.2 3.5.6v11z"></path></svg><span class="tooltip">Personal Projects</span>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zM11 18.49c-1.5-.7-3.4-1-5-1-1.2 0-2.4.2-3.5.6v-11c1-.4 2.2-.6 3.5-.6 1.6 0 3.5.3 5 1v11zm10 .5c-1.1-.4-2.3-.6-3.5-.6-1.6 0-3.5.3-5 1v-11c1.5-.7 3.4-1 5-1 1.2 0 2.4.2 3.5.6v11z">
+                </path>
+            </svg><span class="tooltip">Personal Projects</span>
         </a>
         <!-- Mail (Connect) -->
         <a href="#connect" class="mini-nav-item nav-tracker" data-target="connect">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg><span class="tooltip">Let's Connect</span>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                </path>
+            </svg><span class="tooltip">Let's Connect</span>
         </a>
         <!-- Document (Resume) -->
         <a href="#resume" class="mini-nav-item nav-tracker" data-target="resume">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span class="tooltip">Resume</span>
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg><span class="tooltip">Resume</span>
         </a>
     </nav>
 
+    <!-- 0. HERO STATEMENT BANNER -->
+    <header id="hero" class="hero-statement-section scroll-section">
+        <div class="hero-bg-container">
+            <img src="portfolio-images/hero-images/hero-bg.webp" alt="Atmospheric painted countryside landscape" class="hero-bg-img">
+            <div class="hero-bg-wash"></div>
+        </div>
+
+        <div class="hero-statement-inner">
+            <h1 class="hero-statement-title">
+                <span class="hl-architect">Service Architect</span> designing systems that make <span
+                    class="hl-experience">purposeful experiences</span> possible.
+            </h1>
+            <a href="#about" class="hero-scroll-trigger" aria-label="Uncover my backstory and scroll down to About Me">
+                <span class="hero-backstory-text">Uncover my backstory</span>
+                <div class="hero-scroll-cue">
+                    <span class="scroll-cue-text">SCROLL DOWN</span>
+                    <svg viewBox="0 0 24 24" class="scroll-cue-arrow">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="container">
-        
+
         <!-- 1. ABOUT ME -->
         <section id="about" class="section-margin scroll-section">
             <h2 class="section-title">ABOUT ME</h2>
@@ -822,7 +1516,9 @@
             <div class="hero-row">
                 <div class="hero-photo-wrap">
                     <div class="hero-photo-frame">
-                        <img src="portfolio-images/aboutme-images/aboutme-image.webp?v=2" alt="Joshua Farrock" class="hero-photo" onerror="this.style.display='none'; document.getElementById('profileAvatarFallback').style.display='flex';">
+                        <img src="portfolio-images/aboutme-images/aboutme-image.webp?v=2" alt="Joshua Farrock"
+                            class="hero-photo"
+                            onerror="this.style.display='none'; document.getElementById('profileAvatarFallback').style.display='flex';">
                         <div class="hero-avatar-fallback" id="profileAvatarFallback" style="display: none;">
                             <span>JF</span>
                             <span class="fallback-sub">Joshua</span>
@@ -832,11 +1528,17 @@
                 <div class="hero-content">
                     <h1>Hi, I’m Joshua.</h1>
                     <p class="hero-body">
-                        I design immersive, purposeful experiences that make people want to return. Whether navigating a complex physical environment, engaging with an interactive destination, or using a digital service, I focus on the "why" behind human behaviour. Inspired by the psychology of how we form memories, my goal is to craft seamless, delightful touchpoints that leave a lasting positive impression.
+                        I design immersive, purposeful experiences that make people want to return. Whether navigating a
+                        complex physical environment, engaging with an interactive destination, or using a digital
+                        service, I focus on the "why" behind human behaviour. Inspired by the psychology of how we form
+                        memories, my goal is to craft seamless, delightful touchpoints that leave a lasting positive
+                        impression.
                     </p>
                     <p class="hero-contact">
-                        <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a> | +65 9651 3048 | 
-                        <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/joshua-farrock</a>
+                        <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a> | +65
+                        9651 3048 |
+                        <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer"
+                            class="contact-link">linkedin.com/in/joshua-farrock</a>
                     </p>
                 </div>
             </div>
@@ -845,7 +1547,9 @@
             <div class="leveling-section">
                 <div class="leveling-header">
                     <h3 class="leveling-title">Levelling Up</h3>
-                    <p class="leveling-subtitle" title="A progressive trajectory across research, operational design, and behavioural science.">A progressive trajectory across research, operational design, and behavioural science.</p>
+                    <p class="leveling-subtitle"
+                        title="A progressive trajectory across research, operational design, and behavioural science.">A
+                        progressive trajectory across research, operational design, and behavioural science.</p>
                 </div>
 
                 <div class="timeline-container" id="timelineContainer">
@@ -863,7 +1567,9 @@
                             </div>
                             <div class="milestone-content">
                                 <h4 class="milestone-subheading" style="color: var(--color-blue);">Where I've Been</h4>
-                                <p class="milestone-body">Over 9 years driving service transformation, generative user research, and process optimisation within complex, large-scale customer ecosystems.</p>
+                                <p class="milestone-body">Over 9 years driving service transformation, generative user
+                                    research, and process optimisation within complex, large-scale customer ecosystems.
+                                </p>
                             </div>
                         </div>
 
@@ -874,8 +1580,11 @@
                                 <div class="milestone-dot dot-orange" id="dot2"></div>
                             </div>
                             <div class="milestone-content">
-                                <h4 class="milestone-subheading" style="color: var(--color-orange);">What I'm Building Now</h4>
-                                <p class="milestone-body">Bridging my operational foundation with digital innovation. I'm actively expanding my toolkit into AI-powered UX, digital product strategy, and rapid prototyping with emerging technologies.</p>
+                                <h4 class="milestone-subheading" style="color: var(--color-orange);">What I'm Building
+                                    Now</h4>
+                                <p class="milestone-body">Bridging my operational foundation with digital innovation.
+                                    I'm actively expanding my toolkit into AI-powered UX, digital product strategy, and
+                                    rapid prototyping with emerging technologies.</p>
                             </div>
                         </div>
 
@@ -886,8 +1595,11 @@
                                 <div class="milestone-dot dot-green" id="dot3"></div>
                             </div>
                             <div class="milestone-content">
-                                <h4 class="milestone-subheading" style="color: var(--color-green);">Where I'm Heading</h4>
-                                <p class="milestone-body">Commencing a BSc in Psychology in early 2027. I want to deepen my understanding of human motivations, behavioural science, and the cognitive mechanics that make an experience truly resonate.</p>
+                                <h4 class="milestone-subheading" style="color: var(--color-green);">Where I'm Heading
+                                </h4>
+                                <p class="milestone-body">Commencing a BSc in Psychology in early 2027. I want to deepen
+                                    my understanding of human motivations, behavioural science, and the cognitive
+                                    mechanics that make an experience truly resonate.</p>
                             </div>
                         </div>
                     </div>
@@ -904,28 +1616,35 @@
                     <!-- Block 1 -->
                     <div class="hobby-card">
                         <div class="hobby-photo-wrap" style="border-color: var(--color-blue);">
-                            <img src="portfolio-images/aboutme-images/worldbuilding.webp?v=2" alt="Stories & World-Building" class="hobby-img">
+                            <img src="portfolio-images/aboutme-images/worldbuilding.webp?v=2"
+                                alt="Stories & World-Building" class="hobby-img">
                         </div>
                         <h4 class="hobby-subheading" style="color: var(--color-blue);">Stories &amp; World-Building</h4>
-                        <p class="hobby-body">Exploring open-world and strategy RPGs on my Switch and iPad, alongside epic fantasy fiction, Korean regression manhwa, high-fantasy anime, and books on leadership and behavioural psychology.</p>
+                        <p class="hobby-body">Exploring open-world and strategy RPGs on my Switch and iPad, alongside
+                            epic fantasy fiction, Korean regression manhwa, high-fantasy anime, and books on leadership
+                            and behavioural psychology.</p>
                     </div>
 
                     <!-- Block 2 -->
                     <div class="hobby-card">
                         <div class="hobby-photo-wrap" style="border-color: var(--color-orange);">
-                            <img src="portfolio-images/aboutme-images/staying-active.webp?v=2" alt="Staying Active" class="hobby-img">
+                            <img src="portfolio-images/aboutme-images/staying-active.webp?v=2" alt="Staying Active"
+                                class="hobby-img">
                         </div>
                         <h4 class="hobby-subheading" style="color: var(--color-orange);">Staying Active</h4>
-                        <p class="hobby-body">Hitting the gym, cycling, swimming, and taking long walks with my wife.</p>
+                        <p class="hobby-body">Hitting the gym, cycling, swimming, and taking long walks with my wife.
+                        </p>
                     </div>
 
                     <!-- Block 3 -->
                     <div class="hobby-card">
                         <div class="hobby-photo-wrap" style="border-color: var(--color-green);">
-                            <img src="portfolio-images/aboutme-images/hands-on-crafting.webp?v=2" alt="Hands-On Crafting" class="hobby-img">
+                            <img src="portfolio-images/aboutme-images/hands-on-crafting.webp?v=2"
+                                alt="Hands-On Crafting" class="hobby-img">
                         </div>
                         <h4 class="hobby-subheading" style="color: var(--color-green);">Hands-On Crafting</h4>
-                        <p class="hobby-body">Dabbling in metalwork, leathercraft, and woodwork. Pottery was the most fun—at least until I officially ran out of storage space for all my creations.</p>
+                        <p class="hobby-body">Dabbling in metalwork, leathercraft, and woodwork. Pottery was the most
+                            fun—at least until I officially ran out of storage space for all my creations.</p>
                     </div>
                 </div>
             </div>
@@ -935,29 +1654,42 @@
         <section id="services" class="section-margin scroll-section">
             <h2 class="section-title">MY SERVICES</h2>
             <p class="intro-special">Bridging Generative Research, Physical Operations, and Service Architecture</p>
-            <p>With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
-            <p>Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through proven methodologies and innovative tools—translating academic insights into practical value for your organisation.</p>
+            <p>With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous
+                operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently
+                augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
+            <p>Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my goal is to drive immediate impact through
+                proven methodologies and innovative tools—translating academic insights into practical value for your
+                organisation.</p>
 
             <div class="pillars-grid">
                 <a href="#cs2" class="organic-card pillar-card border-green">
                     <h4 style="color: var(--color-green);">EVIDENCE-BASED UX RESEARCH</h4>
                     <span class="meta-tag">Generative Methodologies</span>
-                    <p>Grounding strategic designs in mixed-methods user research and behavioural psychology to bridge the gap between digital discovery and real-world human friction.</p>
+                    <p>Grounding strategic designs in mixed-methods user research and behavioural psychology to bridge
+                        the gap between digital discovery and real-world human friction.</p>
                 </a>
                 <a href="#cs3" class="organic-card pillar-card border-orange">
                     <h4 style="color: var(--color-orange);">SERVICE ERGONOMICS &amp; 5S</h4>
-                    <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">Ethnographic &amp; Workflow Audits</span>
-                    <p>Applying 5S Lean methodologies and ethnographic research to eliminate cognitive load, prototype physical solutions, and streamline complex logistical workflows.</p>
+                    <span class="meta-tag"
+                        style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">Ethnographic
+                        &amp; Workflow Audits</span>
+                    <p>Applying 5S Lean methodologies and ethnographic research to eliminate cognitive load, prototype
+                        physical solutions, and streamline complex logistical workflows.</p>
                 </a>
                 <a href="#cs1" class="organic-card pillar-card border-blue">
                     <h4>STRATEGIC ARCHITECTURE</h4>
-                    <span class="meta-tag" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel Execution</span>
-                    <p>Translating conceptual experiences into backstage playbooks and strict compliance protocols, achieving high user retention and frontline incident eradication.</p>
+                    <span class="meta-tag"
+                        style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">Omni-channel
+                        Execution</span>
+                    <p>Translating conceptual experiences into backstage playbooks and strict compliance protocols,
+                        achieving high user retention and frontline incident eradication.</p>
                 </a>
                 <a href="#cs5" class="organic-card pillar-card border-green">
                     <h4 style="color: var(--color-green);">EMERGING TECH EXPLORATION</h4>
                     <span class="meta-tag">RAPID PROTOTYPING &amp; AUTOMATION</span>
-                    <p>Embracing emerging technologies to solve complex operational bottlenecks, demonstrating a readiness to learn and prototype unconventional solutions—like automated multi-agent ecosystems—to eliminate manual friction.</p>
+                    <p>Embracing emerging technologies to solve complex operational bottlenecks, demonstrating a
+                        readiness to learn and prototype unconventional solutions—like automated multi-agent
+                        ecosystems—to eliminate manual friction.</p>
                 </a>
             </div>
         </section>
@@ -972,69 +1704,91 @@
             <div id="cs1" class="cs-wrapper">
                 <span class="meta-tag">CASE STUDY 01</span>
                 <h3 class="cs-title">12-Year Development Roadmap</h3>
-                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Lead Service Designer</p>
-                
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Lead Service Designer
+                </p>
+
                 <div class="cs-row">
                     <div class="cs-text">
                         <blockquote class="insight-quote-left">
-                            "Parent anxiety peaked not just during academic exams, but much earlier before exams and during school transitions—revealing touchpoints gaps and opportunities."
+                            "Parent anxiety peaked not just during academic exams, but much earlier before exams and
+                            during school transitions—revealing touchpoints gaps and opportunities."
                         </blockquote>
                         <h5>CHALLENGE</h5>
-                        <p><strong>Fragmented Handoff Gaps:</strong> Isolated programmatic events across a 12-year span caused severe engagement drop-offs. Siloed departmental handoffs risked further drop-offs and critical PDPA privacy breaches.</p>
+                        <p><strong>Fragmented Handoff Gaps:</strong> Isolated programmatic events across a 12-year span
+                            caused severe engagement drop-offs. Siloed departmental handoffs risked further drop-offs
+                            and critical PDPA privacy breaches.</p>
                         <h5>METHODOLOGY</h5>
-                        <p><strong>Generative Journey Mapping:</strong> Conducted interviews and surveys to synthesise needs across 8 developmental categories. Mapped multi-platform transition paths anchored to academic and age-specific milestones.</p>
+                        <p><strong>Generative Journey Mapping:</strong> Conducted interviews and surveys to synthesise
+                            needs across 8 developmental categories. Mapped multi-platform transition paths anchored to
+                            academic and age-specific milestones.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Qualitative research and card sorting of all points into 8 developmental categories via Miro.">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Qualitative research and card sorting of all points into 8 developmental categories via Miro.">
                                 <picture>
                                     <source srcset="portfolio-images/cs1-images/1.1.webp" type="image/webp">
-                                    <img src="portfolio-images/cs1-images/1.1.png" loading="lazy" alt="Qualitative research and card sorting">
+                                    <img src="portfolio-images/cs1-images/1.1.png" loading="lazy"
+                                        alt="Qualitative research and card sorting">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Translating 8 categories of qualitative developmental research into long-term organisational strategy.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Translating 8 categories of qualitative developmental research into long-term organisational strategy.">
                                 <picture>
                                     <source srcset="portfolio-images/cs1-images/1.2.webp" type="image/webp">
-                                    <img src="portfolio-images/cs1-images/1.2.png" loading="lazy" alt="Translating 8 categories">
+                                    <img src="portfolio-images/cs1-images/1.2.png" loading="lazy"
+                                        alt="Translating 8 categories">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Qualitative research and card sorting of all points into 8 developmental categories via Miro.</div>
+                        <div class="dynamic-caption-container">Qualitative research and card sorting of all points into
+                            8 developmental categories via Miro.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
                         <blockquote class="insight-quote-right">
-                            "Sustainable long-term retention requires bridging front-stage experiences with backstage rigor."
+                            "Sustainable long-term retention requires bridging front-stage experiences with backstage
+                            rigor."
                         </blockquote>
                         <h5>ECOSYSTEM SOLUTION</h5>
-                        <p><strong>Targeted Channels &amp; Protocols:</strong> Reorganised fragmented events and introduced a dual-track ecosystem. Built a paced omnichannel calendar with strict IT database transfer protocols.</p>
+                        <p><strong>Targeted Channels &amp; Protocols:</strong> Reorganised fragmented events and
+                            introduced a dual-track ecosystem. Built a paced omnichannel calendar with strict IT
+                            database transfer protocols.</p>
                         <h5>STRATEGIC OUTCOME</h5>
-                        <p><strong>100% Adoption | 70%+ Retention | 0 Data Breaches</strong><br>Adopted as the foundational strategy governing long-term experience design across 4,000+ members.</p>
+                        <p><strong>100% Adoption | 70%+ Retention | 0 Data Breaches</strong><br>Adopted as the
+                            foundational strategy governing long-term experience design across 4,000+ members.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.">
                                 <picture>
                                     <source srcset="portfolio-images/cs1-images/1.3.webp" type="image/webp">
-                                    <img src="portfolio-images/cs1-images/1.3.png" loading="lazy" alt="Identifying handoff vulnerabilities">
+                                    <img src="portfolio-images/cs1-images/1.3.png" loading="lazy"
+                                        alt="Identifying handoff vulnerabilities">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Translating 8 developmental categories into a compliant backstage transition eliminated drop-off friction across 8 consecutive years.">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Translating 8 developmental categories into a compliant backstage transition eliminated drop-off friction across 8 consecutive years.">
                                 <picture>
                                     <source srcset="portfolio-images/cs1-images/1.4.webp" type="image/webp">
-                                    <img src="portfolio-images/cs1-images/1.4.png" loading="lazy" alt="Translating categories into transition">
+                                    <img src="portfolio-images/cs1-images/1.4.png" loading="lazy"
+                                        alt="Translating categories into transition">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Identifying handoff vulnerabilities between siloed departments to design an optimised omnichannel transition.</div>
+                        <div class="dynamic-caption-container">Identifying handoff vulnerabilities between siloed
+                            departments to design an optimised omnichannel transition.</div>
                     </div>
                 </div>
-                
+
                 <div class="improve-section">
                     <h5>WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p><b>Dynamic &amp; Strategic real-time calibration</b><br>Replace static internal annual reviews with automated digital pulse-surveys or strategic interviews after key initiatives to dynamically tailor parent and child resources in real time.</p>
+                    <p><b>Dynamic &amp; Strategic real-time calibration</b><br>Replace static internal annual reviews
+                        with automated digital pulse-surveys or strategic interviews after key initiatives to
+                        dynamically tailor parent and child resources in real time.</p>
                 </div>
             </div>
 
@@ -1042,24 +1796,32 @@
             <div id="cs3" class="cs-wrapper">
                 <span class="meta-tag">CASE STUDY 02</span>
                 <h3 class="cs-title">Physical Storage Configuration Revamp</h3>
-                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
-                
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp;
+                    Service Design Lead</p>
+
                 <div class="cs-row reverse">
                     <div class="cs-text">
                         <h5>CHALLENGE</h5>
-                        <p><strong>High Cognitive Load &amp; Failure Risks:</strong> Fragmented weekly supply logistics created immense cognitive load for volunteer seniors. This chaotic loop introduced significant failure risks and friction during high-volume service delivery.</p>
+                        <p><strong>High Cognitive Load &amp; Failure Risks:</strong> Fragmented weekly supply logistics
+                            created immense cognitive load for volunteer seniors. This chaotic loop introduced
+                            significant failure risks and friction during high-volume service delivery.</p>
                         <h5>METHODOLOGY</h5>
-                        <p><strong>5S Lean &amp; Ethnographic Prototyping:</strong> Applied 5S Lean methodology and conducted ethnographic research to analyse live workflows. Created low-fidelity mockups to test layout alternatives before final fabrication.</p>
+                        <p><strong>5S Lean &amp; Ethnographic Prototyping:</strong> Applied 5S Lean methodology and
+                            conducted ethnographic research to analyse live workflows. Created low-fidelity mockups to
+                            test layout alternatives before final fabrication.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.">
                                 <picture>
                                     <source srcset="portfolio-images/cs2-images/2.1.webp" type="image/webp">
-                                    <img src="portfolio-images/cs2-images/2.1.png" loading="lazy" alt="Fragmented flight case">
+                                    <img src="portfolio-images/cs2-images/2.1.png" loading="lazy"
+                                        alt="Fragmented flight case">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Low-fidelity mockups created to test layout alternatives before moving to final fabrication.">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Low-fidelity mockups created to test layout alternatives before moving to final fabrication.">
                                 <div class="split-frame">
                                     <picture>
                                         <source srcset="portfolio-images/cs2-images/2.2.1.webp" type="image/webp">
@@ -1072,42 +1834,56 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Before: Fragmented and cluttered flight case causing high cognitive load and logistical friction.</div>
+                        <div class="dynamic-caption-container">Before: Fragmented and cluttered flight case causing high
+                            cognitive load and logistical friction.</div>
                     </div>
                 </div>
 
                 <div class="cs-row">
                     <div class="cs-text">
                         <blockquote class="insight-quote-left">
-                            "The operational bottleneck was not a lack of manpower, but a chaotic physical layout that overwhelmed volunteers with high cognitive load."
+                            "The operational bottleneck was not a lack of manpower, but a chaotic physical layout that
+                            overwhelmed volunteers with high cognitive load."
                         </blockquote>
                         <h5>ECOSYSTEM SOLUTION</h5>
-                        <p><strong>Custom 5S Modular Storage Setups:</strong> Transitioned from cardboard prototypes to finalised 5S modular storage setups, utilising custom-sized carton configurations for optimised space utilisation.</p>
+                        <p><strong>Custom 5S Modular Storage Setups:</strong> Transitioned from cardboard prototypes to
+                            finalised 5S modular storage setups, utilising custom-sized carton configurations for
+                            optimised space utilisation.</p>
                         <h5>STRATEGIC OUTCOME</h5>
-                        <p><strong>100% Adoption &amp; Zero Downtime.</strong> Completely eliminated weekly supply logistical friction. Successfully shifted the operation from a chaotic packing loop into a streamlined, guided workflow.</p>
+                        <p><strong>100% Adoption &amp; Zero Downtime.</strong> Completely eliminated weekly supply
+                            logistical friction. Successfully shifted the operation from a chaotic packing loop into a
+                            streamlined, guided workflow.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.">
                                 <picture>
                                     <source srcset="portfolio-images/cs2-images/2.3.webp" type="image/webp">
-                                    <img src="portfolio-images/cs2-images/2.3.png" loading="lazy" alt="Finalised 5S modular storage">
+                                    <img src="portfolio-images/cs2-images/2.3.png" loading="lazy"
+                                        alt="Finalised 5S modular storage">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Transitioning from a high-friction logistical loop to a standardised, 5S-driven operational workflow.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Transitioning from a high-friction logistical loop to a standardised, 5S-driven operational workflow.">
                                 <picture>
                                     <source srcset="portfolio-images/cs2-images/2.4.webp" type="image/webp">
-                                    <img src="portfolio-images/cs2-images/2.4.png" loading="lazy" alt="Streamlined loop">
+                                    <img src="portfolio-images/cs2-images/2.4.png" loading="lazy"
+                                        alt="Streamlined loop">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">After: Finalised 5S modular storage configuration eliminating operational friction and securing 100% departmental adoption.</div>
+                        <div class="dynamic-caption-container">After: Finalised 5S modular storage configuration
+                            eliminating operational friction and securing 100% departmental adoption.</div>
                     </div>
                 </div>
 
                 <div class="improve-section">
                     <h5>WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to other high-volume operations to standardise logistics across the entire organisation.<br>Explore integrating a lightweight digital inventory tracking system to transition from manual visual checks to predictive, automated supply restocking.</p>
+                    <p><strong>Spatial Scaling &amp; Predictive Restocking</strong><br>Scale the 5S modular system to
+                        other high-volume operations to standardise logistics across the entire organisation.<br>Explore
+                        integrating a lightweight digital inventory tracking system to transition from manual visual
+                        checks to predictive, automated supply restocking.</p>
                 </div>
             </div>
 
@@ -1115,66 +1891,86 @@
             <div id="cs4" class="cs-wrapper" style="border: none;">
                 <span class="meta-tag">CASE STUDY 03</span>
                 <h3 class="cs-title">Frontline Service Recovery Framework</h3>
-                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp; Service Design Lead</p>
-                
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Operations &amp;
+                    Service Design Lead</p>
+
                 <div class="cs-row">
                     <div class="cs-text">
                         <h5>CHALLENGE</h5>
-                        <p><strong>Frontline Failure Risks:</strong> Uncommunicated backstage policies led to recurring weekly service failures—culminating in asset custody mismatches, lost items, and mounting parent complaints.</p>
+                        <p><strong>Frontline Failure Risks:</strong> Uncommunicated backstage policies led to recurring
+                            weekly service failures—culminating in asset custody mismatches, lost items, and mounting
+                            parent complaints.</p>
                         <h5>METHODOLOGY</h5>
-                        <p><strong>Systemic Root-Cause Audit:</strong> Partnered with on-ground leads to shadow live operations and trace breakdowns between compliance guidelines and ground-level volunteers.</p>
+                        <p><strong>Systemic Root-Cause Audit:</strong> Partnered with on-ground leads to shadow live
+                            operations and trace breakdowns between compliance guidelines and ground-level volunteers.
+                        </p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.">
                                 <picture>
                                     <source srcset="portfolio-images/cs3-images/3.1.webp" type="image/webp">
-                                    <img src="portfolio-images/cs3-images/3.1.png" loading="lazy" alt="Root Cause Audit">
+                                    <img src="portfolio-images/cs3-images/3.1.png" loading="lazy"
+                                        alt="Root Cause Audit">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Tracing frontline confusion directly back to dormant, uncommunicated policies rather than execution failure.</div>
+                        <div class="dynamic-caption-container">Tracing frontline confusion directly back to dormant,
+                            uncommunicated policies rather than execution failure.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
                         <blockquote class="insight-quote-right">
-                            "Operational Disconnect: Long-form compliance manuals fail in high-speed, live operational environments."
+                            "Operational Disconnect: Long-form compliance manuals fail in high-speed, live operational
+                            environments."
                         </blockquote>
                         <h5>ECOSYSTEM SOLUTION</h5>
-                        <p><strong>Visual Reference &amp; SLA:</strong> Redesigned dense rules into an actionable Visual Reference Blueprint. Enforced a time-bound SLA: 1-Day Triage, 2-Day Recovery Plan, Target Weekend Resolution.</p>
+                        <p><strong>Visual Reference &amp; SLA:</strong> Redesigned dense rules into an actionable Visual
+                            Reference Blueprint. Enforced a time-bound SLA: 1-Day Triage, 2-Day Recovery Plan, Target
+                            Weekend Resolution.</p>
                         <h5>STRATEGIC OUTCOME</h5>
-                        <p><strong>100% Incident Eradication in 30 Days.</strong> Empowered frontline teams with active operational guardrails to resolve complaints autonomously with continuous service assurance.</p>
+                        <p><strong>100% Incident Eradication in 30 Days.</strong> Empowered frontline teams with active
+                            operational guardrails to resolve complaints autonomously with continuous service assurance.
+                        </p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Strict time-bound guardrails provide operational accountability and continuous service assurance.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Strict time-bound guardrails provide operational accountability and continuous service assurance.">
                                 <picture>
                                     <source srcset="portfolio-images/cs3-images/3.4.webp" type="image/webp">
                                     <img src="portfolio-images/cs3-images/3.4.png" loading="lazy" alt="Recovery SLA">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Translating dense policy documentation into easy-to-understand visual playbook">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Translating dense policy documentation into easy-to-understand visual playbook">
                                 <div class="split-frame">
                                     <picture>
                                         <source srcset="portfolio-images/cs3-images/3.2.webp" type="image/webp">
-                                        <img src="portfolio-images/cs3-images/3.2.png" loading="lazy" alt="Playbook Part 1">
+                                        <img src="portfolio-images/cs3-images/3.2.png" loading="lazy"
+                                            alt="Playbook Part 1">
                                     </picture>
                                     <picture>
                                         <source srcset="portfolio-images/cs3-images/3.3.webp" type="image/webp">
-                                        <img src="portfolio-images/cs3-images/3.3.png" loading="lazy" alt="Playbook Part 2">
+                                        <img src="portfolio-images/cs3-images/3.3.png" loading="lazy"
+                                            alt="Playbook Part 2">
                                     </picture>
                                 </div>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Strict time-bound guardrails provide operational accountability and continuous service assurance.</div>
+                        <div class="dynamic-caption-container">Strict time-bound guardrails provide operational
+                            accountability and continuous service assurance.</div>
                     </div>
                 </div>
-                
+
                 <div class="improve-section">
                     <h5>WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF reference deck into an interactive mobile decision-tree for live shifts and escalation triggers, paired with lightweight incident tagging to spot friction trends early.</p>
+                    <p><strong>Mobile Decision Tree &amp; Predictive Tagging</strong><br>Convert the static PDF
+                        reference deck into an interactive mobile decision-tree for live shifts and escalation triggers,
+                        paired with lightweight incident tagging to spot friction trends early.</p>
                 </div>
             </div>
         </section>
@@ -1187,41 +1983,56 @@
 
             <!-- CS2: Saved Places (Originally CS4) - ZIGZAG SWAPPED -->
             <div id="cs2" class="cs-wrapper">
-                <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 04</span>
+                <span class="meta-tag"
+                    style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE
+                    STUDY 04</span>
                 <h3 class="cs-title">Turning Saved Places Into a Trip</h3>
-                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: UX Researcher (Course Project)</p>
-                
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: UX Researcher (Course
+                    Project)</p>
+
                 <div class="cs-row reverse">
                     <div class="cs-text">
                         <h5>CHALLENGE</h5>
-                        <p><strong>Saved Pins Are Not a Plan:</strong> Singaporeans who plan their own trips struggle to translate all their saved pins in Google Maps into a usable daily schedule for their trips.</p>
+                        <p><strong>Saved Pins Are Not a Plan:</strong> Singaporeans who plan their own trips struggle to
+                            translate all their saved pins in Google Maps into a usable daily schedule for their trips.
+                        </p>
                         <h5>METHODOLOGY</h5>
-                        <p><strong>Journey &amp; Competitor Audits:</strong> Paired competitor audits (Google Maps, Wanderlog, TripIt) with mixed-methods research to uncover two systemic pain points: The "Relay Race" (81% juggle 2+ tools) and the "AI Trust Gap".</p>
+                        <p><strong>Journey &amp; Competitor Audits:</strong> Paired competitor audits (Google Maps,
+                            Wanderlog, TripIt) with mixed-methods research to uncover two systemic pain points: The
+                            "Relay Race" (81% juggle 2+ tools) and the "AI Trust Gap".</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Research findings">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.1.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.1.png" loading="lazy" alt="Research finding 1">
+                                    <img src="portfolio-images/cs4-images/4.1.png" loading="lazy"
+                                        alt="Research finding 1">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Research findings">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Research findings">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.2.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.2.png" loading="lazy" alt="Research finding 2">
+                                    <img src="portfolio-images/cs4-images/4.2.png" loading="lazy"
+                                        alt="Research finding 2">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Research findings">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Research findings">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.3.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.3.png" loading="lazy" alt="Research finding 3">
+                                    <img src="portfolio-images/cs4-images/4.3.png" loading="lazy"
+                                        alt="Research finding 3">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Research findings">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Research findings">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.4.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.4.png" loading="lazy" alt="Research finding 4">
+                                    <img src="portfolio-images/cs4-images/4.4.png" loading="lazy"
+                                        alt="Research finding 4">
                                 </picture>
                             </div>
                         </div>
@@ -1232,28 +2043,36 @@
                 <div class="cs-row">
                     <div class="cs-text">
                         <blockquote class="insight-quote-left">
-                            "81% of travellers didn't want another discovery engine—they were drowning in scattered pins and needed a sequencing bridge."
+                            "81% of travellers didn't want another discovery engine—they were drowning in scattered pins
+                            and needed a sequencing bridge."
                         </blockquote>
                         <h5>ECOSYSTEM SOLUTION</h5>
-                        <p><strong>Organisation Over Discovery:</strong> Synthesised data into a HMW statement revolving around organisation. Validated top preferences: Pin Organiser (84%), Day-by-Day Scheduler (82%), Route Optimiser (80%).</p>
+                        <p><strong>Organisation Over Discovery:</strong> Synthesised data into a HMW statement revolving
+                            around organisation. Validated top preferences: Pin Organiser (84%), Day-by-Day Scheduler
+                            (82%), Route Optimiser (80%).</p>
                         <h5>STRATEGIC OUTCOME</h5>
-                        <p>The research pointed to a clear requirement: a native, one-stop feature within Google Maps that bridges discovery and execution by enabling users to seamlessly organise pins into itineraries.</p>
+                        <p>The research pointed to a clear requirement: a native, one-stop feature within Google Maps
+                            that bridges discovery and execution by enabling users to seamlessly organise pins into
+                            itineraries.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Insights synthesised">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Insights synthesised">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.5.webp" type="image/webp">
                                     <img src="portfolio-images/cs4-images/4.5.png" loading="lazy" alt="Insight 1">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Insights synthesised">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Insights synthesised">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.6.webp" type="image/webp">
                                     <img src="portfolio-images/cs4-images/4.6.png" loading="lazy" alt="Insight 2">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Insights synthesised">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Insights synthesised">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.7.webp" type="image/webp">
                                     <img src="portfolio-images/cs4-images/4.7.png" loading="lazy" alt="Insight 3">
@@ -1261,123 +2080,160 @@
                             </div>
                         </div>
                         <div class="dynamic-caption-container">Insights synthesised</div>
-                        
+
                         <!-- Third Carousel -->
                         <div class="image-cluster" style="margin-top: 3rem;">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Feature preferences & Problem Statement">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Feature preferences & Problem Statement">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.8.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.8.png" loading="lazy" alt="Feature Preferences">
+                                    <img src="portfolio-images/cs4-images/4.8.png" loading="lazy"
+                                        alt="Feature Preferences">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Feature preferences & Problem Statement">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Feature preferences & Problem Statement">
                                 <picture>
                                     <source srcset="portfolio-images/cs4-images/4.9.webp" type="image/webp">
-                                    <img src="portfolio-images/cs4-images/4.9.png" loading="lazy" alt="Problem Statement">
+                                    <img src="portfolio-images/cs4-images/4.9.png" loading="lazy"
+                                        alt="Problem Statement">
                                 </picture>
                             </div>
                         </div>
                         <div class="dynamic-caption-container">Feature preferences & Problem Statement</div>
                     </div>
                 </div>
-                
+
                 <div class="improve-section">
                     <h5>WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and measure AI trust calibration.</p>
+                    <p><strong>Ideating Solutions &amp; Prototyping</strong><br>Translate validated preferences into
+                        interactive Figma prototypes. Conduct usability testing to validate end-to-end trip creation and
+                        measure AI trust calibration.</p>
                 </div>
             </div>
 
             <!-- CS5: The Thinking Belle -->
             <div id="cs5" class="cs-wrapper" style="border: none;">
-                <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 05</span>
+                <span class="meta-tag"
+                    style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE
+                    STUDY 05</span>
                 <h3 class="cs-title">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
-                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Workflow Architect (Personal Project)</p>
-                
+                <p style="font-weight: 800; color: var(--color-blue); margin-bottom: 3rem;">Role: Workflow Architect
+                    (Personal Project)</p>
+
                 <div class="cs-row">
                     <div class="cs-text">
                         <blockquote class="insight-quote-left">
-                            "The Bottleneck - Single-prompt AI generation caused severe instruction bloat, requiring a decoupled multi-agent architecture."
+                            "The Bottleneck - Single-prompt AI generation caused severe instruction bloat, requiring a
+                            decoupled multi-agent architecture."
                         </blockquote>
                         <h5>CHALLENGE</h5>
-                        <p><strong>The Manual Monolith:</strong> Scaling an educational CX video series failed under manual prompting. Single-chat generation caused severe context window pollution, tone drift, and hallucination loops.</p>
+                        <p><strong>The Manual Monolith:</strong> Scaling an educational CX video series failed under
+                            manual prompting. Single-chat generation caused severe context window pollution, tone drift,
+                            and hallucination loops.</p>
                         <h5>METHODOLOGY</h5>
-                        <p><strong>Multi-Agent Specialisation:</strong> Transitioned from bloated single-prompting to an all-in-one agent. Ultimately, modularising the pipeline into 5 specialised AI agents (Concept, Script, Visual, Audio, Metadata).</p>
+                        <p><strong>Multi-Agent Specialisation:</strong> Transitioned from bloated single-prompting to an
+                            all-in-one agent. Ultimately, modularising the pipeline into 5 specialised AI agents
+                            (Concept, Script, Visual, Audio, Metadata).</p>
                     </div>
                     <div class="cs-visual">
                         <!-- Thinking Belle Channel & Shorts Carousel -->
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="The Thinking Belle youtube channel, the sheltie character is inspired by my miniature shetland sheepdog, Belle!">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="The Thinking Belle youtube channel, the sheltie character is inspired by my miniature shetland sheepdog, Belle!">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/thinker-belle.webp" type="image/webp">
-                                    <img src="portfolio-images/cs5-images/thinker-belle.webp" loading="lazy" alt="The Thinking Belle YouTube Channel">
+                                    <img src="portfolio-images/cs5-images/thinker-belle.webp" loading="lazy"
+                                        alt="The Thinking Belle YouTube Channel">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="one of the shorts somehow got more than 1k views! what!?">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="one of the shorts somehow got more than 1k views! what!?">
                                 <picture>
-                                    <source srcset="portfolio-images/cs5-images/thinker-belle-shorts.webp" type="image/webp">
-                                    <img src="portfolio-images/cs5-images/thinker-belle-shorts.webp" loading="lazy" alt="The Thinking Belle Shorts">
+                                    <source srcset="portfolio-images/cs5-images/thinker-belle-shorts.webp"
+                                        type="image/webp">
+                                    <img src="portfolio-images/cs5-images/thinker-belle-shorts.webp" loading="lazy"
+                                        alt="The Thinking Belle Shorts">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">The Thinking Belle youtube channel, the sheltie character is inspired by my miniature shetland sheepdog, Belle!</div>
+                        <div class="dynamic-caption-container">The Thinking Belle youtube channel, the sheltie character
+                            is inspired by my miniature shetland sheepdog, Belle!</div>
 
                         <!-- Phases Carousel -->
                         <div class="image-cluster" style="margin-top: 3.5rem;">
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/5.1.webp" type="image/webp">
                                     <img src="portfolio-images/cs5-images/5.1.png" loading="lazy" alt="Phase 1">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-blue);" data-caption="Phase 2: Monolithic Custom Gem — Consolidating rules into one guide reduced setup time, but instruction bloat diluted output precision.">
+                            <div class="cluster-item" style="border-color: var(--color-blue);"
+                                data-caption="Phase 2: Monolithic Custom Gem — Consolidating rules into one guide reduced setup time, but instruction bloat diluted output precision.">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/5.2.webp" type="image/webp">
                                     <img src="portfolio-images/cs5-images/5.2.png" loading="lazy" alt="Phase 2">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Phase 3: Specialised Agent Fleet — Decoupled into 5 discrete role-based Gems (Script, Visuals, Metadata, Community, Publishing) to enforce strict prompt boundaries.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Phase 3: Specialised Agent Fleet — Decoupled into 5 discrete role-based Gems (Script, Visuals, Metadata, Community, Publishing) to enforce strict prompt boundaries.">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/5.3.webp" type="image/webp">
                                     <img src="portfolio-images/cs5-images/5.3.png" loading="lazy" alt="Phase 3">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Phase 1: Unstructured Chat — Single-thread prompting led to rapid context drift, tone inconsistency, and prompt collision.</div>
+                        <div class="dynamic-caption-container">Phase 1: Unstructured Chat — Single-thread prompting led
+                            to rapid context drift, tone inconsistency, and prompt collision.</div>
                     </div>
                 </div>
 
                 <div class="cs-row reverse">
                     <div class="cs-text">
                         <blockquote class="insight-quote-right">
-                            "Applying backstage service blueprinting to AI operations eliminated the human-friction bottleneck of manual text transfer."
+                            "Applying backstage service blueprinting to AI operations eliminated the human-friction
+                            bottleneck of manual text transfer."
                         </blockquote>
                         <h5>ECOSYSTEM SOLUTION</h5>
-                        <p><strong>Automated Command Centre:</strong> Unified multi-chat workflows into an Airtable command centre via Make.com webhooks, embedding structured human-in-the-loop review gates before triggering downstream Gemini agents.</p>
+                        <p><strong>Automated Command Centre:</strong> Unified multi-chat workflows into an Airtable
+                            command centre via Make.com webhooks, embedding structured human-in-the-loop review gates
+                            before triggering downstream Gemini agents.</p>
                         <h5>STRATEGIC OUTCOME</h5>
-                        <p><strong>5 Agents LLM Pipeline | 100% Format Lock</strong><br>Full-stack webhook routing. Centralised multi-chat orchestration into a single workspace, embedding human review gates to enforce tone, creative direction, and output quality.</p>
+                        <p><strong>5 Agents LLM Pipeline | 100% Format Lock</strong><br>Full-stack webhook routing.
+                            Centralised multi-chat orchestration into a single workspace, embedding human review gates
+                            to enforce tone, creative direction, and output quality.</p>
                     </div>
                     <div class="cs-visual">
                         <div class="image-cluster">
-                            <div class="cluster-item" style="border-color: var(--color-orange);" data-caption="Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.">
+                            <div class="cluster-item" style="border-color: var(--color-orange);"
+                                data-caption="Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/5.4.webp" type="image/webp">
                                     <img src="portfolio-images/cs5-images/5.4.png" loading="lazy" alt="Webhook routing">
                                 </picture>
                             </div>
-                            <div class="cluster-item" style="border-color: var(--color-green);" data-caption="Centralised multi-chat orchestration into a single Airtable workspace with embedded human review gates.">
+                            <div class="cluster-item" style="border-color: var(--color-green);"
+                                data-caption="Centralised multi-chat orchestration into a single Airtable workspace with embedded human review gates.">
                                 <picture>
                                     <source srcset="portfolio-images/cs5-images/5.5.webp" type="image/webp">
-                                    <img src="portfolio-images/cs5-images/5.5.png" loading="lazy" alt="Multi-chat orchestration">
+                                    <img src="portfolio-images/cs5-images/5.5.png" loading="lazy"
+                                        alt="Multi-chat orchestration">
                                 </picture>
                             </div>
                         </div>
-                        <div class="dynamic-caption-container">Full-stack webhook routing between Airtable, Make.com, Gemini API and Google Drive API.</div>
+                        <div class="dynamic-caption-container">Full-stack webhook routing between Airtable, Make.com,
+                            Gemini API and Google Drive API.</div>
                     </div>
                 </div>
-                
+
                 <div class="improve-section">
                     <h5>WHAT I WOULD IMPROVE FURTHER</h5>
-                    <p><b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>Advance the architecture by automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>Refine Make.com revision logic so human review notes update targeted script lines without hallucinating and deploy blank-field input guardrails.<br>Explore Google Workspace Studio to setup this workflow.</p>
+                    <p><b>Fix Iterative Feedback Loop &amp; Reduce Copy-pasting</b><br>Advance the architecture by
+                        automating remaining handoffs between agents to eliminate in-platform copy-pasting.<br>Refine
+                        Make.com revision logic so human review notes update targeted script lines without hallucinating
+                        and deploy blank-field input guardrails.<br>Explore Google Workspace Studio to setup this
+                        workflow.</p>
                 </div>
             </div>
         </section>
@@ -1388,35 +2244,50 @@
         <section id="connect" class="section-margin scroll-section">
             <h2 class="section-title">LET'S CONNECT</h2>
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 2.25rem; color: var(--color-blue); margin-bottom: 0.5rem; font-style: normal; font-weight: 800;">Joshua Farrock</h2>
-                <p style="font-weight: 700; color: var(--color-orange); font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem;">Ready to Bridge Human Behaviour, Delightful Experiences &amp; Service Execution</p>
-                <p style="max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for reviewing my portfolio.<br>I am eager to discuss how my background in service transformation can support your organisation.</p>
+                <h2
+                    style="font-size: 2.25rem; color: var(--color-blue); margin-bottom: 0.5rem; font-style: normal; font-weight: 800;">
+                    Joshua Farrock</h2>
+                <p
+                    style="font-weight: 700; color: var(--color-orange); font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem;">
+                    Ready to Bridge Human Behaviour, Delightful Experiences &amp; Service Execution</p>
+                <p style="max-width: 650px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for
+                    reviewing my portfolio.<br>I am eager to discuss how my background in service transformation can
+                    support your organisation.</p>
             </div>
-            
+
             <div class="cs-row" style="align-items: stretch;">
                 <div class="organic-card border-blue" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
                     <h4>DIRECT CONTACT</h4>
-                    <p style="font-weight: 800; color: var(--color-text); margin-bottom: 1rem; font-size: 1.15rem;">Joshua Farrock</p>
+                    <p style="font-weight: 800; color: var(--color-text); margin-bottom: 1rem; font-size: 1.15rem;">
+                        Joshua Farrock</p>
                     <ul style="list-style: none; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.75rem;"><strong>Email:</strong> <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a></li>
+                        <li style="margin-bottom: 0.75rem;"><strong>Email:</strong> <a
+                                href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a>
+                        </li>
                         <li style="margin-bottom: 0.75rem;"><strong>Phone:</strong> +65 9651 3048</li>
-                        <li style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/joshua-farrock</a></li>
+                        <li style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> <a
+                                href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">linkedin.com/in/joshua-farrock</a></li>
                     </ul>
                 </div>
                 <div class="organic-card border-green" style="flex: 1 1 45%; min-width: 300px; margin-bottom: 0;">
                     <h4>ACTIVE UPSKILLING &amp; EDUCATION</h4>
-                    <p style="font-weight: 800; color: var(--color-green); margin-bottom: 1.5rem; font-style: italic;">Continuous Growth</p>
+                    <p style="font-weight: 800; color: var(--color-green); margin-bottom: 1.5rem; font-style: italic;">
+                        Continuous Growth</p>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 1.25rem; line-height: 1.4;">
-                            <strong style="color: var(--color-text);">Bachelor of Science in Psychology (Part-Time)</strong><br>
+                            <strong style="color: var(--color-text);">Bachelor of Science in Psychology
+                                (Part-Time)</strong><br>
                             SUSS (Commencing Jan 2027)
                         </li>
                         <li style="margin-bottom: 1.25rem; line-height: 1.4;">
-                            <strong style="color: var(--color-text);">Advanced Professional Certification in AI-Powered UX Design &amp; Digital Product Strategy</strong><br>
+                            <strong style="color: var(--color-text);">Advanced Professional Certification in AI-Powered
+                                UX Design &amp; Digital Product Strategy</strong><br>
                             NTU PACE (Aug - Dec 2026)
                         </li>
                         <li style="line-height: 1.4;">
-                            <strong style="color: var(--color-text);">Career Program Certification in Senior Service Designer + AI</strong><br>
+                            <strong style="color: var(--color-text);">Career Program Certification in Senior Service
+                                Designer + AI</strong><br>
                             IxDF (Oct - Dec 2026)
                         </li>
                     </ul>
@@ -1429,13 +2300,21 @@
              ========================================= -->
         <section id="resume" class="section-margin scroll-section resume-cta-section">
             <div class="resume-card">
-                <span class="meta-tag" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light); margin-bottom: 1.25rem;">PROFESSIONAL SUMMARY</span>
-                <h2 style="font-size: 2.5rem; color: var(--color-blue); font-weight: 800; margin-bottom: 1rem;">At A Glance</h2>
-                <p style="font-size: 1.15rem; max-width: 640px; margin: 0 auto 2rem auto; line-height: 1.7; color: var(--color-text);">
-                    Curious to find out more about my background? Take a look at my resume for a quick summary of my professional journey, operational experience, and other career details.
+                <span class="meta-tag"
+                    style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light); margin-bottom: 1.25rem;">PROFESSIONAL
+                    SUMMARY</span>
+                <h2 style="font-size: 2.5rem; color: var(--color-blue); font-weight: 800; margin-bottom: 1rem;">At A
+                    Glance</h2>
+                <p
+                    style="font-size: 1.15rem; max-width: 640px; margin: 0 auto 2rem auto; line-height: 1.7; color: var(--color-text);">
+                    Curious to find out more about my background? Take a look at my resume for a quick summary of my
+                    professional journey, operational experience, and other career details.
                 </p>
                 <a href="resume.html" target="_blank" rel="noopener noreferrer" class="resume-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg>
                     View My Resume
                 </a>
             </div>
@@ -1444,6 +2323,23 @@
     </main>
 
     <script>
+        // ----------------------------------------------------
+        // Smooth Scroll Down to About Me
+        // ----------------------------------------------------
+        const backstoryTrigger = document.querySelector('.hero-scroll-trigger');
+        if (backstoryTrigger) {
+            backstoryTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById('about');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    if (history.pushState) {
+                        history.pushState(null, null, '#about');
+                    }
+                }
+            });
+        }
+
         // ----------------------------------------------------
         // Navigation Interactivity (Left Hamburger Nav)
         // ----------------------------------------------------
@@ -1474,7 +2370,7 @@
         // ----------------------------------------------------
         const sections = document.querySelectorAll('.scroll-section');
         const miniNavItems = document.querySelectorAll('.nav-tracker');
-        
+
         const observerOptions = {
             root: null,
             rootMargin: '-20% 0px -50% 0px',
@@ -1485,9 +2381,9 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-                    
+
                     miniNavItems.forEach(item => item.classList.remove('active'));
-                    
+
                     const activeItem = document.querySelector(`.nav-tracker[data-target="${id}"]`);
                     if (activeItem) {
                         activeItem.classList.add('active');
@@ -1510,14 +2406,14 @@
         function resetScrollTimeout() {
             clearTimeout(scrollTimeout);
             rightNav.classList.remove('idle');
-            
+
             scrollTimeout = setTimeout(() => {
                 rightNav.classList.add('idle');
             }, 1500); // 1.5s idle time
         }
 
         window.addEventListener('scroll', resetScrollTimeout);
-        
+
         rightNav.addEventListener('mouseenter', () => {
             clearTimeout(scrollTimeout);
             rightNav.classList.remove('idle');
@@ -1535,18 +2431,18 @@
                 ? cluster.nextElementSibling
                 : cluster.parentElement.querySelector('.dynamic-caption-container');
             if (items.length === 0) return;
-            
+
             let activeIdx = 0;
-            
+
             if (items.length > 1) {
                 const prevBtn = document.createElement('button');
                 prevBtn.className = 'nav-btn prev';
                 prevBtn.innerHTML = '❮';
-                
+
                 const nextBtn = document.createElement('button');
                 nextBtn.className = 'nav-btn next';
                 nextBtn.innerHTML = '❯';
-                
+
                 cluster.appendChild(prevBtn);
                 cluster.appendChild(nextBtn);
 
@@ -1555,18 +2451,18 @@
                     activeIdx = (activeIdx - 1 + items.length) % items.length;
                     updateImages();
                 });
-                
+
                 nextBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     activeIdx = (activeIdx + 1) % items.length;
                     updateImages();
                 });
             }
-            
+
             const updateImages = () => {
                 items.forEach((item, idx) => {
-                    item.className = 'cluster-item'; 
-                    
+                    item.className = 'cluster-item';
+
                     if (idx === activeIdx) {
                         item.classList.add('pos-front');
                         if (captionBox) {
@@ -1577,13 +2473,13 @@
                     } else if (items.length > 2 && idx === (activeIdx - 1 + items.length) % items.length) {
                         item.classList.add('pos-back-left');
                     } else {
-                        item.classList.add('pos-hidden'); 
+                        item.classList.add('pos-hidden');
                     }
                 });
             };
-            
+
             updateImages();
-            
+
             items.forEach((item, idx) => {
                 item.addEventListener('click', (e) => {
                     if (items.length > 1) {
@@ -1638,25 +2534,25 @@
                 const mx2 = x2 + dx2 * 0.5;
 
                 // 1. Lead-in from left (x=0) fading in with exaggerated wave into Dot 1
-                const leadIn = 
+                const leadIn =
                     `M 0,${(y1 + 28).toFixed(1)} ` +
                     `C ${(x1 * 0.28).toFixed(1)},${(y1 + 52).toFixed(1)} ${(x1 * 0.65).toFixed(1)},${(y1 - 38).toFixed(1)} ${x1.toFixed(1)},${y1.toFixed(1)} `;
 
                 // 2. Segment 1 (Dot 1 -> Dot 2): Swoops down, enters a clockwise 360° loop, crosses over, and lands right on Dot 2
-                const seg1 = 
+                const seg1 =
                     `C ${(x1 + dx1 * 0.22).toFixed(1)},${(y1 + 46).toFixed(1)} ${(mx1 - 42).toFixed(1)},${(y1 + 22).toFixed(1)} ${(mx1 - 16).toFixed(1)},${(y1 - 8).toFixed(1)} ` +
                     `C ${(mx1 - 2).toFixed(1)},${(y1 - 46).toFixed(1)} ${(mx1 + 34).toFixed(1)},${(y1 - 46).toFixed(1)} ${(mx1 + 28).toFixed(1)},${(y1 - 5).toFixed(1)} ` +
                     `C ${(mx1 + 24).toFixed(1)},${(y1 + 24).toFixed(1)} ${(mx1 - 28).toFixed(1)},${(y1 + 20).toFixed(1)} ${(mx1 - 2).toFixed(1)},${(y1 - 2).toFixed(1)} ` +
                     `C ${(mx1 + 30).toFixed(1)},${(y1 + 46).toFixed(1)} ${(x2 - dx1 * 0.22).toFixed(1)},${(y2 + 42).toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)} `;
 
                 // 3. Segment 2 (Dot 2 -> Dot 3): Exaggerated roller-coaster S-curve (high crest, deep dive)
-                const seg2 = 
+                const seg2 =
                     `C ${(x2 + dx2 * 0.24).toFixed(1)},${(y2 - 46).toFixed(1)} ${(mx2 - 38).toFixed(1)},${(y2 - 42).toFixed(1)} ${mx2.toFixed(1)},${(y2 + 6).toFixed(1)} ` +
                     `C ${(mx2 + 38).toFixed(1)},${(y2 + 52).toFixed(1)} ${(x3 - dx2 * 0.24).toFixed(1)},${(y3 + 46).toFixed(1)} ${x3.toFixed(1)},${y3.toFixed(1)} `;
 
                 // 4. Trail-out from Dot 3 (x3 -> w): Exaggerated wave fading out
                 const remainW = w - x3;
-                const trail = 
+                const trail =
                     `C ${(x3 + remainW * 0.35).toFixed(1)},${(y3 - 36).toFixed(1)} ${(x3 + remainW * 0.72).toFixed(1)},${(y3 + 32).toFixed(1)} ${w.toFixed(1)},${(y3 - 12).toFixed(1)}`;
 
                 d = leadIn + seg1 + seg2 + trail;
@@ -1678,7 +2574,7 @@
         window.addEventListener('resize', drawTreasureRoute);
         window.addEventListener('load', drawTreasureRoute);
         document.addEventListener('DOMContentLoaded', drawTreasureRoute);
-        
+
         // Use ResizeObserver for instant adaptation to container size
         const tContainer = document.getElementById('timelineContainer');
         if (tContainer && window.ResizeObserver) {
@@ -1688,4 +2584,5 @@
         setTimeout(drawTreasureRoute, 400);
     </script>
 </body>
+
 </html>
