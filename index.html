@@ -148,8 +148,54 @@
             scroll-margin-top: 4rem;
         }
 
+        .scroll-section {
+            position: relative;
+        }
+
         #about {
             margin-bottom: 8rem;
+        }
+
+        /* =========================================
+           Whimsical Pottery Decor Accents
+           Sporadically placed in side gutters
+           ========================================= */
+        .pottery-decor {
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.92;
+            filter: drop-shadow(2px 6px 12px rgba(91, 123, 138, 0.12));
+            user-select: none;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+        }
+
+        .pottery-decor-left {
+            right: calc(100% + 2rem);
+        }
+
+        .pottery-decor-right {
+            left: calc(100% + 2rem);
+        }
+
+        @media (max-width: 1400px) and (min-width: 1201px) {
+            .pottery-decor {
+                max-width: 50px !important;
+                opacity: 0.85;
+            }
+            .pottery-decor-left {
+                right: calc(100% + 0.5rem);
+            }
+            .pottery-decor-right {
+                left: calc(100% + 0.5rem);
+            }
+        }
+
+        /* Fully adjust away on tablet and mobile so artwork NEVER touches text or placeholders */
+        @media (max-width: 1200px) {
+            .pottery-decor {
+                display: none !important;
+            }
         }
 
         /* =========================================
@@ -1484,7 +1530,8 @@
     <!-- 0. HERO STATEMENT BANNER -->
     <header id="hero" class="hero-statement-section scroll-section">
         <div class="hero-bg-container">
-            <img src="portfolio-images/hero-images/hero-bg.webp" alt="Atmospheric painted countryside landscape" class="hero-bg-img">
+            <img src="portfolio-images/hero-images/hero-bg.webp" alt="Atmospheric painted countryside landscape"
+                class="hero-bg-img">
             <div class="hero-bg-wash"></div>
         </div>
 
@@ -1498,7 +1545,7 @@
                 <div class="hero-scroll-cue">
                     <span class="scroll-cue-text">SCROLL DOWN</span>
                     <svg viewBox="0 0 24 24" class="scroll-cue-arrow">
-                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                     </svg>
                 </div>
             </a>
@@ -1510,6 +1557,14 @@
 
         <!-- 1. ABOUT ME -->
         <section id="about" class="section-margin scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-blue-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 5%; width: 68px; transform: rotate(-12deg);">
+            <img src="portfolio-images/pottery-decor/pottery-pink-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 20%; width: 78px; transform: rotate(14deg);">
+            <img src="portfolio-images/pottery-decor/pottery-clay-spiral.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 42%; width: 72px; transform: rotate(-8deg);">
+            <img src="portfolio-images/pottery-decor/pottery-tea-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 58%; width: 52px; transform: rotate(10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-yellow-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 76%; width: 70px; transform: rotate(15deg);">
+            <img src="portfolio-images/pottery-decor/pottery-speckled-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 90%; width: 72px; transform: rotate(-14deg);">
+
             <h2 class="section-title">ABOUT ME</h2>
 
             <!-- SECTION 1: HERO INTRO -->
@@ -1652,6 +1707,10 @@
 
         <!-- 2. MY SERVICES -->
         <section id="services" class="section-margin scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-green-tumbler.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 22%; width: 62px; transform: rotate(-9deg);">
+            <img src="portfolio-images/pottery-decor/pottery-blue-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 68%; width: 80px; transform: rotate(12deg);">
+
             <h2 class="section-title">MY SERVICES</h2>
             <p class="intro-special">Bridging Generative Research, Physical Operations, and Service Architecture</p>
             <p>With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous
@@ -1698,6 +1757,14 @@
              PROFESSIONAL PROJECTS 
              ========================================= -->
         <section id="pro-projects" class="scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-grey-vase.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 7%; width: 62px; transform: rotate(7deg);">
+            <img src="portfolio-images/pottery-decor/pottery-purple-cup.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 23%; width: 64px; transform: rotate(-13deg);">
+            <img src="portfolio-images/pottery-decor/pottery-teal-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 43%; width: 70px; transform: rotate(-10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-round-jar.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 60%; width: 68px; transform: rotate(15deg);">
+            <img src="portfolio-images/pottery-decor/pottery-brown-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 79%; width: 66px; transform: rotate(9deg);">
+            <img src="portfolio-images/pottery-decor/pottery-celadon-dish.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 92%; width: 74px; transform: rotate(-8deg);">
+
             <h2 class="section-title">PROFESSIONAL PROJECTS</h2>
 
             <!-- CS1: 12-Year Roadmap -->
@@ -1979,6 +2046,11 @@
              PERSONAL PROJECTS
              ========================================= -->
         <section id="personal-projects" class="scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-marbled-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 14%; width: 72px; transform: rotate(-14deg);">
+            <img src="portfolio-images/pottery-decor/pottery-blue-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 48%; width: 66px; transform: rotate(11deg);">
+            <img src="portfolio-images/pottery-decor/pottery-clay-spiral.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 82%; width: 70px; transform: rotate(8deg);">
+
             <h2 class="section-title">PERSONAL PROJECTS</h2>
 
             <!-- CS2: Saved Places (Originally CS4) - ZIGZAG SWAPPED -->
@@ -2242,6 +2314,10 @@
              8. LET'S CONNECT
              ========================================= -->
         <section id="connect" class="section-margin scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-tea-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 18%; width: 54px; transform: rotate(-10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-pink-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 62%; width: 76px; transform: rotate(12deg);">
+
             <h2 class="section-title">LET'S CONNECT</h2>
             <div style="text-align: center; margin-bottom: 4rem;">
                 <h2
@@ -2299,6 +2375,10 @@
              9. RESUME TEASER (FOOTER)
              ========================================= -->
         <section id="resume" class="section-margin scroll-section resume-cta-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-yellow-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 20%; width: 66px; transform: rotate(10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-teal-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 48%; width: 70px; transform: rotate(-9deg);">
+
             <div class="resume-card">
                 <span class="meta-tag"
                     style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light); margin-bottom: 1.25rem;">PROFESSIONAL
