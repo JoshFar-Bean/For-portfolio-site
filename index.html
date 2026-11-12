@@ -231,9 +231,9 @@
             object-fit: cover;
             object-position: center 30%;
             filter: saturate(1.08) contrast(1.02);
-            /* Feathers out the center so artwork surrounds the text, keeping text on pure standard paper background */
-            -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 48%, transparent 32%, rgba(0, 0, 0, 0.3) 55%, black 85%);
-            mask-image: radial-gradient(ellipse 70% 50% at 50% 48%, transparent 32%, rgba(0, 0, 0, 0.3) 55%, black 85%);
+            /* Softened mask: 50% opacity behind words so background details and blueprint lines remain visible */
+            -webkit-mask-image: radial-gradient(ellipse 65% 45% at 50% 48%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.78) 55%, black 80%);
+            mask-image: radial-gradient(ellipse 65% 45% at 50% 48%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.78) 55%, black 80%);
             transition: opacity 0.5s ease-in-out;
         }
 
@@ -275,6 +275,7 @@
             color: var(--color-text);
             margin: 0;
             text-wrap: balance;
+            text-shadow: 0 2px 14px rgba(244, 241, 234, 0.65);
         }
 
         /* Highlighting with the site's authentic palette */
@@ -301,14 +302,21 @@
         }
 
         .hero-scroll-trigger {
+            position: relative;
+            top: 10px;
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             gap: 0.35rem;
             text-decoration: none;
             cursor: pointer;
-            margin-top: 0.5rem;
+            margin-top: calc(0.5rem + 5px);
             transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.38)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.22)) drop-shadow(0 1px 3px rgba(244, 241, 234, 0.9));
+        }
+
+        .hero-scroll-trigger:hover {
+            filter: drop-shadow(0 6px 14px rgba(217, 119, 87, 0.45)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
         }
 
         .hero-backstory-text {
@@ -321,6 +329,7 @@
             padding: 0;
             box-shadow: none;
             letter-spacing: -0.01em;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 1px 6px rgba(244, 241, 234, 0.95);
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
@@ -349,14 +358,16 @@
             font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            opacity: 0.85;
+            opacity: 0.95;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.28), 0 1px 4px rgba(244, 241, 234, 0.9);
         }
 
         .scroll-cue-arrow {
             width: 20px;
             height: 20px;
             fill: currentColor;
-            opacity: 0.85;
+            opacity: 0.95;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         @keyframes heroScrollBounce {
@@ -1327,8 +1338,8 @@
             }
 
             .hero-bg-img {
-                -webkit-mask-image: radial-gradient(ellipse 90% 64% at 50% 46%, transparent 38%, rgba(0, 0, 0, 0.3) 60%, black 88%);
-                mask-image: radial-gradient(ellipse 90% 64% at 50% 46%, transparent 38%, rgba(0, 0, 0, 0.3) 60%, black 88%);
+                -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 46%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 28%, rgba(0, 0, 0, 0.78) 58%, black 85%);
+                mask-image: radial-gradient(ellipse 80% 55% at 50% 46%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 28%, rgba(0, 0, 0, 0.78) 58%, black 85%);
             }
 
             .hero-statement-inner {
@@ -1530,8 +1541,8 @@
     <!-- 0. HERO STATEMENT BANNER -->
     <header id="hero" class="hero-statement-section scroll-section">
         <div class="hero-bg-container">
-            <img src="portfolio-images/hero-images/hero-bg.webp" alt="Atmospheric painted countryside landscape"
-                class="hero-bg-img">
+            <img src="portfolio-images/hero-images/hero-bg.jpg"
+                alt="Atmospheric painted countryside landscape with service blueprint architecture annotations" class="hero-bg-img">
             <div class="hero-bg-wash"></div>
         </div>
 
