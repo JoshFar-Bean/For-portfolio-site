@@ -40,6 +40,10 @@
             --color-green: #7b8e73;
             --color-green-light: #b8c5b3;
             --color-green-wash: #e9efe7;
+            /* Deep Cypress / Forest Emerald Green */
+            --color-emerald: #246b5a;
+            --color-emerald-light: #8ec2b3;
+            --color-emerald-wash: #e6f2ee;
         }
 
         body {
@@ -2642,53 +2646,6 @@
         </div>
     </nav>
 
-    <!-- Progressive Section Navigator (Desktop: Left Stepper / Mobile: Bottom Stepper) -->
-    <nav class="progressive-nav-desktop" id="progNavDesktop" aria-label="Case Study Section Progress">
-        <div class="progressive-track-bg"></div>
-        <div class="progressive-track-fill" id="progTrackFill"></div>
-        
-        <a href="#overview" class="prog-step active" data-target="overview">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Overview</span>
-        </a>
-        <a href="#challenge" class="prog-step" data-target="challenge">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Challenge</span>
-        </a>
-        <a href="#solution" class="prog-step" data-target="solution">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Solution</span>
-        </a>
-        <a href="#improvements" class="prog-step" data-target="improvements">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Improvements</span>
-        </a>
-        <a href="cs3-service-recovery.html" class="prog-step prog-step-link">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Next: CS03 ↗</span>
-        </a>
-    </nav>
-
-    <!-- Progressive Section Navigator (Mobile: Pinned to Bottom) -->
-    <nav class="progressive-nav-mobile" id="progNavMobile" aria-label="Mobile Case Study Progress">
-        <div class="prog-mobile-header">
-            <span class="prog-mobile-active-pill" id="progMobileActivePill">Overview</span>
-            <a href="cs3-service-recovery.html" class="prog-mobile-link-pill">Next: CS03 ↗</a>
-        </div>
-        <div class="prog-mobile-track-wrap">
-            <div class="prog-mobile-track-bg"></div>
-            <div class="prog-mobile-track-fill" id="progMobileTrackFill"></div>
-            <button class="prog-mobile-dot active" data-target="overview" aria-label="Go to Overview"></button>
-            <button class="prog-mobile-dot" data-target="challenge" aria-label="Go to Challenge"></button>
-            <button class="prog-mobile-dot" data-target="solution" aria-label="Go to Solution"></button>
-            <button class="prog-mobile-dot" data-target="improvements" aria-label="Go to Improvements"></button>
-        </div>
-    </nav>
-    <div class="scroll-progress-pill" id="scrollProgressPill" aria-hidden="true">
-        <span class="progress-pill-dot"></span>
-        <span class="progress-pill-text" id="scrollProgressPercent">0%</span>
-    </div>
-
     <!-- Fixed Top Navigation Bar -->
     <header class="top-nav-bar" id="topNavBar">
         <div class="top-nav-container">
@@ -2722,8 +2679,8 @@
                                 <span class="dropdown-item-tag">CS1</span>
                                 <span class="dropdown-item-title">12-Year Development Roadmap</span>
                             </a>
-                            <a href="cs2-storage.html" class="dropdown-item">
-                                <span class="dropdown-item-tag">CS2</span>
+                            <a href="cs2-storage.html" class="dropdown-item" aria-current="page">
+                                <span class="dropdown-item-tag emerald">CS2</span>
                                 <span class="dropdown-item-title">Physical Storage Configuration Revamp</span>
                             </a>
                             <a href="cs3-service-recovery.html" class="dropdown-item">
@@ -2749,7 +2706,7 @@
                                 <span class="dropdown-item-title">Turning Saved Places Into a Trip</span>
                             </a>
                             <a href="cs5-thinking-belle.html" class="dropdown-item">
-                                <span class="dropdown-item-tag emerald">CS5</span>
+                                <span class="dropdown-item-tag">CS5</span>
                                 <span class="dropdown-item-title">The Thinking Belle: Multi-Agent AI</span>
                             </a>
                         </div>
@@ -2780,7 +2737,7 @@
 
             <li><a href="professional-projects.html" class="nav-top-level" style="color: var(--color-blue); font-weight: 800;">PROFESSIONAL PROJECTS</a></li>
             <li><a href="cs1-roadmap.html" class="nav-subset">CS1: 12-Year Development Roadmap</a></li>
-            <li><a href="cs2-storage.html" class="nav-subset">CS2: Physical Storage Configuration Revamp</a></li>
+            <li><a href="cs2-storage.html" class="nav-subset" aria-current="page">CS2: Physical Storage Configuration Revamp</a></li>
             <li><a href="cs3-service-recovery.html" class="nav-subset">CS3: Frontline Service Recovery Framework</a></li>
 
             <li><a href="personal-projects.html" class="nav-top-level" style="color: var(--color-orange); font-weight: 800;">PERSONAL PROJECTS</a></li>
@@ -3138,6 +3095,24 @@
                 }
             });
         }
-        setupProgressiveNav();</script>
+        setupProgressiveNav();
+
+        // Top Nav Dropdown Click Toggle (for touch & keyboard interaction)
+        const projectsDropdown = document.getElementById('projectsDropdown');
+        const dropdownTrigger = document.getElementById('dropdownTrigger');
+        if (projectsDropdown && dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = projectsDropdown.classList.toggle('active');
+                dropdownTrigger.setAttribute('aria-expanded', isOpen);
+            });
+            document.addEventListener('click', (e) => {
+                if (!projectsDropdown.contains(e.target)) {
+                    projectsDropdown.classList.remove('active');
+                    dropdownTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

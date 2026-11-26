@@ -2651,53 +2651,6 @@
         </div>
     </nav>
 
-    <!-- Progressive Section Navigator (Desktop: Left Stepper / Mobile: Bottom Stepper) -->
-    <nav class="progressive-nav-desktop" id="progNavDesktop" aria-label="Case Study Section Progress">
-        <div class="progressive-track-bg"></div>
-        <div class="progressive-track-fill" id="progTrackFill"></div>
-        
-        <a href="#overview" class="prog-step active" data-target="overview">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Overview</span>
-        </a>
-        <a href="#challenge" class="prog-step" data-target="challenge">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Challenge</span>
-        </a>
-        <a href="#solution" class="prog-step" data-target="solution">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Solution</span>
-        </a>
-        <a href="#improvements" class="prog-step" data-target="improvements">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Improvements</span>
-        </a>
-        <a href="professional-projects.html" class="prog-step prog-step-link">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Explore Professional Projects ↗</span>
-        </a>
-    </nav>
-
-    <!-- Progressive Section Navigator (Mobile: Pinned to Bottom) -->
-    <nav class="progressive-nav-mobile" id="progNavMobile" aria-label="Mobile Case Study Progress">
-        <div class="prog-mobile-header">
-            <span class="prog-mobile-active-pill" id="progMobileActivePill">Overview</span>
-            <a href="professional-projects.html" class="prog-mobile-link-pill">Explore Professional Projects ↗</a>
-        </div>
-        <div class="prog-mobile-track-wrap">
-            <div class="prog-mobile-track-bg"></div>
-            <div class="prog-mobile-track-fill" id="progMobileTrackFill"></div>
-            <button class="prog-mobile-dot active" data-target="overview" aria-label="Go to Overview"></button>
-            <button class="prog-mobile-dot" data-target="challenge" aria-label="Go to Challenge"></button>
-            <button class="prog-mobile-dot" data-target="solution" aria-label="Go to Solution"></button>
-            <button class="prog-mobile-dot" data-target="improvements" aria-label="Go to Improvements"></button>
-        </div>
-    </nav>
-    <div class="scroll-progress-pill" id="scrollProgressPill" aria-hidden="true">
-        <span class="progress-pill-dot"></span>
-        <span class="progress-pill-text" id="scrollProgressPercent">0%</span>
-    </div>
-
     <!-- Fixed Top Navigation Bar -->
     <header class="top-nav-bar" id="topNavBar">
         <div class="top-nav-container">
@@ -2757,7 +2710,7 @@
                                 <span class="dropdown-item-tag">CS4</span>
                                 <span class="dropdown-item-title">Turning Saved Places Into a Trip</span>
                             </a>
-                            <a href="cs5-thinking-belle.html" class="dropdown-item">
+                            <a href="cs5-thinking-belle.html" class="dropdown-item" aria-current="page">
                                 <span class="dropdown-item-tag emerald">CS5</span>
                                 <span class="dropdown-item-title">The Thinking Belle: Multi-Agent AI</span>
                             </a>
@@ -2794,7 +2747,7 @@
 
             <li><a href="personal-projects.html" class="nav-top-level" style="color: var(--color-orange); font-weight: 800;">PERSONAL PROJECTS</a></li>
             <li><a href="cs4-saved-places.html" class="nav-subset">CS4: Turning Saved Places Into a Trip</a></li>
-            <li><a href="cs5-thinking-belle.html" class="nav-subset">CS5: The Thinking Belle</a></li>
+            <li><a href="cs5-thinking-belle.html" class="nav-subset" aria-current="page">CS5: The Thinking Belle</a></li>
 
             <li><a href="resume.html" class="nav-top-level">RESUME</a></li>
             <li><a href="index.html#connect" class="nav-top-level">LET'S CONNECT</a></li>
@@ -3177,6 +3130,24 @@
                 }
             });
         }
-        setupProgressiveNav();</script>
+        setupProgressiveNav();
+
+        // Top Nav Dropdown Click Toggle (for touch & keyboard interaction)
+        const projectsDropdown = document.getElementById('projectsDropdown');
+        const dropdownTrigger = document.getElementById('dropdownTrigger');
+        if (projectsDropdown && dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = projectsDropdown.classList.toggle('active');
+                dropdownTrigger.setAttribute('aria-expanded', isOpen);
+            });
+            document.addEventListener('click', (e) => {
+                if (!projectsDropdown.contains(e.target)) {
+                    projectsDropdown.classList.remove('active');
+                    dropdownTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
