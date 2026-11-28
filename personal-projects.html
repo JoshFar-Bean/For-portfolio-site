@@ -1482,6 +1482,7 @@
             .top-nav-links {
                 display: none !important;
             }
+
             #openNav {
                 display: flex !important;
                 align-items: center;
@@ -1912,6 +1913,10 @@
             box-shadow: 0 16px 36px rgba(123, 142, 115, 0.14);
         }
 
+        .project-card.accent-blue {
+            border: 2px solid var(--color-blue);
+        }
+
         .project-card.accent-purple,
         .project-card.accent-emerald {
             border: 2px solid var(--color-emerald);
@@ -2335,12 +2340,13 @@
             </a>
             <nav class="top-nav-links" aria-label="Main Navigation">
                 <a href="index.html#hero" class="top-nav-link">HOME</a>
-                
+
                 <div class="nav-dropdown" id="projectsDropdown">
-                    <button class="top-nav-link nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false" id="dropdownTrigger">
+                    <button class="top-nav-link nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false"
+                        id="dropdownTrigger">
                         PROJECTS LIST
                         <svg class="dropdown-chevron" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
-                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                         </svg>
                     </button>
                     <div class="nav-dropdown-menu" role="menu">
@@ -2376,7 +2382,7 @@
                                 <span class="dropdown-header-bullet">•</span>
                                 Personal Projects
                             </div>
-                            <a href="personal-projects.html" class="dropdown-item hub-link orange-hub" aria-current="page">
+                            <a href="personal-projects.html" class="dropdown-item hub-link orange-hub">
                                 <span class="dropdown-item-title">Personal Projects Hub</span>
                                 <span class="dropdown-item-arrow">→</span>
                             </a>
@@ -2424,7 +2430,7 @@
             </li>
 
             <li><a href="personal-projects.html" class="nav-top-level"
-                    style="color: var(--color-orange); font-weight: 800;" aria-current="page">PERSONAL PROJECTS</a></li>
+                    style="color: var(--color-orange); font-weight: 800;">PERSONAL PROJECTS</a></li>
             <li><a href="cs4-saved-places.html" class="nav-subset">CS4: Turning Saved Places Into a Trip</a></li>
             <li><a href="cs5-thinking-belle.html" class="nav-subset">CS5: The Thinking Belle</a></li>
 
@@ -2558,7 +2564,8 @@
         <!-- Minimal Footer (No Let's Connect Section) -->
         <footer
             style="text-align: center; padding: 3rem 0; border-top: 1px dashed var(--color-blue-wash); margin-top: 4rem; color: var(--color-blue-slate); font-size: 0.95rem;">
-            <p style="margin-bottom: 0.5rem; font-weight: 700;">Joshua Farrock — Service Design &amp; Experience Architecture</p>
+            <p style="margin-bottom: 0.5rem; font-weight: 700;">Joshua Farrock — Service Design &amp; Experience
+                Architecture</p>
             <p style="font-size: 0.88rem; opacity: 0.8;">Purposeful systems thinking meets human-centred design.</p>
         </footer>
 
