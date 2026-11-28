@@ -3024,6 +3024,162 @@
             background: var(--color-blue-deep-wash);
         }
 
+        /* =========================================
+           CS06 Section 3: 5-Step Prototyping Pipeline
+           ========================================= */
+        .cs6-pipeline {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1.35rem;
+            align-items: stretch;
+            margin: 0.35rem 0 1.5rem 0;
+            position: relative;
+        }
+        .cs6-pipeline-step {
+            position: relative;
+            background: var(--color-paper);
+            border: 1px solid rgba(44, 95, 138, 0.22);
+            border-radius: 15px;
+            padding: 0.95rem 0.9rem 0.9rem 0.9rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 3px 10px rgba(44, 95, 138, 0.05);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cs6-pipeline-step:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-blue-deep-light);
+            box-shadow: 0 6px 16px rgba(44, 95, 138, 0.1);
+        }
+        .cs6-pipeline-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -1.08rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--color-blue-deep-light);
+            pointer-events: none;
+            line-height: 1;
+        }
+        .cs6-step-head {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.55rem;
+        }
+        .cs6-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--color-blue-deep);
+            background: var(--color-blue-deep-wash);
+            border: 1px solid var(--color-blue-deep-light);
+            border-radius: 999px;
+            padding: 0.15rem 0.46rem;
+            line-height: 1.2;
+        }
+        .cs6-step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 800;
+            color: var(--color-text);
+            line-height: 1.25;
+            margin: 0;
+        }
+        .cs6-step-action {
+            font-size: 0.83rem;
+            line-height: 1.48;
+            color: #434950;
+            margin: 0 0 0.75rem 0;
+            flex-grow: 1;
+        }
+        .cs6-tool-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        .cs6-tool-pill {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            padding: 0.16rem 0.5rem;
+            border-radius: 999px;
+            background: var(--color-paper-light);
+            color: var(--color-blue-slate);
+            border: 1px solid rgba(91, 123, 138, 0.28);
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        /* Balanced 3-over-2 grid when container is narrower than wide desktop */
+        @media (max-width: 1360px) and (min-width: 681px) {
+            .cs6-pipeline {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.15rem 1.45rem;
+            }
+            .cs6-pipeline-step {
+                flex: 0 1 calc(33.333% - 1rem);
+                min-width: 200px;
+            }
+            .cs6-pipeline-step:nth-child(3)::after {
+                display: none;
+            }
+            .cs6-pipeline-step:not(:last-child)::after {
+                right: -1.1rem;
+            }
+        }
+
+        /* Mobile: single-column vertical stepped timeline echoing Levelling Up */
+        @media (max-width: 680px) {
+            .cs6-pipeline {
+                display: flex;
+                flex-direction: column;
+                gap: 0.95rem;
+                padding-left: 2.1rem;
+                margin: 0.5rem 0 1.4rem 0;
+            }
+            .cs6-pipeline::before {
+                content: "";
+                position: absolute;
+                left: 8px;
+                top: 1.15rem;
+                bottom: 1.15rem;
+                border-left: 2px dashed rgba(92, 114, 133, 0.45);
+                pointer-events: none;
+            }
+            .cs6-pipeline-step::before {
+                content: "";
+                position: absolute;
+                left: -2.1rem;
+                top: 1.05rem;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: var(--color-paper-light);
+                border: 3px solid var(--color-blue-deep);
+                box-shadow: 0 0 0 4px var(--color-paper-light);
+                z-index: 2;
+                box-sizing: border-box;
+            }
+            .cs6-pipeline-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
     </style>
 </head>
 
@@ -3297,7 +3453,7 @@
                 <section id="discovery" class="cs6-section-card cs-section-anchor">
                     <h2 class="cs6-section-heading">2. Discovery &amp; Why It Matters</h2>
                     <p class="cs6-summary">
-                        Pre-trip planning leaks <strong>81%</strong> of users off-platform into spreadsheets and chats, while during the trip over <strong>50%</strong> of planners struggle with scheduling, logistics, and group preferences—making in-app adaptation vital for session time and local discovery.
+                        Building on the n = 55 discovery study in <a href="cs4-saved-places.html">Case Study 04</a>, pre-trip planning leaks <strong>81%</strong> of users off-platform into spreadsheets and chats, while over <strong>50%</strong> of planners struggle with scheduling, logistics, and group preferences mid-trip—making in-app adaptation vital for session time and local discovery.
                     </p>
                     <button type="button" class="cs6-drawer-toggle" aria-expanded="false" aria-controls="drawer-discovery">
                         <span>Expand for leakage, during-trip struggles &amp; business stakes</span>
@@ -3343,21 +3499,95 @@
                         How Might We help leisure planners effortlessly adapt pre-planned itineraries to real-time changes on the ground without replanning cognitive load?
                     </blockquote>
                     <p class="cs6-summary">
-                        Built lean—skipping all-in-one hub bloat—through an iterative workflow from FigJam and Gemini/Mermaid to Figma Make, Antigravity IDE (after early VS Code experimentation, with GitHub/Netlify used to inspect CSS and layout tweaks), and Claude/Figma task mapping.
+                        Scoped lean—cutting all-in-one trip-hub bloat to focus on real-time gap resolution and quick manual control.
                     </p>
+
+                    <!-- Visual 5-Step Prototyping Pipeline -->
+                    <div class="cs6-pipeline" role="list" aria-label="Five-step prototyping pipeline">
+                        <div class="cs6-pipeline-step" role="listitem">
+                            <div>
+                                <div class="cs6-step-head">
+                                    <span class="cs6-step-num">01</span>
+                                    <h3 class="cs6-step-title">Frame &amp; Flow</h3>
+                                </div>
+                                <p class="cs6-step-action">Ran Idea Beetle ideation and mapped the core street-corner decision flow.</p>
+                            </div>
+                            <div class="cs6-tool-pills">
+                                <span class="cs6-tool-pill">FigJam</span>
+                            </div>
+                        </div>
+
+                        <div class="cs6-pipeline-step" role="listitem">
+                            <div>
+                                <div class="cs6-step-head">
+                                    <span class="cs6-step-num">02</span>
+                                    <h3 class="cs6-step-title">State Logic</h3>
+                                </div>
+                                <p class="cs6-step-action">Drafted and refined system states, branching paths, and itinerary update rules before UI layout.</p>
+                            </div>
+                            <div class="cs6-tool-pills">
+                                <span class="cs6-tool-pill">Gemini</span>
+                                <span class="cs6-tool-pill">Mermaid.js</span>
+                            </div>
+                        </div>
+
+                        <div class="cs6-pipeline-step" role="listitem">
+                            <div>
+                                <div class="cs6-step-head">
+                                    <span class="cs6-step-num">03</span>
+                                    <h3 class="cs6-step-title">First UI Draft</h3>
+                                </div>
+                                <p class="cs6-step-action">Generated the initial interactive screen layouts to validate hierarchy and pacing quickly.</p>
+                            </div>
+                            <div class="cs6-tool-pills">
+                                <span class="cs6-tool-pill">Figma Make</span>
+                            </div>
+                        </div>
+
+                        <div class="cs6-pipeline-step" role="listitem">
+                            <div>
+                                <div class="cs6-step-head">
+                                    <span class="cs6-step-num">04</span>
+                                    <h3 class="cs6-step-title">Live Build &amp; Polish</h3>
+                                </div>
+                                <p class="cs6-step-action">Built and iterated the live web prototype, moving from early VS Code tests into Antigravity IDE with GitHub and Netlify previews for CSS and layout tweaks.</p>
+                            </div>
+                            <div class="cs6-tool-pills">
+                                <span class="cs6-tool-pill">Antigravity IDE</span>
+                                <span class="cs6-tool-pill">VS Code</span>
+                                <span class="cs6-tool-pill">GitHub</span>
+                                <span class="cs6-tool-pill">Netlify</span>
+                            </div>
+                        </div>
+
+                        <div class="cs6-pipeline-step" role="listitem">
+                            <div>
+                                <div class="cs6-step-head">
+                                    <span class="cs6-step-num">05</span>
+                                    <h3 class="cs6-step-title">6-Task Breakdown</h3>
+                                </div>
+                                <p class="cs6-step-action">Mapped frame-by-frame screens across all six user tasks to prepare structured usability testing flows.</p>
+                            </div>
+                            <div class="cs6-tool-pills">
+                                <span class="cs6-tool-pill">Figma Make</span>
+                                <span class="cs6-tool-pill">Claude</span>
+                                <span class="cs6-tool-pill">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <button type="button" class="cs6-drawer-toggle" aria-expanded="false" aria-controls="drawer-process">
-                        <span>Expand for scoping trade-offs, build pipeline &amp; 6-task flow</span>
+                        <span>Expand for scoping trade-offs &amp; 6-task flow</span>
                         <svg class="cs6-drawer-chevron" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
                         </svg>
                     </button>
-                    <div class="cs6-drawer-panel" id="drawer-process" role="region" aria-label="Scoping trade-offs, build pipeline and 6-task flow">
+                    <div class="cs6-drawer-panel" id="drawer-process" role="region" aria-label="Scoping trade-offs and 6-task flow">
                         <div class="cs6-drawer-inner">
                             <div class="cs6-drawer-content">
                                 <ul class="cs6-drawer-list">
                                     <li><strong>Lean Scoping &amp; Trade-Offs:</strong> Cut heavy all-in-one features (budgets, packing checklists, full group co-editing) to focus on real-time gap resolution and quick manual control (<em>Maps already owns the where—now it can take the weight off when and what's next</em>).</li>
-                                    <li><strong>Build &amp; Experimentation Pipeline:</strong> FigJam (Idea Beetle &amp; flow) → Gemini + Mermaid.js (edited state logic) → Figma Make (first draft) → Antigravity IDE (following earlier VS Code experimentation, with GitHub and Netlify used to preview CSS and layout tweaks) → Figma Make + Claude/Figma (frame-by-frame 6-task breakdown).</li>
-                                    <li><strong>Six Mapped Tasks:</strong>
+                                    <li><strong>Six Mapped Tasks Across Five Core Features:</strong>
                                         <ol class="cs6-sub-list">
                                             <li>Save an <em>Ask Maps</em> itinerary</li>
                                             <li>Locate saved plan</li>
@@ -3377,11 +3607,7 @@
                                     </figure>
                                     <figure class="cs6-figure">
                                         <div class="cs6-figure-frame">
-                                            <img src="images/cs6/figma-6-task-flow.png" loading="lazy" alt="Six-task screen-by-screen breakdown mapped across the prototype" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                            <div class="cs6-figure-placeholder">
-                                                <strong>Asset Placeholder: figma-6-task-flow.png</strong>
-                                                <span>Drop exported file into <code>/images/cs6/figma-6-task-flow.png</code> to display automatically.</span>
-                                            </div>
+                                            <img src="images/cs6/figma-6-task-flow.png?v=2" loading="lazy" alt="Six-task screen-by-screen breakdown mapped across the prototype">
                                         </div>
                                         <figcaption class="cs6-figure-caption">Six-task screen-by-screen breakdown mapped across the prototype.</figcaption>
                                     </figure>
@@ -3511,20 +3737,6 @@
                                     </li>
                                     <li><strong>Costs &amp; Ad-Fatigue Guardrail:</strong> Beyond build effort and ongoing routing/AI compute costs, the primary risk is <strong>ad fatigue</strong>—mitigated by prioritising a traveller's own saved places and genuine walking proximity before promoted options.</li>
                                 </ul>
-                                <div class="cs6-drawer-visuals">
-                                    <figure class="cs6-figure">
-                                        <div class="cs6-figure-frame">
-                                            <img src="images/cs6/slide-16-formula.png" loading="lazy" alt="Bottom-up Singapore Year 1 ad-revenue floor calculation">
-                                        </div>
-                                        <figcaption class="cs6-figure-caption">Bottom-up Singapore Year 1 ad-revenue floor calculation.</figcaption>
-                                    </figure>
-                                    <figure class="cs6-figure">
-                                        <div class="cs6-figure-frame">
-                                            <img src="images/cs6/slide-17-growth-loops.png" loading="lazy" alt="Product Usage Loop and Marketplace Loop driving compounding adoption">
-                                        </div>
-                                        <figcaption class="cs6-figure-caption">Product Usage Loop and Marketplace Loop driving compounding adoption.</figcaption>
-                                    </figure>
-                                </div>
                             </div>
                         </div>
                     </div>
