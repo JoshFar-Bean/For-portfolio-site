@@ -197,9 +197,11 @@
                 max-width: 50px !important;
                 opacity: 0.85;
             }
+
             .pottery-decor-left {
                 right: calc(100% + 0.5rem);
             }
+
             .pottery-decor-right {
                 left: calc(100% + 0.5rem);
             }
@@ -539,6 +541,7 @@
             transition: all 0.25s ease;
             letter-spacing: 0.3px;
         }
+
         .hero-resume-btn:hover {
             background-color: #c26547;
             transform: translateY(-2px);
@@ -1316,10 +1319,11 @@
             fill: var(--color-orange);
         }
 
-                @media (max-width: 900px) {
+        @media (max-width: 900px) {
             .top-nav-links {
                 display: none !important;
             }
+
             #openNav {
                 display: flex !important;
                 align-items: center;
@@ -1461,14 +1465,13 @@
             height: 0;
             transition: height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             background-image: linear-gradient(to bottom,
-                #8b5a3c 0%,
-                #7492a0 17%,
-                #5b7b8a 33%,
-                #d97757 50%,
-                #93a68d 67%,
-                #7b8e73 83%,
-                #246b5a 100%
-            );
+                    #8b5a3c 0%,
+                    #7492a0 17%,
+                    #5b7b8a 33%,
+                    #d97757 50%,
+                    #93a68d 67%,
+                    #7b8e73 83%,
+                    #246b5a 100%);
             background-repeat: no-repeat;
         }
 
@@ -1483,13 +1486,33 @@
         }
 
         /* Color flow: brown -> shade of blue -> blue -> orange -> shade of green -> green -> deep cypress */
-        .prog-step[data-target="hero"] { --step-color: #8b5a3c; }
-        .prog-step[data-target="about"] { --step-color: #7492a0; }
-        .prog-step[data-target="services"] { --step-color: #5b7b8a; }
-        .prog-step[data-target="pro-projects"] { --step-color: #d97757; }
-        .prog-step[data-target="personal-projects"] { --step-color: #93a68d; }
-        .prog-step[data-target="connect"] { --step-color: #7b8e73; }
-        .prog-step[data-target="resume"] { --step-color: #246b5a; }
+        .prog-step[data-target="hero"] {
+            --step-color: #8b5a3c;
+        }
+
+        .prog-step[data-target="pro-projects"] {
+            --step-color: #7492a0;
+        }
+
+        .prog-step[data-target="personal-projects"] {
+            --step-color: #5b7b8a;
+        }
+
+        .prog-step[data-target="services"] {
+            --step-color: #d97757;
+        }
+
+        .prog-step[data-target="about-teaser"] {
+            --step-color: #93a68d;
+        }
+
+        .prog-step[data-target="connect"] {
+            --step-color: #7b8e73;
+        }
+
+        .prog-step[data-target="resume"] {
+            --step-color: #246b5a;
+        }
 
         .prog-step-node {
             width: 18px;
@@ -1547,6 +1570,7 @@
         .prog-step-link .prog-step-pill {
             color: #333333;
         }
+
         .prog-step-link.active .prog-step-pill {
             color: #ffffff;
         }
@@ -1655,12 +1679,11 @@
             transform: translateY(-50%);
             height: 3px;
             background-image: linear-gradient(to right,
-                #8b5a3c 0%,
-                #5b7b8a 25%,
-                #d97757 50%,
-                #7b8e73 75%,
-                #246b5a 100%
-            );
+                    #8b5a3c 0%,
+                    #5b7b8a 25%,
+                    #d97757 50%,
+                    #7b8e73 75%,
+                    #246b5a 100%);
             border-radius: 3px;
             z-index: 1;
             width: 0%;
@@ -1680,13 +1703,33 @@
             transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .prog-mobile-dot[data-target="hero"] { --step-color: #8b5a3c; }
-        .prog-mobile-dot[data-target="about"] { --step-color: #7492a0; }
-        .prog-mobile-dot[data-target="services"] { --step-color: #5b7b8a; }
-        .prog-mobile-dot[data-target="pro-projects"] { --step-color: #d97757; }
-        .prog-mobile-dot[data-target="personal-projects"] { --step-color: #93a68d; }
-        .prog-mobile-dot[data-target="connect"] { --step-color: #7b8e73; }
-        .prog-mobile-dot[data-target="resume"] { --step-color: #246b5a; }
+        .prog-mobile-dot[data-target="hero"] {
+            --step-color: #8b5a3c;
+        }
+
+        .prog-mobile-dot[data-target="pro-projects"] {
+            --step-color: #7492a0;
+        }
+
+        .prog-mobile-dot[data-target="personal-projects"] {
+            --step-color: #5b7b8a;
+        }
+
+        .prog-mobile-dot[data-target="services"] {
+            --step-color: #d97757;
+        }
+
+        .prog-mobile-dot[data-target="about-teaser"] {
+            --step-color: #93a68d;
+        }
+
+        .prog-mobile-dot[data-target="connect"] {
+            --step-color: #7b8e73;
+        }
+
+        .prog-mobile-dot[data-target="resume"] {
+            --step-color: #246b5a;
+        }
 
         .prog-mobile-dot.active {
             border: 2px solid #222222;
@@ -1702,13 +1745,13 @@
             }
         }
 
-        
 
-        
 
-        
 
-        
+
+
+
+
 
         /* =========================================
            Mobile Responsiveness
@@ -1830,7 +1873,7 @@
                 border-radius: 24px;
             }
         }
-    
+
         /* =========================================
            Short Scrolls Component Styles
            ========================================= */
@@ -1845,19 +1888,23 @@
             margin-bottom: 2.5rem;
             color: var(--color-blue-slate);
         }
+
         .breadcrumb-nav a {
             color: var(--color-orange);
             text-decoration: none;
             transition: color 0.2s ease, opacity 0.2s ease;
         }
+
         .breadcrumb-nav a:hover {
             color: var(--color-text);
             text-decoration: underline;
         }
+
         .breadcrumb-sep {
             opacity: 0.45;
             font-size: 0.85rem;
         }
+
         .breadcrumb-current {
             color: var(--color-text);
             opacity: 0.85;
@@ -1878,6 +1925,7 @@
             border-radius: 8px;
             transition: all 0.25s ease;
         }
+
         .back-nav-link:hover {
             background: var(--color-orange-wash);
             color: var(--color-orange);
@@ -1887,6 +1935,7 @@
         .page-header-block {
             margin-bottom: 4rem;
         }
+
         .page-header-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.25rem;
@@ -1895,6 +1944,7 @@
             margin-bottom: 1.25rem;
             line-height: 1.4;
         }
+
         .page-header-desc {
             font-size: 1.12rem;
             line-height: 1.7;
@@ -1918,15 +1968,18 @@
             position: relative;
             overflow: hidden;
         }
+
         .project-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 36px rgba(91, 123, 138, 0.14);
             border-color: var(--color-blue);
         }
+
         .project-card.accent-orange:hover {
             border-color: var(--color-orange);
             box-shadow: 0 16px 36px rgba(217, 119, 87, 0.14);
         }
+
         .project-card.accent-green:hover {
             border-color: var(--color-green);
             box-shadow: 0 16px 36px rgba(123, 142, 115, 0.14);
@@ -1945,6 +1998,7 @@
             padding: 1rem;
             box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
         }
+
         .project-thumbnail-wrapper picture {
             width: 100%;
             height: 100%;
@@ -1952,12 +2006,14 @@
             align-items: center;
             justify-content: center;
         }
+
         .project-thumbnail-wrapper img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
             transition: transform 0.4s ease;
         }
+
         .project-card:hover .project-thumbnail-wrapper img {
             transform: scale(1.03);
         }
@@ -1967,10 +2023,12 @@
             flex-direction: column;
             justify-content: center;
         }
+
         .project-info .meta-tag {
             align-self: flex-start;
             margin-bottom: 0.85rem;
         }
+
         .project-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
@@ -1979,6 +2037,7 @@
             margin-bottom: 0.4rem;
             line-height: 1.25;
         }
+
         .project-role {
             font-family: 'Nunito', sans-serif;
             font-weight: 800;
@@ -1986,6 +2045,7 @@
             font-size: 1.05rem;
             margin-bottom: 1rem;
         }
+
         .project-oneliner {
             font-family: 'Nunito', sans-serif;
             font-size: 1.05rem;
@@ -2004,6 +2064,7 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+
         .project-outcome-badge strong {
             color: var(--color-text);
             display: block;
@@ -2011,9 +2072,11 @@
             margin-bottom: 0.25rem;
             font-family: 'Montserrat', sans-serif;
         }
+
         .project-outcome-badge.blue {
             border-left-color: var(--color-blue);
         }
+
         .project-outcome-badge.green {
             border-left-color: var(--color-green);
         }
@@ -2035,6 +2098,7 @@
             transition: all 0.25s ease;
             box-shadow: 0 4px 12px rgba(91, 123, 138, 0.25);
         }
+
         .btn-view-study:hover {
             background: var(--color-orange);
             transform: translateY(-2px);
@@ -2070,9 +2134,9 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1), 
-                        box-shadow 0.38s ease, 
-                        border-color 0.35s ease;
+            transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.38s ease,
+                border-color 0.35s ease;
             cursor: default;
             z-index: 1;
         }
@@ -2081,12 +2145,15 @@
         .tossed-card.accent-green {
             border: 2px solid var(--color-green);
         }
+
         .tossed-card.accent-orange {
             border: 2px solid var(--color-orange);
         }
+
         .tossed-card.accent-blue {
             border: 2px solid var(--color-blue);
         }
+
         .tossed-card.accent-purple,
         .tossed-card.accent-emerald {
             border: 2px solid var(--color-emerald);
@@ -2096,9 +2163,11 @@
         .tossed-cards-grid .tossed-card:nth-child(1) {
             transform: rotate(-2.4deg) translateY(0px);
         }
+
         .tossed-cards-grid .tossed-card:nth-child(2) {
             transform: rotate(2.2deg) translateY(34px);
         }
+
         .tossed-cards-grid .tossed-card:nth-child(3) {
             transform: rotate(-1.6deg) translateY(12px);
         }
@@ -2106,6 +2175,7 @@
         .tossed-cards-grid.two-cards .tossed-card:nth-child(1) {
             transform: rotate(-2.2deg) translateY(0px);
         }
+
         .tossed-cards-grid.two-cards .tossed-card:nth-child(2) {
             transform: rotate(2.5deg) translateY(28px);
         }
@@ -2117,18 +2187,22 @@
             border-color: var(--color-blue);
             z-index: 10;
         }
+
         .tossed-card.accent-green:hover {
             border-color: var(--color-green);
             box-shadow: 0 24px 44px rgba(123, 142, 115, 0.28);
         }
+
         .tossed-card.accent-orange:hover {
             border-color: var(--color-orange);
             box-shadow: 0 24px 44px rgba(217, 119, 87, 0.28);
         }
+
         .tossed-card.accent-blue:hover {
             border-color: var(--color-blue);
             box-shadow: 0 24px 44px rgba(91, 123, 138, 0.28);
         }
+
         .tossed-card.accent-purple:hover,
         .tossed-card.accent-emerald:hover {
             border-color: var(--color-emerald);
@@ -2150,6 +2224,7 @@
             padding: 0.85rem;
             box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
         }
+
         .tossed-card-thumb picture {
             width: 100%;
             height: 100%;
@@ -2157,12 +2232,14 @@
             align-items: center;
             justify-content: center;
         }
+
         .tossed-card-thumb img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
             transition: transform 0.4s ease;
         }
+
         .tossed-card:hover .tossed-card-thumb img {
             transform: scale(1.04);
         }
@@ -2196,6 +2273,7 @@
             line-height: 1.5;
             flex-grow: 1;
         }
+
         .tossed-card-outcome strong {
             display: block;
             color: var(--color-text);
@@ -2203,12 +2281,15 @@
             margin-bottom: 0.25rem;
             font-family: 'Montserrat', sans-serif;
         }
+
         .tossed-card-outcome.blue {
             border-left-color: var(--color-blue);
         }
+
         .tossed-card-outcome.green {
             border-left-color: var(--color-green);
         }
+
         .tossed-card-outcome.purple,
         .tossed-card-outcome.emerald {
             border-left-color: var(--color-emerald);
@@ -2226,6 +2307,7 @@
             background: var(--color-green);
             box-shadow: 0 4px 12px rgba(123, 142, 115, 0.25);
         }
+
         .tossed-card.accent-green .btn-view-study:hover {
             background: #687a61;
             box-shadow: 0 6px 18px rgba(123, 142, 115, 0.35);
@@ -2235,6 +2317,7 @@
             background: var(--color-orange);
             box-shadow: 0 4px 12px rgba(217, 119, 87, 0.25);
         }
+
         .tossed-card.accent-orange .btn-view-study:hover {
             background: #be6143;
             box-shadow: 0 6px 18px rgba(217, 119, 87, 0.35);
@@ -2244,6 +2327,7 @@
             background: var(--color-blue);
             box-shadow: 0 4px 12px rgba(91, 123, 138, 0.25);
         }
+
         .tossed-card.accent-blue .btn-view-study:hover {
             background: #4a6775;
             box-shadow: 0 6px 18px rgba(91, 123, 138, 0.35);
@@ -2254,6 +2338,7 @@
             background: var(--color-emerald);
             box-shadow: 0 4px 12px rgba(36, 107, 90, 0.25);
         }
+
         .tossed-card.accent-purple .btn-view-study:hover,
         .tossed-card.accent-emerald .btn-view-study:hover {
             background: #1b5346;
@@ -2296,12 +2381,14 @@
             margin-top: 4rem;
             margin-bottom: 3rem;
         }
+
         .hub-switch-card h4 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.35rem;
             color: var(--color-text);
             margin-bottom: 0.75rem;
         }
+
         .hub-switch-card p {
             color: #555;
             max-width: 600px;
@@ -2322,6 +2409,7 @@
             font-family: 'Nunito', sans-serif;
             margin-bottom: 4rem;
         }
+
         .subnav-btn {
             display: inline-flex;
             align-items: center;
@@ -2336,6 +2424,7 @@
             border: 1px solid rgba(0, 0, 0, 0.08);
             transition: all 0.2s ease;
         }
+
         .subnav-btn:hover {
             color: var(--color-orange);
             border-color: var(--color-orange);
@@ -2355,36 +2444,44 @@
                 padding: 1.75rem;
                 gap: 1.5rem;
             }
+
             .project-thumbnail-wrapper {
                 height: 210px;
             }
+
             .tossed-cards-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
                 padding: 1.5rem 0;
             }
+
             .tossed-cards-grid.two-cards {
                 grid-template-columns: 1fr;
             }
+
             .tossed-cards-grid .tossed-card:nth-child(odd) {
                 transform: rotate(-1.5deg) translateY(0);
             }
+
             .tossed-cards-grid .tossed-card:nth-child(even) {
                 transform: rotate(1.8deg) translateY(0);
             }
+
             .tossed-card-title {
                 min-height: auto;
             }
+
             .case-study-subnav {
                 flex-direction: column;
                 align-items: stretch;
             }
+
             .subnav-btn {
                 justify-content: center;
             }
         }
 
-    
+
         /* =========================================
            Project Mini Pill Labels (Below Title)
            ========================================= */
@@ -2394,6 +2491,7 @@
             gap: 0.42rem;
             margin: 0.4rem 0 0.85rem 0;
         }
+
         .project-mini-pill {
             display: inline-flex;
             align-items: center;
@@ -2409,45 +2507,344 @@
             line-height: 1.3;
             white-space: nowrap;
         }
+
         .tossed-card .project-mini-pills {
             gap: 0.35rem;
             margin: 0.15rem 0 0.9rem 0;
         }
+
         .tossed-card .project-mini-pill {
             font-size: 0.65rem;
             padding: 0.2rem 0.56rem;
         }
+
         .project-info .project-mini-pills {
             margin: 0.25rem 0 0.75rem 0;
         }
 
-    
+
         .tossed-card.accent-blue-deep {
             border: 2.5px solid var(--color-blue-deep);
             box-shadow: 0 14px 32px rgba(44, 95, 138, 0.14), 0 2px 6px rgba(44, 95, 138, 0.08);
         }
+
         .tossed-card.accent-blue-deep:hover {
             border-color: var(--color-blue-deep);
             box-shadow: 0 24px 46px rgba(44, 95, 138, 0.32);
         }
+
         .tossed-card-outcome.blue-deep {
             border-left-color: var(--color-blue-deep);
             background: #f2f7fb;
         }
+
         .tossed-card.accent-blue-deep .btn-view-study {
             background: var(--color-blue-deep);
             box-shadow: 0 4px 14px rgba(44, 95, 138, 0.30);
         }
+
         .tossed-card.accent-blue-deep .btn-view-study:hover {
             background: var(--color-blue-deep-hover);
             box-shadow: 0 6px 20px rgba(44, 95, 138, 0.42);
         }
+
         .tossed-card.accent-blue-deep .project-mini-pill {
             color: var(--color-blue-deep);
             border-color: var(--color-blue-deep-light);
             background: var(--color-blue-deep-wash);
         }
 
+
+        /* =========================================
+           Editorial About Me Spotlight (Above Let's Connect)
+           ========================================= */
+        .about-teaser-section {
+            margin: 5.5rem 0 6.5rem 0;
+            position: relative;
+        }
+
+        .about-spotlight {
+            display: grid;
+            grid-template-columns: minmax(210px, 31%) 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 1.5rem 0.5rem;
+        }
+
+        .about-spotlight-portrait {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-spotlight-photo-frame {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px solid var(--color-orange);
+            background: var(--color-paper);
+            box-shadow: 0 10px 26px rgba(217, 119, 87, 0.22);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .about-spotlight-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+            transform: scale(1.02);
+        }
+
+        .about-spotlight-content {
+            text-align: left;
+            min-width: 0;
+        }
+
+        .about-spotlight-eyebrow {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-orange);
+            margin-bottom: 0.55rem;
+        }
+
+        .about-spotlight-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.15rem, 3.6vw, 2.9rem);
+            font-weight: 800;
+            color: var(--color-blue);
+            line-height: 1.15;
+            margin-bottom: 0.9rem;
+        }
+
+        .about-spotlight-bio {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.12rem;
+            line-height: 1.68;
+            color: var(--color-text);
+            max-width: 620px;
+            margin: 0 0 2rem 0;
+        }
+
+        /* Compact "Levelling Up" Trajectory Strip (aligned with /about) */
+        .spotlight-trajectory {
+            position: relative;
+            margin: 0 0 2.15rem 0;
+            padding: 0.25rem 0;
+        }
+
+        .spotlight-track-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .spotlight-track-path {
+            stroke: var(--color-blue-slate);
+            stroke-width: 2.25px;
+            stroke-dasharray: 7 5;
+            stroke-linecap: round;
+            fill: none;
+            opacity: 0.85;
+            transition: d 0.15s ease;
+        }
+
+        .spotlight-stages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .spotlight-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .spotlight-stage-node {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .spotlight-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            margin-bottom: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            white-space: nowrap;
+        }
+
+        .spotlight-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-paper);
+            border: 3px solid;
+            box-shadow: 0 0 0 4px var(--color-paper);
+            position: relative;
+            z-index: 3;
+            margin-left: 0.35rem;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .spotlight-stage:hover .spotlight-dot {
+            transform: scale(1.25);
+        }
+
+        .spotlight-stage-copy {
+            min-width: 0;
+        }
+
+        .spotlight-stage-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 0.28rem;
+        }
+
+        .spotlight-stage-sub {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.89rem;
+            line-height: 1.48;
+            color: #4f5963;
+            margin: 0;
+        }
+
+        /* CTA Row directly beneath trajectory strip */
+        .about-spotlight-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.85rem 1.25rem;
+        }
+
+        .about-teaser-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.6rem;
+            border-radius: 999px;
+            background: var(--color-orange);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(217, 119, 87, 0.3);
+            transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .about-teaser-btn:hover {
+            background: #c26547;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 87, 0.4);
+            color: #ffffff;
+        }
+
+        .about-spotlight-caption {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--color-blue-slate);
+            opacity: 0.85;
+        }
+
+        @media (max-width: 860px) {
+            .about-spotlight {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem 0;
+            }
+
+            .about-spotlight-photo-frame {
+                width: 165px;
+                height: 165px;
+            }
+
+            .about-spotlight-content {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-spotlight-photo-frame {
+                width: 155px;
+                height: 155px;
+            }
+
+            .spotlight-stages {
+                grid-template-columns: 1fr;
+                gap: 1.45rem;
+            }
+
+            .spotlight-stage {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .spotlight-stage-node {
+                margin-bottom: 0;
+                padding-top: 0.25rem;
+            }
+
+            .spotlight-stage-node .spotlight-badge {
+                display: none;
+            }
+
+            .spotlight-dot {
+                margin-left: 0;
+            }
+
+            .spotlight-stage-copy .spotlight-badge-mobile {
+                display: inline-flex !important;
+                margin-bottom: 0.4rem;
+            }
+
+            .about-spotlight-cta-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.65rem;
+            }
+        }
+
+        .spotlight-badge-mobile {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -2463,8 +2860,9 @@
             </a>
             <nav class="top-nav-links" aria-label="Main Navigation">
                 <a href="#hero" class="top-nav-link active" data-nav="hero">HOME</a>
-                <a href="#about" class="top-nav-link" data-nav="about">ABOUT ME</a>
                 <a href="#pro-projects" class="top-nav-link" data-nav="projects">PROJECTS</a>
+                <a href="#services" class="top-nav-link" data-nav="services">CAPABILITIES</a>
+                <a href="about.html" class="top-nav-link" data-nav="about">ABOUT ME</a>
                 <a href="#connect" class="top-nav-link" data-nav="connect">LET'S CONNECT</a>
                 <a href="resume.html" class="top-nav-link" data-nav="resume">RESUME</a>
             </nav>
@@ -2481,45 +2879,42 @@
     <nav class="side-nav" id="sideNav">
         <button class="close-nav-btn" id="closeNav" aria-label="Close Navigation">
             <svg viewBox="0 0 24 24">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z">
+                </path>
             </svg>
         </button>
         <ul>
             <li><a href="#hero" class="nav-top-level">HOME</a></li>
-            <li><a href="#about" class="nav-top-level">ABOUT ME</a></li>
-            <li><a href="#services" class="nav-top-level">MY SERVICES</a></li>
 
-            <li><a href="professional-projects.html" class="nav-top-level" style="color: var(--color-blue); font-weight: 800;">PROFESSIONAL PROJECTS</a></li>
+            <li><a href="professional-projects.html" class="nav-top-level"
+                    style="color: var(--color-blue); font-weight: 800;">PROFESSIONAL PROJECTS</a></li>
             <li><a href="cs1-roadmap.html" class="nav-subset">CS1: 12-Year Development Roadmap</a></li>
             <li><a href="cs2-storage.html" class="nav-subset">CS2: Physical Storage Configuration Revamp</a></li>
-            <li><a href="cs3-service-recovery.html" class="nav-subset">CS3: Frontline Service Recovery Framework</a></li>
+            <li><a href="cs3-service-recovery.html" class="nav-subset">CS3: Frontline Service Recovery Framework</a>
+            </li>
 
-            <li><a href="personal-projects.html" class="nav-top-level" style="color: var(--color-orange); font-weight: 800;">PERSONAL PROJECTS</a></li>
+            <li><a href="personal-projects.html" class="nav-top-level"
+                    style="color: var(--color-orange); font-weight: 800;">PERSONAL PROJECTS</a></li>
             <li><a href="cs4-saved-places.html" class="nav-subset">CS4: Turning Saved Places Into a Trip</a></li>
             <li><a href="cs5-thinking-belle.html" class="nav-subset">CS5: The Thinking Belle</a></li>
             <li><a href="cs6-google-maps-plans.html" class="nav-subset">CS6: Google Maps Plans</a></li>
 
-            <li><a href="resume.html" class="nav-top-level">RESUME</a></li>
+            <li><a href="#services" class="nav-top-level">CORE CAPABILITIES</a></li>
+            <li><a href="about.html" class="nav-top-level">ABOUT ME</a></li>
             <li><a href="#connect" class="nav-top-level">LET'S CONNECT</a></li>
+            <li><a href="resume.html" class="nav-top-level">RESUME</a></li>
         </ul>
     </nav>
 
-        <!-- Progressive Section Navigator (Desktop: Left Stepper / Mobile: Bottom Stepper) -->
+    <!-- Progressive Section Navigator (Desktop: Left Stepper / Mobile: Bottom Stepper) -->
     <nav class="progressive-nav-desktop" id="progNavDesktop" aria-label="Page Section Progress">
         <div class="progressive-track-bg"></div>
         <div class="progressive-track-fill" id="progTrackFill"></div>
-        
+
         <a href="#hero" class="prog-step active" data-target="hero">
             <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
             <span class="prog-step-pill">Home</span>
-        </a>
-        <a href="#about" class="prog-step" data-target="about">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">About Me</span>
-        </a>
-        <a href="#services" class="prog-step" data-target="services">
-            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
-            <span class="prog-step-pill">Services</span>
         </a>
         <a href="#pro-projects" class="prog-step" data-target="pro-projects">
             <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
@@ -2528,6 +2923,14 @@
         <a href="#personal-projects" class="prog-step" data-target="personal-projects">
             <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
             <span class="prog-step-pill">Personal</span>
+        </a>
+        <a href="#services" class="prog-step" data-target="services">
+            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
+            <span class="prog-step-pill">Capabilities</span>
+        </a>
+        <a href="#about-teaser" class="prog-step" data-target="about-teaser">
+            <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
+            <span class="prog-step-pill">About Me</span>
         </a>
         <a href="#connect" class="prog-step" data-target="connect">
             <span class="prog-step-node"><span class="prog-step-node-inner"></span></span>
@@ -2549,10 +2952,12 @@
             <div class="prog-mobile-track-bg"></div>
             <div class="prog-mobile-track-fill" id="progMobileTrackFill"></div>
             <button class="prog-mobile-dot active" data-target="hero" aria-label="Go to Home"></button>
-            <button class="prog-mobile-dot" data-target="about" aria-label="Go to About Me"></button>
-            <button class="prog-mobile-dot" data-target="services" aria-label="Go to Services"></button>
-            <button class="prog-mobile-dot" data-target="pro-projects" aria-label="Go to Professional Projects"></button>
-            <button class="prog-mobile-dot" data-target="personal-projects" aria-label="Go to Personal Projects"></button>
+            <button class="prog-mobile-dot" data-target="pro-projects"
+                aria-label="Go to Professional Projects"></button>
+            <button class="prog-mobile-dot" data-target="personal-projects"
+                aria-label="Go to Personal Projects"></button>
+            <button class="prog-mobile-dot" data-target="services" aria-label="Go to Core Capabilities"></button>
+            <button class="prog-mobile-dot" data-target="about-teaser" aria-label="Go to About Me"></button>
             <button class="prog-mobile-dot" data-target="connect" aria-label="Go to Connect"></button>
             <button class="prog-mobile-dot" data-target="resume" aria-label="Go to Resume"></button>
         </div>
@@ -2562,7 +2967,8 @@
     <header id="hero" class="hero-statement-section scroll-section">
         <div class="hero-bg-container">
             <img src="portfolio-images/hero-images/hero-bg-v2.jpg?v=2026112009"
-                alt="Atmospheric painted countryside landscape with service blueprint architecture annotations" class="hero-bg-img">
+                alt="Atmospheric painted countryside landscape with service blueprint architecture annotations"
+                class="hero-bg-img">
             <div class="hero-bg-wash"></div>
         </div>
 
@@ -2571,8 +2977,8 @@
                 <span class="hl-architect">Service Architect</span> designing systems that make <span
                     class="hl-experience">purposeful experiences</span> possible.
             </h1>
-            <a href="#about" class="hero-scroll-trigger" aria-label="Uncover my backstory and scroll down to About Me">
-                <span class="hero-backstory-text">Uncover my backstory</span>
+            <a href="#pro-projects" class="hero-scroll-trigger" aria-label="Scroll down to Professional Projects">
+                <span class="hero-backstory-text">Explore My Projects</span>
                 <div class="hero-scroll-cue">
                     <span class="scroll-cue-text">SCROLL DOWN</span>
                     <svg viewBox="0 0 24 24" class="scroll-cue-arrow">
@@ -2586,180 +2992,263 @@
     <!-- Main Content -->
     <main class="container">
 
-        <!-- 1. ABOUT ME -->
-        <section id="about" class="section-margin scroll-section">
-            <!-- Pottery Accents -->
-            <img src="portfolio-images/pottery-decor/pottery-blue-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 5%; width: 68px; transform: rotate(-12deg);">
-            <img src="portfolio-images/pottery-decor/pottery-pink-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 20%; width: 78px; transform: rotate(14deg);">
-            <img src="portfolio-images/pottery-decor/pottery-clay-spiral.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 42%; width: 72px; transform: rotate(-8deg);">
-            <img src="portfolio-images/pottery-decor/pottery-tea-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 58%; width: 52px; transform: rotate(10deg);">
-            <img src="portfolio-images/pottery-decor/pottery-yellow-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 76%; width: 70px; transform: rotate(15deg);">
-            <img src="portfolio-images/pottery-decor/pottery-speckled-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 90%; width: 72px; transform: rotate(-14deg);">
+        <!-- =========================================
+             PROFESSIONAL PROJECTS (TOSSED ON THE FLOOR CARDS)
+             ========================================= -->
+        <section id="pro-projects" class="section-margin scroll-section">
+            <h2 class="section-title">PROFESSIONAL PROJECTS</h2>
+            <p class="intro-special" style="text-align: center; margin-bottom: 0.75rem;">Large-Scale Service
+                Architecture, Frontline Operations, &amp; Systems Optimisation</p>
+            <p
+                style="text-align: center; max-width: 1050px; margin: 0 auto 1.5rem auto; font-size: 1.1rem; color: #444;">
+                A selection of end-to-end service initiatives. Explore the case studies below or visit the dedicated
+                hub.
+            </p>
 
-            <h2 class="section-title">ABOUT ME</h2>
-
-            <!-- SECTION 1: HERO INTRO -->
-            <div class="hero-row">
-                <div class="hero-profile-main">
-                    <div class="hero-photo-wrap">
-                        <div class="hero-photo-frame">
-                            <img src="portfolio-images/aboutme-images/aboutme-image.webp?v=2" alt="Joshua Farrock"
-                                class="hero-photo"
-                                onerror="this.style.display='none'; document.getElementById('profileAvatarFallback').style.display='flex';">
-                            <div class="hero-avatar-fallback" id="profileAvatarFallback" style="display: none;">
-                                <span>JF</span>
-                                <span class="fallback-sub">Joshua</span>
-                            </div>
-                        </div>
+            <!-- 3 in a line, slanted & staggered like cards tossed on the studio floor -->
+            <div class="tossed-cards-grid">
+                <!-- CS1 Card (Green) -->
+                <article class="tossed-card accent-green">
+                    <div class="tossed-card-thumb">
+                        <picture>
+                            <source srcset="portfolio-images/cs1-images/1.1.webp" type="image/webp">
+                            <img src="portfolio-images/cs1-images/1.1.png" loading="lazy"
+                                alt="12-Year Development Roadmap">
+                        </picture>
                     </div>
-                    <div class="hero-content">
-                        <h1>Hi, I’m Joshua.</h1>
-                        <p class="hero-body">
-                            I design delightful experiences built to last and grow with the people who use them. Across physical spaces, interactive destinations, and digital services, I pay close attention to how people actually behave and what makes an experience stick. That curiosity, paired with practical systems behind the scenes, is how I turn complex journeys into moments worth remembering.
-                        </p>
-                        <p class="hero-contact">
-                            <a href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a> | +65
-                            9651 3048 |
-                            <a href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer"
-                                class="contact-link">linkedin.com/in/joshua-farrock</a>
-                        </p>
+                    <span class="meta-tag"
+                        style="background: var(--color-green-wash); color: var(--color-green); border-color: var(--color-green-light);">CASE
+                        STUDY 01</span>
+                    <h3 class="tossed-card-title">12-Year Development Roadmap</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">Service Strategy</span>
+                        <span class="project-mini-pill">Lifecycle Design</span>
+                        <span class="project-mini-pill">Systems Design</span>
                     </div>
-                </div>
-                <div class="hero-resume-wrap" style="width: 100%; text-align: center; margin-top: 1.75rem;">
-                    <a href="resume.html" target="_blank" rel="noopener noreferrer" class="hero-resume-btn">
-                        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
-                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    <div class="tossed-card-outcome green">
+                        <strong>🎯 70%+ Retention &amp; 0 Data Breaches</strong>
+                        Adopted as the foundational strategy governing long-term design across 4,000+ members.
+                    </div>
+                    <a href="cs1-roadmap.html" class="btn-view-study" style="background: var(--color-green);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                         </svg>
-                        View My Resume
                     </a>
-                </div>
+                </article>
+
+                <!-- CS2 Card (Orange) -->
+                <article class="tossed-card accent-orange">
+                    <div class="tossed-card-thumb">
+                        <picture>
+                            <source srcset="portfolio-images/cs2-images/2.1.webp" type="image/webp">
+                            <img src="portfolio-images/cs2-images/2.1.png" loading="lazy"
+                                alt="Physical Storage Configuration Revamp">
+                        </picture>
+                    </div>
+                    <span class="meta-tag"
+                        style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE
+                        STUDY 02</span>
+                    <h3 class="tossed-card-title">Physical Storage Configuration Revamp</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">Field Research</span>
+                        <span class="project-mini-pill">Service Ergonomics</span>
+                        <span class="project-mini-pill">Workflow Design</span>
+                    </div>
+                    <div class="tossed-card-outcome orange">
+                        <strong>🎯 100% Adoption &amp; Zero Downtime</strong>
+                        Completely eliminated weekly supply logistical friction for volunteer seniors.
+                    </div>
+                    <a href="cs2-storage.html" class="btn-view-study" style="background: var(--color-orange);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- CS3 Card (Blue) -->
+                <article class="tossed-card accent-blue">
+                    <div class="tossed-card-thumb">
+                        <picture>
+                            <source srcset="portfolio-images/cs3-images/3.1.webp" type="image/webp">
+                            <img src="portfolio-images/cs3-images/3.1.png" loading="lazy"
+                                alt="Frontline Service Recovery Framework">
+                        </picture>
+                    </div>
+                    <span class="meta-tag"
+                        style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">CASE
+                        STUDY 03</span>
+                    <h3 class="tossed-card-title">Frontline Service Recovery Framework</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">Service Recovery</span>
+                        <span class="project-mini-pill">Frontline CX</span>
+                        <span class="project-mini-pill">Service Playbooks</span>
+                    </div>
+                    <div class="tossed-card-outcome blue">
+                        <strong>🎯 100% Incident Eradication in 30 Days</strong>
+                        Empowered frontline teams with active operational guardrails to resolve complaints autonomously.
+                    </div>
+                    <a href="cs3-service-recovery.html" class="btn-view-study" style="background: var(--color-blue);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                </article>
             </div>
 
-            <!-- SECTION 1: LEVELLING UP -->
-            <div class="leveling-section">
-                <div class="leveling-header">
-                    <h3 class="leveling-title">Levelling Up</h3>
-                    <p class="leveling-subtitle"
-                        title="A progressive trajectory across research, operational design, and behavioural science.">A
-                        progressive trajectory across research, operational design, and behavioural science.</p>
-                </div>
-
-                <div class="timeline-container" id="timelineContainer">
-                    <!-- Treasure Map Curved Dashed Route SVG with Fade In (Left) and Fade Out (Right) -->
-                    <svg class="timeline-track-svg" id="treasureMapSvg" xmlns="http://www.w3.org/2000/svg">
-                        <path id="treasurePath" class="treasure-map-path" d="" />
-                    </svg>
-
-                    <div class="timeline-milestones">
-                        <!-- Milestone 1 -->
-                        <div class="timeline-milestone">
-                            <div class="milestone-node-wrap">
-                                <span class="milestone-badge badge-blue">BASE STATS</span>
-                                <div class="milestone-dot dot-blue" id="dot1"></div>
-                            </div>
-                            <div class="milestone-content">
-                                <h4 class="milestone-subheading" style="color: var(--color-blue);">Where I've Been</h4>
-                                <p class="milestone-body">Over 9 years driving service transformation, generative user
-                                    research, and process optimisation within complex, large-scale customer ecosystems.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Milestone 2 -->
-                        <div class="timeline-milestone">
-                            <div class="milestone-node-wrap">
-                                <span class="milestone-badge badge-orange">EXP FARMING</span>
-                                <div class="milestone-dot dot-orange" id="dot2"></div>
-                            </div>
-                            <div class="milestone-content">
-                                <h4 class="milestone-subheading" style="color: var(--color-orange);">What I'm Building
-                                    Now</h4>
-                                <p class="milestone-body">Bridging my operational foundation with digital innovation.
-                                    I'm actively expanding my toolkit into AI-powered UX, digital product strategy, and
-                                    rapid prototyping with emerging technologies.</p>
-                            </div>
-                        </div>
-
-                        <!-- Milestone 3 -->
-                        <div class="timeline-milestone">
-                            <div class="milestone-node-wrap">
-                                <span class="milestone-badge badge-green">NEXT UNLOCKS</span>
-                                <div class="milestone-dot dot-green" id="dot3"></div>
-                            </div>
-                            <div class="milestone-content">
-                                <h4 class="milestone-subheading" style="color: var(--color-green);">Where I'm Heading
-                                </h4>
-                                <p class="milestone-body">Commencing a BSc in Psychology in early 2027. I want to deepen
-                                    my understanding of human motivations, behavioural science, and the cognitive
-                                    mechanics that make an experience truly resonate.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECTION 2: BEYOND THE CANVAS -->
-            <div class="beyond-section">
-                <div class="beyond-header">
-                    <h3 class="beyond-title">Beyond the Canvas</h3>
-                    <p class="beyond-subtitle">Collector of hobbies, daily rituals, and creative nourishment.</p>
-                </div>
-                <div class="beyond-grid">
-                    <!-- Block 1 -->
-                    <div class="hobby-card">
-                        <div class="hobby-photo-wrap" style="border-color: var(--color-blue);">
-                            <img src="portfolio-images/aboutme-images/worldbuilding.webp?v=2"
-                                alt="Stories & World-Building" class="hobby-img">
-                        </div>
-                        <h4 class="hobby-subheading" style="color: var(--color-blue);">Stories &amp; World-Building</h4>
-                        <p class="hobby-body">Exploring open-world and strategy RPGs on my Switch and iPad, alongside
-                            epic fantasy fiction, Korean regression manhwa, high-fantasy anime, and books on leadership
-                            and behavioural psychology.</p>
-                    </div>
-
-                    <!-- Block 2 -->
-                    <div class="hobby-card">
-                        <div class="hobby-photo-wrap" style="border-color: var(--color-orange);">
-                            <img src="portfolio-images/aboutme-images/staying-active.webp?v=2" alt="Staying Active"
-                                class="hobby-img">
-                        </div>
-                        <h4 class="hobby-subheading" style="color: var(--color-orange);">Staying Active</h4>
-                        <p class="hobby-body">Hitting the gym, cycling, swimming, and taking long walks with my wife.
-                        </p>
-                    </div>
-
-                    <!-- Block 3 -->
-                    <div class="hobby-card">
-                        <div class="hobby-photo-wrap" style="border-color: var(--color-green);">
-                            <img src="portfolio-images/aboutme-images/hands-on-crafting.webp?v=2"
-                                alt="Hands-On Crafting" class="hobby-img">
-                        </div>
-                        <h4 class="hobby-subheading" style="color: var(--color-green);">Hands-On Crafting</h4>
-                        <p class="hobby-body">Dabbling in metalwork, leathercraft, and woodwork. Pottery was the most
-                            fun—at least until I officially ran out of storage space for all my creations.</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+                <a href="professional-projects.html" class="more-details-btn">
+                    More Details →
+                </a>
             </div>
         </section>
 
-        <!-- 2. MY SERVICES -->
+        <!-- =========================================
+             PERSONAL PROJECTS (TOSSED ON THE FLOOR CARDS)
+             ========================================= -->
+        <section id="personal-projects" class="section-margin scroll-section">
+            <!-- Pottery Accents -->
+            <img src="portfolio-images/pottery-decor/pottery-marbled-bowl.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-left" style="top: 14%; width: 72px; transform: rotate(-14deg);">
+            <img src="portfolio-images/pottery-decor/pottery-blue-mug.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-right" style="top: 48%; width: 66px; transform: rotate(11deg);">
+
+            <h2 class="section-title">PERSONAL PROJECTS</h2>
+            <p class="intro-special" style="text-align: center; margin-bottom: 0.75rem;">Generative User Research,
+                Product Discovery, &amp; Multi-Agent AI Architecture</p>
+            <p
+                style="text-align: center; max-width: 1050px; margin: 0 auto 1.5rem auto; font-size: 1.1rem; color: #444;">
+                Independent discovery initiatives and experimental prototypes exploring mixed-methods human friction and
+                decoupled AI workflows.
+            </p>
+
+            <!-- Slanted & staggered cards (3 in a line) -->
+            <div class="tossed-cards-grid">
+                <!-- CS4 Card (Green) -->
+                <article class="tossed-card accent-green">
+                    <div class="tossed-card-thumb">
+                        <picture>
+                            <source srcset="portfolio-images/cs4-images/4.1.webp" type="image/webp">
+                            <img src="portfolio-images/cs4-images/4.1.png" loading="lazy"
+                                alt="Turning Saved Places Into a Trip">
+                        </picture>
+                    </div>
+                    <span class="meta-tag"
+                        style="background: var(--color-green-wash); color: var(--color-green); border-color: var(--color-green-light);">CASE
+                        STUDY 04</span>
+                    <h3 class="tossed-card-title">Turning Saved Places Into a Trip</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">UX Research</span>
+                        <span class="project-mini-pill">Mixed Methods</span>
+                        <span class="project-mini-pill">Product Discovery</span>
+                    </div>
+                    <div class="tossed-card-outcome green">
+                        <strong>🎯 84% Demand for Native Pin Organiser</strong>
+                        Validated 81% user juggle friction and established feature priorities for Google Maps
+                        integration.
+                    </div>
+                    <a href="cs4-saved-places.html" class="btn-view-study" style="background: var(--color-green);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- CS5 Card (Deep Cypress / Forest Emerald Green) -->
+                <article class="tossed-card accent-emerald">
+                    <div class="tossed-card-thumb">
+                        <picture>
+                            <source srcset="portfolio-images/cs5-images/thinker-belle.webp" type="image/webp">
+                            <img src="portfolio-images/cs5-images/thinker-belle.webp" loading="lazy"
+                                alt="The Thinking Belle">
+                        </picture>
+                    </div>
+                    <span class="meta-tag"
+                        style="background: var(--color-emerald-wash); color: var(--color-emerald); border-color: var(--color-emerald-light);">CASE
+                        STUDY 05</span>
+                    <h3 class="tossed-card-title">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">DesignOps</span>
+                        <span class="project-mini-pill">AI Systems</span>
+                        <span class="project-mini-pill">Service Automation</span>
+                    </div>
+                    <div class="tossed-card-outcome emerald">
+                        <strong>🎯 100% Format Lock Across 5 LLM Agents</strong>
+                        Centralised multi-agent video production with zero prompt context pollution and consistent
+                        quality gates.
+                    </div>
+                    <a href="cs5-thinking-belle.html" class="btn-view-study" style="background: var(--color-emerald);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- CS6 Card (Deep Coastal Blue) -->
+                <article class="tossed-card accent-blue-deep">
+                    <div class="tossed-card-thumb">
+                        <img src="images/cs6/slide-14-hero.png" loading="lazy"
+                            alt="Google Maps Plans: Live Gap Resolution for Leisure Planners">
+                    </div>
+                    <span class="meta-tag"
+                        style="background: var(--color-blue-deep-wash); color: var(--color-blue-deep); border-color: var(--color-blue-deep-light);">CASE
+                        STUDY 06</span>
+                    <h3 class="tossed-card-title">Google Maps Plans: Live Gap Resolution for Leisure Planners</h3>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">Product Strategy</span>
+                        <span class="project-mini-pill">Interaction Design</span>
+                        <span class="project-mini-pill">Prototyping</span>
+                    </div>
+                    <div class="tossed-card-outcome blue-deep">
+                        <strong>🎯 Conservative $150K Year 1 Singapore ad-revenue floor &amp; live interactive
+                            prototype</strong>
+                        Translating leisure travel research into a five-part Google Maps adaptation flow, interactive
+                        prototype, and first-principles business case.
+                    </div>
+                    <a href="cs6-google-maps-plans.html" class="btn-view-study"
+                        style="background: var(--color-blue-deep);">
+                        View Case Study
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                        </svg>
+                    </a>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+                <a href="personal-projects.html" class="more-details-btn">
+                    More Details →
+                </a>
+            </div>
+        </section>
+
+        <!-- CORE CAPABILITIES -->
         <section id="services" class="section-margin scroll-section">
             <!-- Pottery Accents -->
-            <img src="portfolio-images/pottery-decor/pottery-green-tumbler.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 22%; width: 62px; transform: rotate(-9deg);">
-            <img src="portfolio-images/pottery-decor/pottery-blue-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 68%; width: 80px; transform: rotate(12deg);">
+            <img src="portfolio-images/pottery-decor/pottery-green-tumbler.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-left" style="top: 22%; width: 62px; transform: rotate(-9deg);">
+            <img src="portfolio-images/pottery-decor/pottery-blue-plate.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-right" style="top: 68%; width: 80px; transform: rotate(12deg);">
 
-            <h2 class="section-title">MY SERVICES</h2>
+            <h2 class="section-title">CORE CAPABILITIES</h2>
             <p class="intro-special">Bridging Generative Research, Physical Operations, and Service Architecture</p>
             <p>With 9+ years driving large-scale service transformation, I bridge generative user research with rigorous
                 operational excellence. Driven by an active curiosity for emerging tech, my capabilities are currently
                 augmented by my NTU PACE AI-UX and IxDF Senior Service Design certifications.</p>
-            <p>Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my focus is on driving immediate impact through proven operational methodologies, adopting emerging tools, and turning fresh insights from my studies into practical value for your organisation.</p>
+            <p>Ahead of commencing my BSc in Psychology at SUSS (Jan 2027), my focus is on driving immediate impact
+                through proven operational methodologies, adopting emerging tools, and turning fresh insights from my
+                studies into practical value for your organisation.</p>
 
             <div class="pillars-grid">
                 <a href="cs4-saved-places.html" class="organic-card pillar-card border-green">
                     <h4 style="color: var(--color-green);">EVIDENCE-BASED UX RESEARCH</h4>
                     <span class="meta-tag">Generative Methodologies</span>
-                    <p>Grounding strategic designs in mixed-methods user research and real-world human behaviour to bridge the gap between digital discovery and everyday friction.</p>
+                    <p>Grounding strategic designs in mixed-methods user research and real-world human behaviour to
+                        bridge the gap between digital discovery and everyday friction.</p>
                 </a>
                 <a href="cs2-storage.html" class="organic-card pillar-card border-orange">
                     <h4 style="color: var(--color-orange);">SERVICE ERGONOMICS &amp; 5S</h4>
@@ -2789,217 +3278,86 @@
             </div>
         </section>
 
-        <!-- =========================================
-             PROFESSIONAL PROJECTS 
-             ========================================= -->
-        
-        <!-- =========================================
-             PROFESSIONAL PROJECTS (TOSSED ON THE FLOOR CARDS)
-             ========================================= -->
-        <section id="pro-projects" class="section-margin scroll-section">
-            <h2 class="section-title">PROFESSIONAL PROJECTS</h2>
-            <p class="intro-special" style="text-align: center; margin-bottom: 0.75rem;">Large-Scale Service Architecture, Frontline Operations, &amp; Systems Optimisation</p>
-            <p style="text-align: center; max-width: 1050px; margin: 0 auto 1.5rem auto; font-size: 1.1rem; color: #444;">
-                A selection of end-to-end service initiatives. Explore the case studies below or visit the dedicated hub.
-            </p>
+        <!-- EDITORIAL ABOUT ME SPOTLIGHT -->
+        <section id="about-teaser" class="section-margin scroll-section about-teaser-section">
+            <div class="about-spotlight">
+                <div class="about-spotlight-portrait">
+                    <div class="about-spotlight-photo-frame">
+                        <img src="portfolio-images/aboutme-images/aboutme-image.webp?v=2" alt="Joshua Farrock" loading="lazy"
+                            onerror="this.style.display='none'; document.getElementById('teaserAvatarFallback').style.display='flex';">
+                        <div class="hero-avatar-fallback" id="teaserAvatarFallback" style="display: none;">
+                            <span>JF</span>
+                            <span class="fallback-sub">Joshua</span>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- 3 in a line, slanted & staggered like cards tossed on the studio floor -->
-            <div class="tossed-cards-grid">
-                <!-- CS1 Card (Green) -->
-                <article class="tossed-card accent-green">
-                    <div class="tossed-card-thumb">
-                        <picture>
-                            <source srcset="portfolio-images/cs1-images/1.1.webp" type="image/webp">
-                            <img src="portfolio-images/cs1-images/1.1.png" loading="lazy" alt="12-Year Development Roadmap">
-                        </picture>
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-green-wash); color: var(--color-green); border-color: var(--color-green-light);">CASE STUDY 01</span>
-                    <h3 class="tossed-card-title">12-Year Development Roadmap</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">Service Strategy</span>
-                        <span class="project-mini-pill">Lifecycle Design</span>
-                        <span class="project-mini-pill">Systems Design</span>
-                    </div>
-                    <div class="tossed-card-outcome green">
-                        <strong>🎯 70%+ Retention &amp; 0 Data Breaches</strong>
-                        Adopted as the foundational strategy governing long-term design across 4,000+ members.
-                    </div>
-                    <a href="cs1-roadmap.html" class="btn-view-study" style="background: var(--color-green);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                <div class="about-spotlight-content">
+                    <span class="about-spotlight-eyebrow">ABOUT ME</span>
+                    <h2 class="about-spotlight-title">Hi, I’m Joshua.</h2>
+                    <p class="about-spotlight-bio">
+                        I design practical, people-centred experiences across physical spaces and digital services—turning real-world behaviour into systems that last.
+                    </p>
+
+                    <!-- Compact Levelling Up Trajectory Strip -->
+                    <div class="spotlight-trajectory" id="spotlightTrajectory">
+                        <svg class="spotlight-track-svg" id="spotlightTrackSvg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path id="spotlightTrackPath" class="spotlight-track-path" d="" />
                         </svg>
-                    </a>
-                </article>
 
-                <!-- CS2 Card (Orange) -->
-                <article class="tossed-card accent-orange">
-                    <div class="tossed-card-thumb">
-                        <picture>
-                            <source srcset="portfolio-images/cs2-images/2.1.webp" type="image/webp">
-                            <img src="portfolio-images/cs2-images/2.1.png" loading="lazy" alt="Physical Storage Configuration Revamp">
-                        </picture>
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 02</span>
-                    <h3 class="tossed-card-title">Physical Storage Configuration Revamp</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">Field Research</span>
-                        <span class="project-mini-pill">Service Ergonomics</span>
-                        <span class="project-mini-pill">Workflow Design</span>
-                    </div>
-                    <div class="tossed-card-outcome orange">
-                        <strong>🎯 100% Adoption &amp; Zero Downtime</strong>
-                        Completely eliminated weekly supply logistical friction for volunteer seniors.
-                    </div>
-                    <a href="cs2-storage.html" class="btn-view-study" style="background: var(--color-orange);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
+                        <div class="spotlight-stages">
+                            <div class="spotlight-stage">
+                                <div class="spotlight-stage-node">
+                                    <span class="spotlight-badge badge-blue">BASE STATS</span>
+                                    <div class="spotlight-dot dot-blue" id="spotDot1"></div>
+                                </div>
+                                <div class="spotlight-stage-copy">
+                                    <span class="spotlight-badge badge-blue spotlight-badge-mobile">BASE STATS</span>
+                                    <h3 class="spotlight-stage-heading" style="color: var(--color-blue);">9+ Years</h3>
+                                    <p class="spotlight-stage-sub">Service transformation &amp; frontline ops</p>
+                                </div>
+                            </div>
 
-                <!-- CS3 Card (Blue) -->
-                <article class="tossed-card accent-blue">
-                    <div class="tossed-card-thumb">
-                        <picture>
-                            <source srcset="portfolio-images/cs3-images/3.1.webp" type="image/webp">
-                            <img src="portfolio-images/cs3-images/3.1.png" loading="lazy" alt="Frontline Service Recovery Framework">
-                        </picture>
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">CASE STUDY 03</span>
-                    <h3 class="tossed-card-title">Frontline Service Recovery Framework</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">Service Recovery</span>
-                        <span class="project-mini-pill">Frontline CX</span>
-                        <span class="project-mini-pill">Service Playbooks</span>
-                    </div>
-                    <div class="tossed-card-outcome blue">
-                        <strong>🎯 100% Incident Eradication in 30 Days</strong>
-                        Empowered frontline teams with active operational guardrails to resolve complaints autonomously.
-                    </div>
-                    <a href="cs3-service-recovery.html" class="btn-view-study" style="background: var(--color-blue);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
-            </div>
+                            <div class="spotlight-stage">
+                                <div class="spotlight-stage-node">
+                                    <span class="spotlight-badge badge-orange">EXP FARMING</span>
+                                    <div class="spotlight-dot dot-orange" id="spotDot2"></div>
+                                </div>
+                                <div class="spotlight-stage-copy">
+                                    <span class="spotlight-badge badge-orange spotlight-badge-mobile">EXP FARMING</span>
+                                    <h3 class="spotlight-stage-heading" style="color: var(--color-orange);">AI-UX &amp; Prototyping</h3>
+                                    <p class="spotlight-stage-sub">Digital product strategy &amp; live builds</p>
+                                </div>
+                            </div>
 
-            <div style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-                <a href="professional-projects.html" class="more-details-btn">
-                    More Details →
-                </a>
+                            <div class="spotlight-stage">
+                                <div class="spotlight-stage-node">
+                                    <span class="spotlight-badge badge-green">NEXT UNLOCKS</span>
+                                    <div class="spotlight-dot dot-green" id="spotDot3"></div>
+                                </div>
+                                <div class="spotlight-stage-copy">
+                                    <span class="spotlight-badge badge-green spotlight-badge-mobile">NEXT UNLOCKS</span>
+                                    <h3 class="spotlight-stage-heading" style="color: var(--color-green);">Jan 2027</h3>
+                                    <p class="spotlight-stage-sub">BSc in Psychology (SUSS)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-spotlight-cta-row">
+                        <a href="about.html" class="about-teaser-btn">Read My Backstory →</a>
+                        <span class="about-spotlight-caption">Career arc, philosophy &amp; hands-on craft</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- =========================================
-             PERSONAL PROJECTS (TOSSED ON THE FLOOR CARDS)
-             ========================================= -->
-        <section id="personal-projects" class="section-margin scroll-section">
+        <section id="connect" class="section-margin scroll-section">
             <!-- Pottery Accents -->
-            <img src="portfolio-images/pottery-decor/pottery-marbled-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 14%; width: 72px; transform: rotate(-14deg);">
-            <img src="portfolio-images/pottery-decor/pottery-blue-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 48%; width: 66px; transform: rotate(11deg);">
-
-            <h2 class="section-title">PERSONAL PROJECTS</h2>
-            <p class="intro-special" style="text-align: center; margin-bottom: 0.75rem;">Generative User Research, Product Discovery, &amp; Multi-Agent AI Architecture</p>
-            <p style="text-align: center; max-width: 1050px; margin: 0 auto 1.5rem auto; font-size: 1.1rem; color: #444;">
-                Independent discovery initiatives and experimental prototypes exploring mixed-methods human friction and decoupled AI workflows.
-            </p>
-
-            <!-- Slanted & staggered cards (3 in a line) -->
-            <div class="tossed-cards-grid">
-                <!-- CS4 Card (Green) -->
-                <article class="tossed-card accent-green">
-                    <div class="tossed-card-thumb">
-                        <picture>
-                            <source srcset="portfolio-images/cs4-images/4.1.webp" type="image/webp">
-                            <img src="portfolio-images/cs4-images/4.1.png" loading="lazy" alt="Turning Saved Places Into a Trip">
-                        </picture>
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-green-wash); color: var(--color-green); border-color: var(--color-green-light);">CASE STUDY 04</span>
-                    <h3 class="tossed-card-title">Turning Saved Places Into a Trip</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">UX Research</span>
-                        <span class="project-mini-pill">Mixed Methods</span>
-                        <span class="project-mini-pill">Product Discovery</span>
-                    </div>
-                    <div class="tossed-card-outcome green">
-                        <strong>🎯 84% Demand for Native Pin Organiser</strong>
-                        Validated 81% user juggle friction and established feature priorities for Google Maps integration.
-                    </div>
-                    <a href="cs4-saved-places.html" class="btn-view-study" style="background: var(--color-green);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
-
-                <!-- CS5 Card (Deep Cypress / Forest Emerald Green) -->
-                <article class="tossed-card accent-emerald">
-                    <div class="tossed-card-thumb">
-                        <picture>
-                            <source srcset="portfolio-images/cs5-images/thinker-belle.webp" type="image/webp">
-                            <img src="portfolio-images/cs5-images/thinker-belle.webp" loading="lazy" alt="The Thinking Belle">
-                        </picture>
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-emerald-wash); color: var(--color-emerald); border-color: var(--color-emerald-light);">CASE STUDY 05</span>
-                    <h3 class="tossed-card-title">The Thinking Belle: Multi-Agent AI Content Pipeline</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">DesignOps</span>
-                        <span class="project-mini-pill">AI Systems</span>
-                        <span class="project-mini-pill">Service Automation</span>
-                    </div>
-                    <div class="tossed-card-outcome emerald">
-                        <strong>🎯 100% Format Lock Across 5 LLM Agents</strong>
-                        Centralised multi-agent video production with zero prompt context pollution and consistent quality gates.
-                    </div>
-                    <a href="cs5-thinking-belle.html" class="btn-view-study" style="background: var(--color-emerald);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
-
-                <!-- CS6 Card (Deep Coastal Blue) -->
-                <article class="tossed-card accent-blue-deep">
-                    <div class="tossed-card-thumb">
-                        <img src="images/cs6/slide-14-hero.png" loading="lazy" alt="Google Maps Plans: Live Gap Resolution for Leisure Planners">
-                    </div>
-                    <span class="meta-tag" style="background: var(--color-blue-deep-wash); color: var(--color-blue-deep); border-color: var(--color-blue-deep-light);">CASE STUDY 06</span>
-                    <h3 class="tossed-card-title">Google Maps Plans: Live Gap Resolution for Leisure Planners</h3>
-                    <div class="project-mini-pills" aria-label="Project focus areas">
-                        <span class="project-mini-pill">Product Strategy</span>
-                        <span class="project-mini-pill">Interaction Design</span>
-                        <span class="project-mini-pill">Prototyping</span>
-                    </div>
-                    <div class="tossed-card-outcome blue-deep">
-                        <strong>🎯 Conservative $150K Year 1 Singapore ad-revenue floor &amp; live interactive prototype</strong>
-                        Translating leisure travel research into a five-part Google Maps adaptation flow, interactive prototype, and first-principles business case.
-                    </div>
-                    <a href="cs6-google-maps-plans.html" class="btn-view-study" style="background: var(--color-blue-deep);">
-                        View Case Study
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </a>
-                </article>
-            </div>
-
-            <div style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
-                <a href="personal-projects.html" class="more-details-btn">
-                    More Details →
-                </a>
-            </div>
-        </section>
-
-<section id="connect" class="section-margin scroll-section">
-            <!-- Pottery Accents -->
-            <img src="portfolio-images/pottery-decor/pottery-tea-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 18%; width: 54px; transform: rotate(-10deg);">
-            <img src="portfolio-images/pottery-decor/pottery-pink-plate.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 62%; width: 76px; transform: rotate(12deg);">
+            <img src="portfolio-images/pottery-decor/pottery-tea-bowl.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-left" style="top: 18%; width: 54px; transform: rotate(-10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-pink-plate.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-right" style="top: 62%; width: 76px; transform: rotate(12deg);">
 
             <h2 class="section-title">LET'S CONNECT</h2>
             <div style="text-align: center; margin-bottom: 4rem;">
@@ -3009,7 +3367,9 @@
                 <p
                     style="font-weight: 700; color: var(--color-orange); font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem;">
                     Ready to Bridge Human Behaviour, Delightful Experiences &amp; Service Execution</p>
-                <p style="max-width: 1100px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for reviewing my portfolio. I am eager to discuss how my background in service transformation can support your organisation.</p>
+                <p style="max-width: 1100px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">Thank you for
+                    reviewing my portfolio. I am eager to discuss how my background in service transformation can
+                    support your organisation.</p>
             </div>
 
             <div class="cs-row" style="align-items: stretch;">
@@ -3021,7 +3381,6 @@
                         <li style="margin-bottom: 0.75rem;"><strong>Email:</strong> <a
                                 href="mailto:joshuafarrock@gmail.com" class="contact-link">joshuafarrock@gmail.com</a>
                         </li>
-                        <li style="margin-bottom: 0.75rem;"><strong>Phone:</strong> +65 9651 3048</li>
                         <li style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> <a
                                 href="https://linkedin.com/in/joshua-farrock" target="_blank" rel="noopener noreferrer"
                                 class="contact-link">linkedin.com/in/joshua-farrock</a></li>
@@ -3057,8 +3416,10 @@
              ========================================= -->
         <section id="resume" class="section-margin scroll-section resume-cta-section">
             <!-- Pottery Accents -->
-            <img src="portfolio-images/pottery-decor/pottery-yellow-mug.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-left" style="top: 20%; width: 66px; transform: rotate(10deg);">
-            <img src="portfolio-images/pottery-decor/pottery-teal-bowl.png" alt="" aria-hidden="true" loading="lazy" class="pottery-decor pottery-decor-right" style="top: 48%; width: 70px; transform: rotate(-9deg);">
+            <img src="portfolio-images/pottery-decor/pottery-yellow-mug.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-left" style="top: 20%; width: 66px; transform: rotate(10deg);">
+            <img src="portfolio-images/pottery-decor/pottery-teal-bowl.png" alt="" aria-hidden="true" loading="lazy"
+                class="pottery-decor pottery-decor-right" style="top: 48%; width: 70px; transform: rotate(-9deg);">
 
             <div class="resume-card">
                 <span class="meta-tag"
@@ -3091,11 +3452,11 @@
         if (backstoryTrigger) {
             backstoryTrigger.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.getElementById('about');
+                const target = document.getElementById('pro-projects');
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                     if (history.pushState) {
-                        history.pushState(null, null, '#about');
+                        history.pushState(null, null, '#pro-projects');
                     }
                 }
             });
@@ -3137,14 +3498,14 @@
         const desktopTrackFill = document.getElementById('progTrackFill');
         const mobileTrackFill = document.getElementById('progMobileTrackFill');
         const topNavLinks = document.querySelectorAll('.top-nav-link');
-        const targetIds = ['hero', 'about', 'services', 'pro-projects', 'personal-projects', 'connect', 'resume'];
+        const targetIds = ['hero', 'pro-projects', 'personal-projects', 'services', 'about-teaser', 'connect', 'resume'];
 
         const topNavMap = {
             'hero': 'hero',
-            'about': 'about',
-            'services': 'about',
             'pro-projects': 'projects',
             'personal-projects': 'projects',
+            'services': 'services',
+            'about-teaser': 'about',
             'connect': 'connect',
             'resume': 'resume'
         };
@@ -3427,6 +3788,56 @@
         }
         setTimeout(drawTreasureRoute, 100);
         setTimeout(drawTreasureRoute, 400);
+
+        // ----------------------------------------------------
+        // About Me Spotlight - Mini Trajectory Dashed Route
+        // ----------------------------------------------------
+        function drawSpotlightRoute() {
+            const container = document.getElementById('spotlightTrajectory');
+            const path = document.getElementById('spotlightTrackPath');
+            const dot1 = document.getElementById('spotDot1');
+            const dot2 = document.getElementById('spotDot2');
+            const dot3 = document.getElementById('spotDot3');
+            if (!container || !path || !dot1 || !dot2 || !dot3) return;
+
+            const cRect = container.getBoundingClientRect();
+            if (cRect.width === 0 || cRect.height === 0) return;
+
+            const d1 = dot1.getBoundingClientRect();
+            const d2 = dot2.getBoundingClientRect();
+            const d3 = dot3.getBoundingClientRect();
+
+            const x1 = d1.left + d1.width / 2 - cRect.left;
+            const y1 = d1.top + d1.height / 2 - cRect.top;
+            const x2 = d2.left + d2.width / 2 - cRect.left;
+            const y2 = d2.top + d2.height / 2 - cRect.top;
+            const x3 = d3.left + d3.width / 2 - cRect.left;
+            const y3 = d3.top + d3.height / 2 - cRect.top;
+
+            let d = '';
+            if (window.innerWidth > 600) {
+                // Horizontal subtle wave through all 3 node centres
+                const dx1 = x2 - x1;
+                const dx2 = x3 - x2;
+                d = `M ${x1.toFixed(1)},${y1.toFixed(1)} ` +
+                    `C ${(x1 + dx1 * 0.35).toFixed(1)},${(y1 - 10).toFixed(1)} ${(x1 + dx1 * 0.65).toFixed(1)},${(y2 + 10).toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)} ` +
+                    `C ${(x2 + dx2 * 0.35).toFixed(1)},${(y2 - 10).toFixed(1)} ${(x2 + dx2 * 0.65).toFixed(1)},${(y3 + 10).toFixed(1)} ${x3.toFixed(1)},${y3.toFixed(1)}`;
+            } else {
+                // Clean vertical dashed line straight through the 3 stacked node centres
+                d = `M ${x1.toFixed(1)},${y1.toFixed(1)} L ${x2.toFixed(1)},${y2.toFixed(1)} L ${x3.toFixed(1)},${y3.toFixed(1)}`;
+            }
+            path.setAttribute('d', d);
+        }
+
+        window.addEventListener('resize', drawSpotlightRoute);
+        window.addEventListener('load', drawSpotlightRoute);
+        document.addEventListener('DOMContentLoaded', drawSpotlightRoute);
+        const sContainer = document.getElementById('spotlightTrajectory');
+        if (sContainer && window.ResizeObserver) {
+            new ResizeObserver(drawSpotlightRoute).observe(sContainer);
+        }
+        setTimeout(drawSpotlightRoute, 100);
+        setTimeout(drawSpotlightRoute, 400);
     </script>
 </body>
 
