@@ -47,6 +47,11 @@
             --color-emerald: #246b5a;
             --color-emerald-light: #8ec2b3;
             --color-emerald-wash: #e6f2ee;
+            /* Deeper Coastal Blue Accent (Case Study 06) */
+            --color-blue-deep: #2c5f8a;
+            --color-blue-deep-hover: #214b6e;
+            --color-blue-deep-light: #7da6c7;
+            --color-blue-deep-wash: #ddeaf4;
 
             --color-purple: var(--color-emerald);
             --color-purple-light: var(--color-emerald-light);
@@ -2362,6 +2367,28 @@
             margin: 0.25rem 0 0.75rem 0;
         }
 
+    
+        .project-card.accent-blue-deep {
+            border: 2.5px solid var(--color-blue-deep);
+            box-shadow: 0 12px 30px rgba(44, 95, 138, 0.12);
+        }
+        .project-card.accent-blue-deep:hover {
+            border-color: var(--color-blue-deep);
+            box-shadow: 0 18px 40px rgba(44, 95, 138, 0.26);
+        }
+        .project-outcome-badge.blue-deep {
+            border-left-color: var(--color-blue-deep);
+            background: #f2f7fb;
+        }
+        .project-card.accent-blue-deep .project-mini-pill {
+            color: var(--color-blue-deep);
+            border-color: var(--color-blue-deep-light);
+            background: var(--color-blue-deep-wash);
+        }
+        .project-card.accent-blue-deep .btn-view-study:hover {
+            background: var(--color-blue-deep-hover) !important;
+        }
+
     </style>
 </head>
 
@@ -2598,14 +2625,14 @@
             </article>
 
             <!-- CS6 Card -->
-            <article class="project-card accent-blue">
+            <article class="project-card accent-blue-deep">
                 <div class="project-thumbnail-wrapper">
                     <img src="images/cs6/slide-14-hero.png" loading="lazy"
                         alt="Google Maps Plans: Live Gap Resolution for Leisure Planners">
                 </div>
                 <div class="project-info">
                     <span class="meta-tag"
-                        style="background: var(--color-blue-wash); color: var(--color-blue); border-color: var(--color-blue-light);">CASE
+                        style="background: var(--color-blue-deep-wash); color: var(--color-blue-deep); border-color: var(--color-blue-deep-light);">CASE
                         STUDY 06</span>
                     <h2 class="project-title">Google Maps Plans: Live Gap Resolution for Leisure Planners</h2>
                     <div class="project-mini-pills" aria-label="Project focus areas">
@@ -2618,11 +2645,11 @@
                         Translating leisure travel research into a five-part Google Maps adaptation flow, interactive
                         prototype, and first-principles business case.
                     </p>
-                    <div class="project-outcome-badge blue">
+                    <div class="project-outcome-badge blue-deep">
                         <strong>🎯 Conservative $150K Year 1 Singapore ad-revenue floor &amp; live interactive prototype</strong>
                         Five-part native adaptation layer built to capture off-platform leakage and keep trips inside Google Maps.
                     </div>
-                    <a href="cs6-google-maps-plans.html" class="btn-view-study" style="background: var(--color-blue);">
+                    <a href="cs6-google-maps-plans.html" class="btn-view-study" style="background: var(--color-blue-deep);">
                         View Case Study
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                             <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />

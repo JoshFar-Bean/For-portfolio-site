@@ -44,6 +44,11 @@
             --color-emerald: #246b5a;
             --color-emerald-light: #8ec2b3;
             --color-emerald-wash: #e6f2ee;
+            /* Deeper Coastal Blue Accent (Case Study 06) */
+            --color-blue-deep: #2c5f8a;
+            --color-blue-deep-hover: #214b6e;
+            --color-blue-deep-light: #7da6c7;
+            --color-blue-deep-wash: #ddeaf4;
         }
 
         body {
@@ -2655,7 +2660,7 @@
         }
         .cs6-role {
             font-weight: 800;
-            color: var(--color-blue);
+            color: var(--color-blue-deep);
             margin-bottom: 0.75rem;
             font-size: 1.02rem;
         }
@@ -2746,7 +2751,7 @@
         /* Section Cards (Summary + Single Accessible Expandable Drawer) */
         .cs6-section-card {
             background: var(--color-paper-light);
-            border: 1.5px solid rgba(91, 123, 138, 0.22);
+            border: 1.5px solid rgba(44, 95, 138, 0.28);
             border-radius: 22px;
             padding: 2rem 2.25rem;
             margin-bottom: 2.25rem;
@@ -2757,7 +2762,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(1.25rem, 2.2vw, 1.55rem);
             font-weight: 800;
-            color: var(--color-blue);
+            color: var(--color-blue-deep);
             margin-bottom: 0.85rem;
             line-height: 1.3;
         }
@@ -2784,9 +2789,9 @@
             gap: 0.55rem;
             padding: 0.62rem 1.2rem;
             border-radius: 999px;
-            border: 1.5px solid rgba(91, 123, 138, 0.35);
+            border: 1.5px solid var(--color-blue-deep-light);
             background: #ffffff;
-            color: var(--color-blue);
+            color: var(--color-blue-deep);
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
             font-weight: 700;
@@ -2796,8 +2801,8 @@
         }
         .cs6-drawer-toggle:hover,
         .cs6-drawer-toggle[aria-expanded="true"] {
-            background: var(--color-blue-wash);
-            border-color: var(--color-blue);
+            background: var(--color-blue-deep-wash);
+            border-color: var(--color-blue-deep);
             color: var(--color-text);
         }
         .cs6-drawer-chevron {
@@ -3012,6 +3017,13 @@
             margin: 0.25rem 0 0.75rem 0;
         }
 
+    
+        .cs6-header .project-mini-pill {
+            color: var(--color-blue-deep);
+            border-color: var(--color-blue-deep-light);
+            background: var(--color-blue-deep-wash);
+        }
+
     </style>
 </head>
 
@@ -3208,7 +3220,7 @@
             <div id="cs6" class="cs-wrapper">
                 <!-- Header Block -->
                 <header class="cs6-header">
-                    <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 06</span>
+                    <span class="meta-tag" style="background: var(--color-blue-deep-wash); color: var(--color-blue-deep); border-color: var(--color-blue-deep-light);">CASE STUDY 06</span>
                     <h1 class="cs6-h1">Google Maps Plans: Live Gap Resolution for Leisure Planners</h1>
                     <div class="project-mini-pills" aria-label="Project focus areas">
                         <span class="project-mini-pill">Product Strategy</span>
