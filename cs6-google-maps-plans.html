@@ -2975,7 +2975,44 @@
                 padding: 0.6rem 0.6rem 1.85rem 0.6rem;
             }
         }
-</style>
+
+        /* =========================================
+           Project Mini Pill Labels (Below Title)
+           ========================================= */
+        .project-mini-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.42rem;
+            margin: 0.4rem 0 0.85rem 0;
+        }
+        .project-mini-pill {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding: 0.24rem 0.68rem;
+            border-radius: 999px;
+            background: var(--color-paper);
+            color: var(--color-blue-slate);
+            border: 1px solid rgba(91, 123, 138, 0.28);
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+        .tossed-card .project-mini-pills {
+            gap: 0.35rem;
+            margin: 0.15rem 0 0.9rem 0;
+        }
+        .tossed-card .project-mini-pill {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.56rem;
+        }
+        .project-info .project-mini-pills {
+            margin: 0.25rem 0 0.75rem 0;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -3173,6 +3210,11 @@
                 <header class="cs6-header">
                     <span class="meta-tag" style="background: var(--color-orange-wash); color: var(--color-orange); border-color: var(--color-orange-light);">CASE STUDY 06</span>
                     <h1 class="cs6-h1">Google Maps Plans: Live Gap Resolution for Leisure Planners</h1>
+                    <div class="project-mini-pills" aria-label="Project focus areas">
+                        <span class="project-mini-pill">Product Strategy</span>
+                        <span class="project-mini-pill">Interaction Design</span>
+                        <span class="project-mini-pill">Prototyping</span>
+                    </div>
                     <p class="cs6-role">Role: UX &amp; Product Strategy Capstone (Personal Project)</p>
                     <p class="cs6-subhead">A UX and product strategy capstone built around a five-part planning flow and interactive prototype.</p>
                     <div class="cs6-cta-row">
